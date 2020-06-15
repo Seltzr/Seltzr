@@ -5,6 +5,54 @@ pool:
   vmImage: 'ubuntu-latest'
 
 jobs:
+- job: 'buildorm'
+  displayName: 'Build Seltzr.OrmBase'
+  workspace:
+    clean: outputs
+  steps:
+  - task: DotNetCoreCLI@2
+    displayName: '.NET Build'
+    inputs:
+      command: 'build'
+      projects: 'Seltzr.OrmBase/Seltzr.OrmBase.csproj'
+  - task: DotNetCoreCLI@2
+    displayName: '.NET Pack'
+    inputs:
+      command: 'pack'
+      packagesToPack: 'Seltzr.OrmBase/Seltzr.OrmBase.csproj'
+      nobuild: true
+  - task: NuGetAuthenticate@0
+    displayName: 'NuGet Authenticate'
+  - task: NuGetCommand@2
+    displayName: 'NuGet Push'
+    inputs:
+      command: push
+      publishVstsFeed: 'Seltzr/Seltzr'
+      allowPackageConflicts: true
+- job: 'buildef'
+  displayName: 'Build Seltzr.EntityFramework'
+  workspace:
+    clean: outputs
+  steps:
+  - task: DotNetCoreCLI@2
+    displayName: '.NET Build'
+    inputs:
+      command: 'build'
+      projects: 'Seltzr.EntityFramework/Seltzr.EntityFramework.csproj'
+  - task: DotNetCoreCLI@2
+    displayName: '.NET Pack'
+    inputs:
+      command: 'pack'
+      packagesToPack: 'Seltzr.EntityFramework/Seltzr.EntityFramework.csproj'
+      nobuild: true
+  - task: NuGetAuthenticate@0
+    displayName: 'NuGet Authenticate'
+  - task: NuGetCommand@2
+    displayName: 'NuGet Push'
+    inputs:
+      command: push
+      publishVstsFeed: 'Seltzr/Seltzr'
+      allowPackageConflicts: true
 - job: 'buildefcore'
   displayName: 'Build Seltzr.EntityFrameworkCore'
   workspace:
