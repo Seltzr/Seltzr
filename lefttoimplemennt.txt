@@ -16,7 +16,7 @@ TODO OTHERWISE
 
 Ideas
 	- Reset (clears all)
-	- EF .UseRestModels
+	- EF .UseSeltzr
 	- FlatMap
 	- Finish? (completes this route and starts a new one with the same pattern)
 

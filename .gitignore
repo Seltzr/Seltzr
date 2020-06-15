@@ -1,12 +1,12 @@
 .vs/
 .vscode/
 
-RestModels/bin
-RestModels/obj
+Seltzr/bin
+Seltzr/obj
 
-/RestModels.EntityFramework/obj
-/RestModels.EntityFramework/bin
-/RestModels.sln.DotSettings.user
+/Seltzr.EntityFramework/obj
+/Seltzr.EntityFramework/bin
+/Seltzr.sln.DotSettings.user
 
 TestProject/obj
 TestProject/bin

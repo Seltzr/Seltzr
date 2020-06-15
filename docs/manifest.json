@@ -5,26 +5,26 @@
   "files": [
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.EntityFrameworkRestModelsApplicationBuilderExtensions.yml",
+      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.EntityFrameworkSeltzrApplicationBuilderExtensions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Microsoft.Extensions.DependencyInjection.EntityFrameworkRestModelsApplicationBuilderExtensions.html",
-          "hash": "mOjipthNvhh+we7tzzzspQ=="
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.EntityFrameworkSeltzrApplicationBuilderExtensions.html",
+          "hash": "in+Ob+/77su4InZM4HhgYQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.RestModelsApplicationBuilderExtensions.yml",
+      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Microsoft.Extensions.DependencyInjection.RestModelsApplicationBuilderExtensions.html",
-          "hash": "xkyYUc/GcwiWFOMRWGfzMw=="
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.html",
+          "hash": "MfQwv7q1B0k93i8q3PO++Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -33,1186 +33,1222 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.Extensions.DependencyInjection.html",
-          "hash": "pZYroFJlopPNJ8KPjmjNhA=="
+          "hash": "GFQWv/ZSwsoHFXfuksaeZA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Actions.DelegatePostOpAction-2.yml",
+      "source_relative_path": "api/Seltzr.Actions.DelegatePostOpAction-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Actions.DelegatePostOpAction-2.html",
-          "hash": "P/docSVhKDmeolFGPy2ZIA=="
+          "relative_path": "api/Seltzr.Actions.DelegatePostOpAction-2.html",
+          "hash": "1xgCfA7nIh72hYrHCEzG/A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Actions.DelegatePreOpAction-2.yml",
+      "source_relative_path": "api/Seltzr.Actions.DelegatePreOpAction-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Actions.DelegatePreOpAction-2.html",
-          "hash": "yhrMwiobSF8s5odlGWHaRg=="
+          "relative_path": "api/Seltzr.Actions.DelegatePreOpAction-2.html",
+          "hash": "obAVZ9YvxCCY0ssdyw9bMQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Actions.IPostOpAction-2.yml",
+      "source_relative_path": "api/Seltzr.Actions.IPostOpAction-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Actions.IPostOpAction-2.html",
-          "hash": "6Jwwum9T4VT9SdFw+myMgw=="
+          "relative_path": "api/Seltzr.Actions.IPostOpAction-2.html",
+          "hash": "5UuuYI4loGOWDAKTAR0aIg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Actions.IPreOpAction-2.yml",
+      "source_relative_path": "api/Seltzr.Actions.IPreOpAction-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Actions.IPreOpAction-2.html",
-          "hash": "k6FXCwdCkQfvNSUZgDRazw=="
+          "relative_path": "api/Seltzr.Actions.IPreOpAction-2.html",
+          "hash": "zktENhZjKnv+73haQIlClA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Actions.yml",
+      "source_relative_path": "api/Seltzr.Actions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Actions.html",
-          "hash": "cZ7+LINrR/2c8HrgsJIcXw=="
+          "relative_path": "api/Seltzr.Actions.html",
+          "hash": "lxaBgJ2gKrhubDkhOEe+1g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Auth.BasicAuthProvider-2.yml",
+      "source_relative_path": "api/Seltzr.Auth.BasicAuthProvider-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Auth.BasicAuthProvider-2.html",
-          "hash": "fFfbqDgeHjNXmAXpAwOcbw=="
+          "relative_path": "api/Seltzr.Auth.BasicAuthProvider-2.html",
+          "hash": "lDGEPol267dytyzXGak1iQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Auth.DelegateAuthProvider-2.yml",
+      "source_relative_path": "api/Seltzr.Auth.DelegateAuthProvider-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Auth.DelegateAuthProvider-2.html",
-          "hash": "5llEu2Hqy8f8Mq0Eo3tr+w=="
+          "relative_path": "api/Seltzr.Auth.DelegateAuthProvider-2.html",
+          "hash": "2RbAWS6YNBCUgHKSi0x5yA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Auth.HeaderAuthProvider-2.yml",
+      "source_relative_path": "api/Seltzr.Auth.HeaderAuthProvider-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Auth.HeaderAuthProvider-2.html",
-          "hash": "rwvdiygKLo7+tWB1fw3AoQ=="
+          "relative_path": "api/Seltzr.Auth.HeaderAuthProvider-2.html",
+          "hash": "o9PtUwEjosp1nDcLSLDpXw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Auth.IAuthProvider-2.yml",
+      "source_relative_path": "api/Seltzr.Auth.IAuthProvider-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Auth.IAuthProvider-2.html",
-          "hash": "Z2Oo1nCanzJxVZ/gmzgOng=="
+          "relative_path": "api/Seltzr.Auth.IAuthProvider-2.html",
+          "hash": "MXI0dIJ0bQSAh4dZRjJacQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Auth.IdentityAuthProvider-2.yml",
+      "source_relative_path": "api/Seltzr.Auth.IdentityAuthProvider-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Auth.IdentityAuthProvider-2.html",
-          "hash": "rpmr6hDygslvYIL/afLXAw=="
+          "relative_path": "api/Seltzr.Auth.IdentityAuthProvider-2.html",
+          "hash": "kDtouOoQDC5qx/E+4oOfUg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Auth.NoUser.yml",
+      "source_relative_path": "api/Seltzr.Auth.NoUser.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Auth.NoUser.html",
-          "hash": "s4mS1YtOKjZDX9k7i+TjLA=="
+          "relative_path": "api/Seltzr.Auth.NoUser.html",
+          "hash": "dmszN5uLWku/HWbwXh6Nbg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Auth.QueryAuthProvider-2.yml",
+      "source_relative_path": "api/Seltzr.Auth.QueryAuthProvider-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Auth.QueryAuthProvider-2.html",
-          "hash": "n2ilVDDIsbpK7CmKe3HNPA=="
+          "relative_path": "api/Seltzr.Auth.QueryAuthProvider-2.html",
+          "hash": "OustiY2rccHtNNxXiC5+LQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Auth.yml",
+      "source_relative_path": "api/Seltzr.Auth.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Auth.html",
-          "hash": "EVH2GAh2O7KFVTdgBZmGvQ=="
+          "relative_path": "api/Seltzr.Auth.html",
+          "hash": "C6wzQf6NNY1t7gIm8S+jBg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Conditions.DelegateCondition-2.yml",
+      "source_relative_path": "api/Seltzr.Conditions.DelegateCondition-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Conditions.DelegateCondition-2.html",
-          "hash": "g49RfQBIaa+CJqvqAIws8Q=="
+          "relative_path": "api/Seltzr.Conditions.DelegateCondition-2.html",
+          "hash": "H53d1HegdKyfYce1RK7H3g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Conditions.ICondition-2.yml",
+      "source_relative_path": "api/Seltzr.Conditions.ICondition-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Conditions.ICondition-2.html",
-          "hash": "DoFCxX914YoN6FhQPrPlEA=="
+          "relative_path": "api/Seltzr.Conditions.ICondition-2.html",
+          "hash": "PhdLztshDkQMz24cAWB0ZQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Conditions.yml",
+      "source_relative_path": "api/Seltzr.Conditions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Conditions.html",
-          "hash": "8RWlP4zCUVbsIX9CZ+SmbA=="
+          "relative_path": "api/Seltzr.Conditions.html",
+          "hash": "LRHS2sYBYiy3uL8aiWrzbg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Context.ApiContext-2.yml",
+      "source_relative_path": "api/Seltzr.Context.ApiContext-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Context.ApiContext-2.html",
-          "hash": "k4lxoH8zb/AoIUJNqsBI6A=="
+          "relative_path": "api/Seltzr.Context.ApiContext-2.html",
+          "hash": "4RlPWDwlDphlnQeYnZ5GJg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Context.IApiContext-2.yml",
+      "source_relative_path": "api/Seltzr.Context.IApiContext-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Context.IApiContext-2.html",
-          "hash": "FdUvBTn6c1GUosrbTBfQmg=="
+          "relative_path": "api/Seltzr.Context.IApiContext-2.html",
+          "hash": "vis7ubS+qLz/k6vb4e6U9w=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Context.yml",
+      "source_relative_path": "api/Seltzr.Context.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Context.html",
-          "hash": "y++igwvKwkkLfTiCQ6TjWA=="
+          "relative_path": "api/Seltzr.Context.html",
+          "hash": "Mz0cmMFDKLwIlI9FB1xk2g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.EntityFramework.EntityFrameworkModelProvider-2.yml",
+      "source_relative_path": "api/Seltzr.EntityFramework.EntityFrameworkModelProvider-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.EntityFramework.EntityFrameworkModelProvider-2.html",
-          "hash": "hJ7wobsMWYbwenypUMmLBQ=="
+          "relative_path": "api/Seltzr.EntityFramework.EntityFrameworkModelProvider-2.html",
+          "hash": "S9cfEgFPBmayJYXBvRlqNA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.yml",
+      "source_relative_path": "api/Seltzr.EntityFramework.Operations.CreateOperation-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.html",
-          "hash": "gEfj02+ezD0qTV94yscPUA=="
+          "relative_path": "api/Seltzr.EntityFramework.Operations.CreateOperation-2.html",
+          "hash": "vlERjG5Pw2CoOFYiIeNLcA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.EntityFramework.Extensions.yml",
+      "source_relative_path": "api/Seltzr.EntityFramework.Operations.DeleteOperation-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.EntityFramework.Extensions.html",
-          "hash": "+8bbUhJV/b1LBJ7wQkA3Lw=="
+          "relative_path": "api/Seltzr.EntityFramework.Operations.DeleteOperation-2.html",
+          "hash": "MQUqpNKABWs/+FiLg14xvg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.EntityFramework.Filters.PrimaryKeyFilter-2.yml",
+      "source_relative_path": "api/Seltzr.EntityFramework.Operations.UpdateOperation-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.EntityFramework.Filters.PrimaryKeyFilter-2.html",
-          "hash": "P/HWgPEN5cfAwZ5PVoJU+Q=="
+          "relative_path": "api/Seltzr.EntityFramework.Operations.UpdateOperation-2.html",
+          "hash": "FA/8SOvk3BfgNoxZ5DYk+A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.EntityFramework.Filters.yml",
+      "source_relative_path": "api/Seltzr.EntityFramework.Operations.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.EntityFramework.Filters.html",
-          "hash": "v7Xk8GnS+3+cLj98fVdyeA=="
+          "relative_path": "api/Seltzr.EntityFramework.Operations.html",
+          "hash": "StymDuTlhB3YgodF14udRg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.EntityFramework.Operations.CreateOperation-2.yml",
+      "source_relative_path": "api/Seltzr.EntityFramework.Options.EntityFrameworkSeltzrOptionsBuilder-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.EntityFramework.Operations.CreateOperation-2.html",
-          "hash": "orRjC5eh22Ut0azWUODcXA=="
+          "relative_path": "api/Seltzr.EntityFramework.Options.EntityFrameworkSeltzrOptionsBuilder-2.html",
+          "hash": "4XPCJcPmqedaexlALkeZjw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.EntityFramework.Operations.DeleteOperation-2.yml",
+      "source_relative_path": "api/Seltzr.EntityFramework.Options.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.EntityFramework.Operations.DeleteOperation-2.html",
-          "hash": "024XpdeR9QoG/CnHh/BIdQ=="
+          "relative_path": "api/Seltzr.EntityFramework.Options.html",
+          "hash": "9hnVz5t3bRgJUcU6z4TPqQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.EntityFramework.Operations.UpdateOperation-2.yml",
+      "source_relative_path": "api/Seltzr.EntityFramework.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.EntityFramework.Operations.UpdateOperation-2.html",
-          "hash": "FOC4dP5wO3E92F18s1ZMWw=="
+          "relative_path": "api/Seltzr.EntityFramework.html",
+          "hash": "Qjjz4b9N5Z2artlEzLcy9g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.EntityFramework.Operations.yml",
+      "source_relative_path": "api/Seltzr.ExceptionHandlers.AuthFailedExceptionHandler.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.EntityFramework.Operations.html",
-          "hash": "enjGSHwL/9CCVwxRSAfxFw=="
+          "relative_path": "api/Seltzr.ExceptionHandlers.AuthFailedExceptionHandler.html",
+          "hash": "cKms/XCWwl5YR8YZZngUig=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.EntityFramework.Options.EntityFrameworkRestModelOptionsBuilder-2.yml",
+      "source_relative_path": "api/Seltzr.ExceptionHandlers.DelegateExceptionHandler.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.EntityFramework.Options.EntityFrameworkRestModelOptionsBuilder-2.html",
-          "hash": "CSU4fLPHKUySonnKZC2Fuw=="
+          "relative_path": "api/Seltzr.ExceptionHandlers.DelegateExceptionHandler.html",
+          "hash": "mg6TDrNvPmMLoX9szBX1tA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.EntityFramework.Options.yml",
+      "source_relative_path": "api/Seltzr.ExceptionHandlers.IExceptionHandler.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.EntityFramework.Options.html",
-          "hash": "fC/qTSJUchm/hu2ZB00ggg=="
+          "relative_path": "api/Seltzr.ExceptionHandlers.IExceptionHandler.html",
+          "hash": "YPV1MBOoiUimRPkqpAws2A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.EntityFramework.yml",
+      "source_relative_path": "api/Seltzr.ExceptionHandlers.SimpleExceptionHandler.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.EntityFramework.html",
-          "hash": "vZ/MRJ4hMduUIKzNBmtgLg=="
+          "relative_path": "api/Seltzr.ExceptionHandlers.SimpleExceptionHandler.html",
+          "hash": "f64CNrGJvdrTfjlC5XthyQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.ExceptionHandlers.AuthFailedExceptionHandler.yml",
+      "source_relative_path": "api/Seltzr.ExceptionHandlers.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.ExceptionHandlers.AuthFailedExceptionHandler.html",
-          "hash": "sUunZy/2sDuTNzh8HeCuJg=="
+          "relative_path": "api/Seltzr.ExceptionHandlers.html",
+          "hash": "AwFxCfuZWfw6Y0i8PZCN5w=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.ExceptionHandlers.DelegateExceptionHandler.yml",
+      "source_relative_path": "api/Seltzr.Exceptions.ApiException.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.ExceptionHandlers.DelegateExceptionHandler.html",
-          "hash": "eGhg9VJAAjkhydMUgo6nZg=="
+          "relative_path": "api/Seltzr.Exceptions.ApiException.html",
+          "hash": "45gyUR1tQUnvIMDkJhe0zQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.ExceptionHandlers.IExceptionHandler.yml",
+      "source_relative_path": "api/Seltzr.Exceptions.AuthFailedException.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.ExceptionHandlers.IExceptionHandler.html",
-          "hash": "oAPKoOKI2058Um9HtA+6uw=="
+          "relative_path": "api/Seltzr.Exceptions.AuthFailedException.html",
+          "hash": "G9Khbxvjb8Tgch4tRp2SPQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.ExceptionHandlers.SimpleExceptionHandler.yml",
+      "source_relative_path": "api/Seltzr.Exceptions.ConditionFailedException.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.ExceptionHandlers.SimpleExceptionHandler.html",
-          "hash": "MITazBYapvXPYwBZ3WTwyg=="
+          "relative_path": "api/Seltzr.Exceptions.ConditionFailedException.html",
+          "hash": "SRonVtubUcWy/MluAPct7g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.ExceptionHandlers.yml",
+      "source_relative_path": "api/Seltzr.Exceptions.ErrorCodes.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.ExceptionHandlers.html",
-          "hash": "CMF7yOx5pMGFJboZ6DmOKA=="
+          "relative_path": "api/Seltzr.Exceptions.ErrorCodes.html",
+          "hash": "7OKMF0dGppMqSfWWPo+RRA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Exceptions.ApiException.yml",
+      "source_relative_path": "api/Seltzr.Exceptions.OperationFailedException.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Exceptions.ApiException.html",
-          "hash": "8X7WzKwVohKI37L2K/1eTQ=="
+          "relative_path": "api/Seltzr.Exceptions.OperationFailedException.html",
+          "hash": "q5R4ggLASqKcToBohgZJVQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Exceptions.AuthFailedException.yml",
+      "source_relative_path": "api/Seltzr.Exceptions.OptionsException.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Exceptions.AuthFailedException.html",
-          "hash": "g6z0O+4JiqaF7JbSulfzUA=="
+          "relative_path": "api/Seltzr.Exceptions.OptionsException.html",
+          "hash": "8gjS6r14N+AvFMtghAuJzA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Exceptions.ConditionFailedException.yml",
+      "source_relative_path": "api/Seltzr.Exceptions.ParsingFailedException.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Exceptions.ConditionFailedException.html",
-          "hash": "0pCM8Hylpu4D8KCN3heXRA=="
+          "relative_path": "api/Seltzr.Exceptions.ParsingFailedException.html",
+          "hash": "gPJbb2Y4jgMrKIleJOhhPg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Exceptions.ErrorCodes.yml",
+      "source_relative_path": "api/Seltzr.Exceptions.WritingFailedException.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Exceptions.ErrorCodes.html",
-          "hash": "kTkgpSlVNpdPKvI7D2VSHw=="
+          "relative_path": "api/Seltzr.Exceptions.WritingFailedException.html",
+          "hash": "48/y/ISpgq8cq+1R0E54Kw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Exceptions.OperationFailedException.yml",
+      "source_relative_path": "api/Seltzr.Exceptions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Exceptions.OperationFailedException.html",
-          "hash": "q0tenG7M29NV+BrJaAw2NQ=="
+          "relative_path": "api/Seltzr.Exceptions.html",
+          "hash": "1dvKvC5hd7c1MFEAnoCctw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Exceptions.OptionsException.yml",
+      "source_relative_path": "api/Seltzr.Extensions.SeltzrOptionsBuilderExtensions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Exceptions.OptionsException.html",
-          "hash": "G9JPa6EODKpk287cgtFUjw=="
+          "relative_path": "api/Seltzr.Extensions.SeltzrOptionsBuilderExtensions.html",
+          "hash": "H1BTqxAu2Ewegj7FkflJyw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Exceptions.ParsingFailedException.yml",
+      "source_relative_path": "api/Seltzr.Extensions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Exceptions.ParsingFailedException.html",
-          "hash": "vnB5gUMqJNEAZ2Ad8Mp5UQ=="
+          "relative_path": "api/Seltzr.Extensions.html",
+          "hash": "p9SbpzRzbtCyVsL/m2QiNw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Exceptions.WritingFailedException.yml",
+      "source_relative_path": "api/Seltzr.Filters.DelegateFilter-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Exceptions.WritingFailedException.html",
-          "hash": "oKpbgR0BGQZGY1P5ynU0kQ=="
+          "relative_path": "api/Seltzr.Filters.DelegateFilter-2.html",
+          "hash": "ggsax0bqXsze6070zQE0qQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Exceptions.yml",
+      "source_relative_path": "api/Seltzr.Filters.IFilter-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Exceptions.html",
-          "hash": "bqejB0qzwQMAHrhGSE3/8A=="
+          "relative_path": "api/Seltzr.Filters.IFilter-1.html",
+          "hash": "tLlXcwXbyZxGhMv0GTQD0w=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Extensions.RestModelOptionsBuilderExtensions.yml",
+      "source_relative_path": "api/Seltzr.Filters.IFilter-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Extensions.RestModelOptionsBuilderExtensions.html",
-          "hash": "DayQd2UdCNNJZjX/BPPvBg=="
+          "relative_path": "api/Seltzr.Filters.IFilter-2.html",
+          "hash": "KDp9dZyj+/kCAH6oYXHb1A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Extensions.yml",
+      "source_relative_path": "api/Seltzr.Filters.ParameterResolver.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Extensions.html",
-          "hash": "LzRZGsSTiPtzU0mg8ylK1A=="
+          "relative_path": "api/Seltzr.Filters.ParameterResolver.html",
+          "hash": "UcILmO5G0gLBHtlL444flQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Filters.DelegateFilter-2.yml",
+      "source_relative_path": "api/Seltzr.Filters.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Filters.DelegateFilter-2.html",
-          "hash": "874Xgdgh8V84TKm7UNhl3g=="
+          "relative_path": "api/Seltzr.Filters.html",
+          "hash": "rE+d9D0HgfuwI4sSv1g1ZA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Filters.IFilter-1.yml",
+      "source_relative_path": "api/Seltzr.Models.IModelProvider-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Filters.IFilter-1.html",
-          "hash": "XM9AOKk5NEp8Pjvk+VY7NQ=="
+          "relative_path": "api/Seltzr.Models.IModelProvider-1.html",
+          "hash": "Z7y4lAWFs6ERAlxd2KtC9A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Filters.IFilter-2.yml",
+      "source_relative_path": "api/Seltzr.Models.IModelProvider-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Filters.IFilter-2.html",
-          "hash": "ed5jMXT+hRS8Ex7YmJbccA=="
+          "relative_path": "api/Seltzr.Models.IModelProvider-2.html",
+          "hash": "w+lP9gdLKBg9LsTuEf7a8g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Filters.ParameterResolver.yml",
+      "source_relative_path": "api/Seltzr.Models.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Filters.ParameterResolver.html",
-          "hash": "13BkkQSvICwdEIRQnw8LyQ=="
+          "relative_path": "api/Seltzr.Models.html",
+          "hash": "k7Gfy7eLdh5bM1rvm5eu4A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Filters.yml",
+      "source_relative_path": "api/Seltzr.Operations.IOperation-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Filters.html",
-          "hash": "Rhp5I/8kGjgiCBonF1/INQ=="
+          "relative_path": "api/Seltzr.Operations.IOperation-1.html",
+          "hash": "0KLWyWEWb37EWjAVOsYoxQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Models.IModelProvider-1.yml",
+      "source_relative_path": "api/Seltzr.Operations.IOperation-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Models.IModelProvider-1.html",
-          "hash": "gIjWPahAdXLAcXMkB3028Q=="
+          "relative_path": "api/Seltzr.Operations.IOperation-2.html",
+          "hash": "0WqMORSOOrjA8eLuMdhWtw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Models.IModelProvider-2.yml",
+      "source_relative_path": "api/Seltzr.Operations.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Models.IModelProvider-2.html",
-          "hash": "leMBHLHf9BkPGzFT/t1K9w=="
+          "relative_path": "api/Seltzr.Operations.html",
+          "hash": "0ZEMnOdc6dFQ3AQhG1IObA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Models.yml",
+      "source_relative_path": "api/Seltzr.Options.Builder.SeltzrOptionsBuilder-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Models.html",
-          "hash": "wBPo8k2mZwNAPWNPRv95gQ=="
+          "relative_path": "api/Seltzr.Options.Builder.SeltzrOptionsBuilder-2.html",
+          "hash": "0ugXyqzYNq/2nKxvG546ZA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Operations.IOperation-1.yml",
+      "source_relative_path": "api/Seltzr.Options.Builder.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Operations.IOperation-1.html",
-          "hash": "ApJWZu3rLIGikoNMSi3Zrw=="
+          "relative_path": "api/Seltzr.Options.Builder.html",
+          "hash": "Fbyd7mQluk/P35ShY/aVeA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Operations.IOperation-2.yml",
+      "source_relative_path": "api/Seltzr.Options.FormattingOptions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Operations.IOperation-2.html",
-          "hash": "gFmXJPYUs4kD0kOYOnFlsg=="
+          "relative_path": "api/Seltzr.Options.FormattingOptions.html",
+          "hash": "NSM8gmeZb3nHVLbmczNwnA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Operations.yml",
+      "source_relative_path": "api/Seltzr.Options.ParserOptions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Operations.html",
-          "hash": "Nk/mHfmY8woW1ImaqzC7qg=="
+          "relative_path": "api/Seltzr.Options.ParserOptions.html",
+          "hash": "pSczoES7VFI5qx4mJmiI0Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Options.Builder.RestModelOptionsBuilder-2.yml",
+      "source_relative_path": "api/Seltzr.Options.SeltzrOptions-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html",
-          "hash": "6jfnVa/+nl8/J21mlGzt4Q=="
+          "relative_path": "api/Seltzr.Options.SeltzrOptions-2.html",
+          "hash": "wJARkGbO9/lA45jEEYkc5Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Options.Builder.yml",
+      "source_relative_path": "api/Seltzr.Options.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Options.Builder.html",
-          "hash": "TYX2zd9BB/DQp1T0/QxeCw=="
+          "relative_path": "api/Seltzr.Options.html",
+          "hash": "vOXhYa3pkWPskkoKZUIc7A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Options.FormattingOptions.yml",
+      "source_relative_path": "api/Seltzr.OrmBase.Filters.PrimaryKeyFilter-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Options.FormattingOptions.html",
-          "hash": "7eb9rR2kCI6uwsfyisQ2hA=="
+          "relative_path": "api/Seltzr.OrmBase.Filters.PrimaryKeyFilter-1.html",
+          "hash": "qdWHa5vAYJe17kZkpwJnqg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Options.ParserOptions.yml",
+      "source_relative_path": "api/Seltzr.OrmBase.Filters.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Options.ParserOptions.html",
-          "hash": "LUkEFa+mGF8eTrjOZAJibA=="
+          "relative_path": "api/Seltzr.OrmBase.Filters.html",
+          "hash": "OfGMdK2eaEFDxQbw+yOo+Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Options.RestModelOptions-2.yml",
+      "source_relative_path": "api/Seltzr.OrmBase.IOrmDataProvider-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Options.RestModelOptions-2.html",
-          "hash": "5XODQYG4kiaTX4fKQO9L8w=="
+          "relative_path": "api/Seltzr.OrmBase.IOrmDataProvider-2.html",
+          "hash": "yaDqRCO3uPZJkVHTDQAvqQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Options.yml",
+      "source_relative_path": "api/Seltzr.OrmBase.KeyProperty.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Options.html",
-          "hash": "yBa86tqOXVp9Gz8LtzfSlA=="
+          "relative_path": "api/Seltzr.OrmBase.KeyProperty.html",
+          "hash": "KLSFgsMn7AMYFzjIwdmBsg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.ParameterRetrievers.HeaderRetriever.yml",
+      "source_relative_path": "api/Seltzr.OrmBase.Options.IOrmSeltzrOptionsBuilder-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.ParameterRetrievers.HeaderRetriever.html",
-          "hash": "ybF+8bQMe3Fzt7E3YsSdCg=="
+          "relative_path": "api/Seltzr.OrmBase.Options.IOrmSeltzrOptionsBuilder-2.html",
+          "hash": "q46EDB+v0IgkayRYsFklBA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.ParameterRetrievers.ParameterRetriever.yml",
+      "source_relative_path": "api/Seltzr.OrmBase.Options.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.ParameterRetrievers.ParameterRetriever.html",
-          "hash": "u06Tp/X9wCwx5rnu7wWp+Q=="
+          "relative_path": "api/Seltzr.OrmBase.Options.html",
+          "hash": "UFNsz+ov3PsleuHzfa0xAA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.ParameterRetrievers.QueryParameterRetriever.yml",
+      "source_relative_path": "api/Seltzr.OrmBase.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.ParameterRetrievers.QueryParameterRetriever.html",
-          "hash": "i1YNCZBXCqvWAXflPnJhyA=="
+          "relative_path": "api/Seltzr.OrmBase.html",
+          "hash": "7jO2RGgXUnKg/o1ypqAnIg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.ParameterRetrievers.RouteValueRetriever.yml",
+      "source_relative_path": "api/Seltzr.ParameterRetrievers.HeaderRetriever.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.ParameterRetrievers.RouteValueRetriever.html",
-          "hash": "j+uuzqqypvjyyfs3W5lSdA=="
+          "relative_path": "api/Seltzr.ParameterRetrievers.HeaderRetriever.html",
+          "hash": "YJNYszIy+K3oPxi0VycdaQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.ParameterRetrievers.yml",
+      "source_relative_path": "api/Seltzr.ParameterRetrievers.ParameterRetriever.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.ParameterRetrievers.html",
-          "hash": "MGr4bMjki8JuR2jpSgyXSg=="
+          "relative_path": "api/Seltzr.ParameterRetrievers.ParameterRetriever.html",
+          "hash": "UozZ0Nk5UNGJtJrxgyajkw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Parsers.IBodyParser-1.yml",
+      "source_relative_path": "api/Seltzr.ParameterRetrievers.QueryParameterRetriever.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Parsers.IBodyParser-1.html",
-          "hash": "Hn7xFhBN1JvqPILrnqW/Tg=="
+          "relative_path": "api/Seltzr.ParameterRetrievers.QueryParameterRetriever.html",
+          "hash": "WO24PKyZsjIbfJcue8UsfA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Parsers.JsonBodyParser-1.yml",
+      "source_relative_path": "api/Seltzr.ParameterRetrievers.RouteValueRetriever.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Parsers.JsonBodyParser-1.html",
-          "hash": "ipti+bQg9XAoWsOG3mlSRg=="
+          "relative_path": "api/Seltzr.ParameterRetrievers.RouteValueRetriever.html",
+          "hash": "1Rh0Zb3Ql6FBBAeTwK8jTg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Parsers.ParseResult-1.yml",
+      "source_relative_path": "api/Seltzr.ParameterRetrievers.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Parsers.ParseResult-1.html",
-          "hash": "OPFyoqdfoN+od3Hh2bjBQQ=="
+          "relative_path": "api/Seltzr.ParameterRetrievers.html",
+          "hash": "FRBbhDFLJvxXdDzrIdVeDA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Parsers.XmlBodyParser-1.yml",
+      "source_relative_path": "api/Seltzr.Parsers.IBodyParser-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Parsers.XmlBodyParser-1.html",
-          "hash": "GO65LDnHMemeIaThKrkitQ=="
+          "relative_path": "api/Seltzr.Parsers.IBodyParser-1.html",
+          "hash": "MFblc/36c8WjwdWBORH4Cw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Parsers.yml",
+      "source_relative_path": "api/Seltzr.Parsers.JsonBodyParser-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Parsers.html",
-          "hash": "HiEu0mIeW7HDRG1AeS197Q=="
+          "relative_path": "api/Seltzr.Parsers.JsonBodyParser-1.html",
+          "hash": "pbmYYY/JN8CgquEcIB37nw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Responses.Attributes.ApiVersionAttribute.yml",
+      "source_relative_path": "api/Seltzr.Parsers.ParseResult-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Responses.Attributes.ApiVersionAttribute.html",
-          "hash": "rA3mAMBK2N1t70LaM9fqfQ=="
+          "relative_path": "api/Seltzr.Parsers.ParseResult-1.html",
+          "hash": "R0wAr4qu3ui2N5/isitW/w=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Responses.Attributes.CurrentPageAttribute.yml",
+      "source_relative_path": "api/Seltzr.Parsers.XmlBodyParser-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Responses.Attributes.CurrentPageAttribute.html",
-          "hash": "l/3Uv2AriXzMZoHdP18DeQ=="
+          "relative_path": "api/Seltzr.Parsers.XmlBodyParser-1.html",
+          "hash": "k5nZTjVRZvHG/mXmHtTtfw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Responses.Attributes.DeprecationNoticeAttribute.yml",
+      "source_relative_path": "api/Seltzr.Parsers.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Responses.Attributes.DeprecationNoticeAttribute.html",
-          "hash": "Jq96p7VHS5R2tsHnFij5Og=="
+          "relative_path": "api/Seltzr.Parsers.html",
+          "hash": "r+nKvbEJX4lKaBEKHG08uw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Responses.Attributes.ModelCountAttribute.yml",
+      "source_relative_path": "api/Seltzr.Responses.Attributes.ApiVersionAttribute.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Responses.Attributes.ModelCountAttribute.html",
-          "hash": "Fc8+OSqckyJcF4GMYitVPA=="
+          "relative_path": "api/Seltzr.Responses.Attributes.ApiVersionAttribute.html",
+          "hash": "kB/ZpoC6LjtJSTuzmZULjQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Responses.Attributes.ResponseValueAttribute.yml",
+      "source_relative_path": "api/Seltzr.Responses.Attributes.CurrentPageAttribute.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Responses.Attributes.ResponseValueAttribute.html",
-          "hash": "l5Pjy0x80ZE8p/CT+dJiMg=="
+          "relative_path": "api/Seltzr.Responses.Attributes.CurrentPageAttribute.html",
+          "hash": "DiIRa1jYXI4LO9aWlZnokQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Responses.Attributes.TotalPagesAttribute.yml",
+      "source_relative_path": "api/Seltzr.Responses.Attributes.DeprecationNoticeAttribute.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Responses.Attributes.TotalPagesAttribute.html",
-          "hash": "G4UPoT8hAc9JGXBvdnS2qg=="
+          "relative_path": "api/Seltzr.Responses.Attributes.DeprecationNoticeAttribute.html",
+          "hash": "aQZMPgC5Z0ha5sbosZdOFw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Responses.Attributes.yml",
+      "source_relative_path": "api/Seltzr.Responses.Attributes.ModelCountAttribute.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Responses.Attributes.html",
-          "hash": "jVUcMSs6q0qEg+PpyxLHFg=="
+          "relative_path": "api/Seltzr.Responses.Attributes.ModelCountAttribute.html",
+          "hash": "Lrqf4aJFi1B7vPHm1gdthg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Responses.BasicResponse-1.yml",
+      "source_relative_path": "api/Seltzr.Responses.Attributes.ResponseValueAttribute.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Responses.BasicResponse-1.html",
-          "hash": "w7NeNR1F4dzH6PgjgaO1PA=="
+          "relative_path": "api/Seltzr.Responses.Attributes.ResponseValueAttribute.html",
+          "hash": "fsL3tPnDoqxguS0QjrERTQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Responses.Response-1.yml",
+      "source_relative_path": "api/Seltzr.Responses.Attributes.TotalPagesAttribute.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Responses.Response-1.html",
-          "hash": "hFv51BHhFRGyvkRNOcYMLg=="
+          "relative_path": "api/Seltzr.Responses.Attributes.TotalPagesAttribute.html",
+          "hash": "Eth3JUFlVJ0JNqJb0Thy0Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Responses.yml",
+      "source_relative_path": "api/Seltzr.Responses.Attributes.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Responses.html",
-          "hash": "INSD/iy0yA+bl1Fg7LBbEw=="
+          "relative_path": "api/Seltzr.Responses.Attributes.html",
+          "hash": "KNr6D7h+UQ+VIt8Cf32Jcg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Results.AcceptDependentResultWriter-2.yml",
+      "source_relative_path": "api/Seltzr.Responses.BasicResponse-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Results.AcceptDependentResultWriter-2.html",
-          "hash": "DeDzlLSlnQR+yzcjFpKf4Q=="
+          "relative_path": "api/Seltzr.Responses.BasicResponse-1.html",
+          "hash": "HhSEJiarfM79EBggL+JuCQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Results.HeaderDependentResultWriter-2.yml",
+      "source_relative_path": "api/Seltzr.Responses.Response-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Results.HeaderDependentResultWriter-2.html",
-          "hash": "vQ/mPvXNVcWzxpf1r5YJtA=="
+          "relative_path": "api/Seltzr.Responses.Response-1.html",
+          "hash": "XPpvKol5MpbYfyxh07bI1Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Results.IResultWriter-1.yml",
+      "source_relative_path": "api/Seltzr.Responses.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Results.IResultWriter-1.html",
-          "hash": "ng8hShnFuEE/8tMSG4thfg=="
+          "relative_path": "api/Seltzr.Responses.html",
+          "hash": "gQP7K9BAil6T6p7fKzMATA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Results.IResultWriter-2.yml",
+      "source_relative_path": "api/Seltzr.Results.AcceptDependentResultWriter-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Results.IResultWriter-2.html",
-          "hash": "IUFPJALEPPUKgBvs7qN4hg=="
+          "relative_path": "api/Seltzr.Results.AcceptDependentResultWriter-2.html",
+          "hash": "bVmWHIrYfQL4K6Zt1TemjA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Results.Json.IModelJsonConverter.yml",
+      "source_relative_path": "api/Seltzr.Results.HeaderDependentResultWriter-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Results.Json.IModelJsonConverter.html",
-          "hash": "wRpmj1kMLQfqjJjb88PpAA=="
+          "relative_path": "api/Seltzr.Results.HeaderDependentResultWriter-2.html",
+          "hash": "XiP53YRDmJOUxa6fbcmU1A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Results.Json.JsonResultWriter-1.yml",
+      "source_relative_path": "api/Seltzr.Results.IResultWriter-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Results.Json.JsonResultWriter-1.html",
-          "hash": "3fK2qilm3zXdz8s3LXDW9Q=="
+          "relative_path": "api/Seltzr.Results.IResultWriter-1.html",
+          "hash": "eQlizyhNYFB7qPpxeRdn9w=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Results.Json.ModelJsonConverter-1.yml",
+      "source_relative_path": "api/Seltzr.Results.IResultWriter-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Results.Json.ModelJsonConverter-1.html",
-          "hash": "74H83A6RevELegkroh2/0w=="
+          "relative_path": "api/Seltzr.Results.IResultWriter-2.html",
+          "hash": "Cr4UuFLIQXu9Mz63GbHNGQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Results.Json.yml",
+      "source_relative_path": "api/Seltzr.Results.Json.IModelJsonConverter.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Results.Json.html",
-          "hash": "kcaE+biJgE7j8cfRP/SNuA=="
+          "relative_path": "api/Seltzr.Results.Json.IModelJsonConverter.html",
+          "hash": "B5kKAzE0ZUivevOGAPMXJQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Results.NumberAffectedResultWriter-1.yml",
+      "source_relative_path": "api/Seltzr.Results.Json.JsonResultWriter-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Results.NumberAffectedResultWriter-1.html",
-          "hash": "zuX8xn6jlUZUr9Ua5PPGvw=="
+          "relative_path": "api/Seltzr.Results.Json.JsonResultWriter-1.html",
+          "hash": "92Ic86O6J/MaNMIqs4uUrw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Results.QueryDependentResultWriter-2.yml",
+      "source_relative_path": "api/Seltzr.Results.Json.ModelJsonConverter-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Results.QueryDependentResultWriter-2.html",
-          "hash": "t8xFb600yJTrYRdOJc7kjg=="
+          "relative_path": "api/Seltzr.Results.Json.ModelJsonConverter-1.html",
+          "hash": "DHT9ddxIrbRhyc2hYqRA0w=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Results.RequestDependentResultWriter-2.yml",
+      "source_relative_path": "api/Seltzr.Results.Json.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Results.RequestDependentResultWriter-2.html",
-          "hash": "+Py91yx+e4Kfys3QZ7UdKg=="
+          "relative_path": "api/Seltzr.Results.Json.html",
+          "hash": "LkQnm+X9i8M8mnOAgKXJSA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Results.StringResultWriter-1.yml",
+      "source_relative_path": "api/Seltzr.Results.NumberAffectedResultWriter-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Results.StringResultWriter-1.html",
-          "hash": "NwDnrKcDFeTsPWfBtBT9Ew=="
+          "relative_path": "api/Seltzr.Results.NumberAffectedResultWriter-1.html",
+          "hash": "PxO9UfXIkcBhF8quyVdykA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Results.XmlResultWriter-1.yml",
+      "source_relative_path": "api/Seltzr.Results.QueryDependentResultWriter-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Results.XmlResultWriter-1.html",
-          "hash": "sD8r02pZdWbr7p7KrUtMsg=="
+          "relative_path": "api/Seltzr.Results.QueryDependentResultWriter-2.html",
+          "hash": "pdEId58sxkO545e8Y0uwdA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/RestModels.Results.yml",
+      "source_relative_path": "api/Seltzr.Results.RequestDependentResultWriter-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/RestModels.Results.html",
-          "hash": "rQZXa64eKRdl0pPvkOe7NQ=="
+          "relative_path": "api/Seltzr.Results.RequestDependentResultWriter-2.html",
+          "hash": "zzkRteCYUrFPajXN4clinQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Seltzr.Results.StringResultWriter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Seltzr.Results.StringResultWriter-1.html",
+          "hash": "Kp0X/PaX9mSI+iW16afQPQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Seltzr.Results.XmlResultWriter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Seltzr.Results.XmlResultWriter-1.html",
+          "hash": "Sq3tEBps5e7PrWbvXQuthg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Seltzr.Results.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Seltzr.Results.html",
+          "hash": "yrVXuGCExUB+H3UV8+KyYw=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1221,10 +1257,10 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "ZJ8f3wNCLcqkaQMK+FyRJA=="
+          "hash": "LjWZM+0OtlfpF1AVgJRTaA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1233,7 +1269,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "ARqXNYP3nJ/mMHkEefuUxw=="
+          "hash": "drFzTCnS58QRn+Z+GTM8Gg=="
         }
       },
       "is_incremental": false,
@@ -1248,7 +1284,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/getting_started/efcore.html",
-          "hash": "mcBYohaBf4smb1RCm9YCjQ=="
+          "hash": "QG2cLd0HAME4fLfPgiEvkA=="
         }
       },
       "is_incremental": false,
@@ -1272,10 +1308,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "lEPP73nVk52xHpiveBQQkw=="
+          "hash": "nywRQYFAcjPt5FLI5tfm2g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1288,7 +1324,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/request_flow/index.html",
-          "hash": "oOKVgaXyn4YIrfjIaahveQ=="
+          "hash": "ZaE6vfpOvkGUkpRRL7u37A=="
         }
       },
       "is_incremental": false,
@@ -1339,7 +1375,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "REvBA7W2bITkux/QP4bQQg=="
+          "hash": "3BqHHy+jKwxsLUbkq+4kFg=="
         }
       },
       "is_incremental": false,
@@ -1371,13 +1407,13 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 6,
-          "skipped_file_count": 5
+          "skipped_file_count": 4
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 101,
-          "skipped_file_count": 101
+          "total_file_count": 104,
+          "skipped_file_count": 31
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

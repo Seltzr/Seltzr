@@ -37,7 +37,7 @@ const registry = new textmate.Registry({
 });
 
 registry.loadGrammar('source.cs').then(grammar => {
-    //updateFile("C:/workspace/RestModels/docs/docfx_project/_site/articles/request_flow/index.html", grammar);
+    //updateFile("C:/workspace/Seltzr/docs/docfx_project/_site/articles/request_flow/index.html", grammar);
     let root = path.resolve(__dirname, "../../docs");
     let files = getAllFiles(root).filter(f => f.endsWith(".html"));
     files.forEach(f => updateFile(f, grammar));

@@ -9,7 +9,6 @@ namespace TestProject.TestComponents {
 	using System;
 	using System.ComponentModel.DataAnnotations;
 	using System.ComponentModel.DataAnnotations.Schema;
-	using System.Xml.Serialization;
 
 	public class TestModel {
 		public Guid FancyType { get; set; } = Guid.NewGuid();

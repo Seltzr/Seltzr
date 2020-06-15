@@ -2,14 +2,14 @@
 uid: getting-started
 ---
 
-# Getting Started with RestModels and Entity Framework Core
+# Getting Started with Seltzr and Entity Framework Core
 
 In this getting started example, we'll be building a simple API for a blog server. When you're finished, you'll be able to create, read, update, and delete blogs and blog posts with simple key-based authentication.
 
 ## Terminology
 Some of the terms used in this article can mean a lot of different things in a lot of different places, so here's a quick breakdown of what they mean in this article:
 
-* **API:** Every call to some form of `app.UseRestModels` is an "API," a set of routes bundled together for working with a specific model.
+* **API:** Every call to some form of `app.UseSeltzr` is an "API," a set of routes bundled together for working with a specific model.
 * **Model:** The data class that the API operates on. In Entity Framework, this is also referred to as an Entity.
 * **Route:** A bundle of all the options for a request with a single associated route pattern {todo fix - im having a hard time explaining this}
 * **Route Pattern:** The string pattern that determines whether an HTTP request path matches a route
@@ -36,19 +36,19 @@ Create a new folder for your project, and a new web application with `dotnet`:
 ***
 
 ## Installing Dependencies
-Next, install the `RestModels.EntityFrameworkCore` nuget package, as well as the Entity Framework package for your database. In this example, we'll be using `Sqlite`.
+Next, install the `Seltzr.EntityFrameworkCore` nuget package, as well as the Entity Framework package for your database. In this example, we'll be using `Sqlite`.
 
 ### [Visual Studio 2019](#tab/vs)
 * From the toolbar, select **Tools** > **NuGet Package Manager** > **Package Manager Console**
 * Enter the following commands in the Package Manager Console:
 ```powershell
 Install-Package Microsoft.EntityFrameworkCore.Sqlite
-Install-Package RestModels.EntityFrameworkCore
+Install-Package Seltzr.EntityFrameworkCore
 ```
 ### [Command Line](#tab/cli)
 ```bash
 dotnet add package Microsoft.EntityFrameworkCore.Sqlite
-dotnet add package RestModels.EntityFrameworkCore
+dotnet add package Seltzr.EntityFrameworkCore
 ```
 ***
 
@@ -132,7 +132,7 @@ Now that we have our model and EF Core set up, we can start building our Blog AP
 In  `Startup.cs`, add the following code to the end of the `Configure` method:
 ```csharp
 string AdminKey = "mysecretkey";
-app.UseEntityFrameworkRestModels<Blog, BlogServerContext>("blog", options => {
+app.UseEntityFrameworkSeltzr<Blog, BlogServerContext>("blog", options => {
     options
         .ParseJson() // parse JSON for request bodies
         .WriteJson() // output JSON responses
@@ -147,7 +147,7 @@ app.UseEntityFrameworkRestModels<Blog, BlogServerContext>("blog", options => {
 ```
 
 > [!IMPORTANT]
-> Make sure you add `using RestModels.Extensions;` and `using RestModels.EntityFrameworkCore.Extensions;` to the top of the file, otherwise the build will fail.
+> Make sure you add `using Seltzr.Extensions;` and `using Seltzr.EntityFrameworkCore.Extensions;` to the top of the file, otherwise the build will fail.
 
 This defines an API on the `/blog` route, which can create, read, update, and delete Blogs. Notice that child routes inherit the properties of their parent routes by default. For example, all of the `GET`/`POST`/`PUT`/`DELETE` requests will omit the `Posts` property from their response because the `Omit` method was called on the base route. 
 {{Sometimes, however, a method like `GetByPrimaryKey` will clear all body parsers for that route, because it doesn't make sense to parse a body for a `GET` request. -- todo: article w/ more in-depth exploration of this topic, maybe delete this confusing sentence entirely}}
@@ -162,7 +162,7 @@ This defines an API on the `/blog` route, which can create, read, update, and de
 At this point, run the project to better understand what you've built so far. To run the app, hit the play button in Visual Studio, or run `dotnet run` in the command line. While you can try to explore the `GET` request in the browser, you'll need a tool like [Insomnia](https://insomnia.rest/) or [Postman](https://www.postman.com/) to test the `POST`, `PUT`, and `DELETE` requests.
 
 > [!NOTE]
-> You'll likely immediately notice that visting just `/blog` in your web browser returns a `405 Method Not Allowed` response. That's because no routes matching it have a `GET` request method associated with them. You can add a request method manually with <xref:RestModels.Options.Builder.RestModelOptionsBuilder`2.AddRequestMethod(System.String)>, but it's generally recommended to use the `options.SetupMETHOD` and `options.METHOD` methods instead like we did here. For more information on routing, see <xref:routing>.
+> You'll likely immediately notice that visting just `/blog` in your web browser returns a `405 Method Not Allowed` response. That's because no routes matching it have a `GET` request method associated with them. You can add a request method manually with <xref:Seltzr.Options.Builder.SeltzrOptionsBuilder`2.AddRequestMethod(System.String)>, but it's generally recommended to use the `options.SetupMETHOD` and `options.METHOD` methods instead like we did here. For more information on routing, see <xref:routing>.
 
 ### Experimenting with Blogs
 #### Create A Blog
@@ -238,7 +238,7 @@ While we're at it, we should probably fix the API to disallow insecure blog urls
 Run the program again and see what happens if you try to create an insecure Blog.
 
 > [!NOTE]
-> Although it is generally recommended that `PUT` requests be idempotent, RestModels update operations by default allow partial updates. That is, you don't need to provide all the properties of a model in the request body for an update to be successful. If you would like to instead require all properties be provided, try replacing the update route above with the following: 
+> Although it is generally recommended that `PUT` requests be idempotent, Seltzr update operations by default allow partial updates. That is, you don't need to provide all the properties of a model in the request body for an update to be successful. If you would like to instead require all properties be provided, try replacing the update route above with the following: 
 > ```csharp
 > .PutUpdateByPrimaryKey(update => {
 >   update
@@ -265,7 +265,7 @@ DELETE https://localhost:5001/blog/1?key=mysecretkey
 By default, the deleted model is returned.
 
 ## Checkpoint
-You've successfully built your first API with RestModels! If you think you've got the hang of things, and just want to explore, look at <xref:request-flow>. Otherwise, if you want a little more guidance, we still have to build an API for `Posts`. Let's do that now.
+You've successfully built your first API with Seltzr! If you think you've got the hang of things, and just want to explore, look at <xref:request-flow>. Otherwise, if you want a little more guidance, we still have to build an API for `Posts`. Let's do that now.
 
 ## Building the `Post` API
 Let's take this next one step by step.
@@ -274,7 +274,7 @@ First, we'll define an API in with it's root at `/blog/{id}/posts`, and we'll us
 
 ### [Startup.cs](#tab/cs)
 ```csharp
-app.UseEntityFrameworkRestModels<Post, BlogServerContext>("blog/{BlogId:int}/posts/", options => {
+app.UseEntityFrameworkSeltzr<Post, BlogServerContext>("blog/{BlogId:int}/posts/", options => {
     options
         .ParseJson()
         .WriteJson()
@@ -282,12 +282,12 @@ app.UseEntityFrameworkRestModels<Post, BlogServerContext>("blog/{BlogId:int}/pos
 ```
 ***
 
-RestModels uses the routing engine from ASP.NET Core, so you can use the same [templates](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/routing?view=aspnetcore-3.1#route-template-reference).
+Seltzr uses the routing engine from ASP.NET Core, so you can use the same [templates](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/routing?view=aspnetcore-3.1#route-template-reference).
 
 Next, we'll set up the same CRUD operations from the `Blog` API. Since we're still developing, we'll leave out `CatchExceptions` so we can use the default ASP.NET Core exception handler.
 
 ```csharp
-app.UseEntityFrameworkRestModels<Post, BlogServerContext>("blog/{BlogId:int}/posts/", options => {
+app.UseEntityFrameworkSeltzr<Post, BlogServerContext>("blog/{BlogId:int}/posts/", options => {
     options
         .GetByPrimaryKey()
         .AuthQuery("key", AdminKey)
@@ -301,7 +301,7 @@ app.UseEntityFrameworkRestModels<Post, BlogServerContext>("blog/{BlogId:int}/pos
 
 Since we only want these routes to modify posts from the Blog of the given BlogId route value, we'll add a [Filter](xref:filtering).
 ```csharp
-app.UseEntityFrameworkRestModels<Post, BlogServerContext>("blog/{BlogId:int}/posts/", options => {
+app.UseEntityFrameworkSeltzr<Post, BlogServerContext>("blog/{BlogId:int}/posts/", options => {
     options
         .FilterByRouteEqual(p => p.BlogId, "BlogId")
         ...
@@ -313,7 +313,7 @@ app.UseEntityFrameworkRestModels<Post, BlogServerContext>("blog/{BlogId:int}/pos
 
 It doesn't make sense to filter posts when we're creating a new `Post`, so lets clear that filter in `PostCreate`:
 ```csharp
-app.UseEntityFrameworkRestModels<Post, BlogServerContext>("blog/{BlogId:int}/posts/", options => {
+app.UseEntityFrameworkSeltzr<Post, BlogServerContext>("blog/{BlogId:int}/posts/", options => {
     options
         ...
         .PostCreate(create => create.ClearFilters())
@@ -326,7 +326,7 @@ app.UseEntityFrameworkRestModels<Post, BlogServerContext>("blog/{BlogId:int}/pos
 
 If you try to run it now, `POST` requests will fail because Entity Framework complains that a foreign key constraint isn't met. Well, we can add that foreign key constraint easily with `SetValueRoute`, which will set a value for the parsed model before it's created based on that `BlogId` route value.
 ```csharp
-app.UseEntityFrameworkRestModels<Post, BlogServerContext>("blog/{BlogId:int}/posts/", options => {
+app.UseEntityFrameworkSeltzr<Post, BlogServerContext>("blog/{BlogId:int}/posts/", options => {
     options
         ...
         .PostCreate(create => {
@@ -339,12 +339,12 @@ app.UseEntityFrameworkRestModels<Post, BlogServerContext>("blog/{BlogId:int}/pos
 ```
 
 > [!TIP]
-> RestModels can infer the name of the route value from the name of the property you want to set. Try removing `"BlogId"` from the call to `SetValueRoute`.
+> Seltzr can infer the name of the route value from the name of the property you want to set. Try removing `"BlogId"` from the call to `SetValueRoute`.
 
 
 We'll also want to add a way to `GET` all of the posts on a Blog. We can add that functionality on the base route with a simple call.
 ```csharp
-app.UseEntityFrameworkRestModels<Post, BlogServerContext>("blog/{BlogId:int}/posts/", options => {
+app.UseEntityFrameworkSeltzr<Post, BlogServerContext>("blog/{BlogId:int}/posts/", options => {
     options
         ...
         .Get();
@@ -353,7 +353,7 @@ app.UseEntityFrameworkRestModels<Post, BlogServerContext>("blog/{BlogId:int}/pos
 
 If you're unauthenticated, however, let's make the API return a random blog post. Each of the methods that creates a new route accepts both a route pattern to append to the existing one and an options handler to add additional options. We'll use those here to create a route at `blog/{id}/posts/random`
 ```csharp
-app.UseEntityFrameworkRestModels<Post, BlogServerContext>("blog/{BlogId:int}/posts/", options => {
+app.UseEntityFrameworkSeltzr<Post, BlogServerContext>("blog/{BlogId:int}/posts/", options => {
     options
         ...
         .SetupAnonymousGet("random", random => {
@@ -364,14 +364,14 @@ app.UseEntityFrameworkRestModels<Post, BlogServerContext>("blog/{BlogId:int}/pos
 ```
 
 > [!TIP]
-> The `Blog` property will always be null on returned posts because of how Entity Framework works. Use <xref:RestModels.Options.Builder.RestModelOptionsBuilder`2.Omit(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})> to hide it.
+> The `Blog` property will always be null on returned posts because of how Entity Framework works. Use <xref:Seltzr.Options.Builder.SeltzrOptionsBuilder`2.Omit(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})> to hide it.
 
 ## Wrapping Up
 Run the project again and play around with creating blogs, creating, updating, deleting posts in a blog, getting all posts, and getting a random post.
 
-Congratulations! You've built two APIs with RestModels in less than 30 lines of code! These getting started guides provide a small taste of what RestModels can do. 
+Congratulations! You've built two APIs with Seltzr in less than 30 lines of code! These getting started guides provide a small taste of what Seltzr can do. 
 
 If you're still eager to learn more, check out the following resources:
 
-* [The Request Flow](xref:request-flow). A closer look at the architecture of RestModels.
-* [More Examples](xref:api-examples). RestModels hides a lot of power in a small library. The best way to make full use of it is by exploring examples.
+* [The Request Flow](xref:request-flow). A closer look at the architecture of Seltzr.
+* [More Examples](xref:api-examples). Seltzr hides a lot of power in a small library. The best way to make full use of it is by exploring examples.

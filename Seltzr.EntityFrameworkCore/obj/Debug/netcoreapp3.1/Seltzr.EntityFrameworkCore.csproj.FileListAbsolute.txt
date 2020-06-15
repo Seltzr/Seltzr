@@ -1,0 +1,16 @@
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\Seltzr.EntityFrameworkCore\obj\Debug\netcoreapp3.1\Seltzr.EntityFrameworkCore.csprojAssemblyReference.cache
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\Seltzr.EntityFrameworkCore\obj\Debug\netcoreapp3.1\Seltzr.EntityFrameworkCore.AssemblyInfoInputs.cache
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\Seltzr.EntityFrameworkCore\obj\Debug\netcoreapp3.1\Seltzr.EntityFrameworkCore.AssemblyInfo.cs
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\Seltzr.EntityFrameworkCore\obj\Debug\netcoreapp3.1\Seltzr.EntityFrameworkCore.csproj.CoreCompileInputs.cache
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\Seltzr.EntityFrameworkCore\bin\Debug\netcoreapp3.1\Seltzr.EntityFrameworkCore.deps.json
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\Seltzr.EntityFrameworkCore\bin\Debug\netcoreapp3.1\Seltzr.EntityFrameworkCore.dll
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\Seltzr.EntityFrameworkCore\bin\Debug\netcoreapp3.1\Seltzr.EntityFrameworkCore.pdb
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\Seltzr.EntityFrameworkCore\bin\Debug\netcoreapp3.1\Seltzr.dll
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\Seltzr.EntityFrameworkCore\bin\Debug\netcoreapp3.1\Seltzr.OrmBase.dll
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\Seltzr.EntityFrameworkCore\bin\Debug\netcoreapp3.1\Seltzr.OrmBase.pdb
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\Seltzr.EntityFrameworkCore\bin\Debug\netcoreapp3.1\Seltzr.OrmBase.xml
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\Seltzr.EntityFrameworkCore\bin\Debug\netcoreapp3.1\Seltzr.pdb
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\Seltzr.EntityFrameworkCore\bin\Debug\netcoreapp3.1\Seltzr.xml
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\Seltzr.EntityFrameworkCore\obj\Debug\netcoreapp3.1\Seltzr.EntityFrameworkCore.csproj.CopyComplete
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\Seltzr.EntityFrameworkCore\obj\Debug\netcoreapp3.1\Seltzr.EntityFrameworkCore.dll
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\Seltzr.EntityFrameworkCore\obj\Debug\netcoreapp3.1\Seltzr.EntityFrameworkCore.pdb

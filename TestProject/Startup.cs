@@ -7,41 +7,24 @@
 
 namespace TestProject
 {
-    using System;
-    using System.Diagnostics;
-    using System.Linq;
-
-    using Microsoft.AspNetCore.Builder;
+	using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
-    using Microsoft.AspNetCore.Http;
-    using Microsoft.EntityFrameworkCore;
+	using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
 
-    using RestModels.Auth;
-    using RestModels.EntityFramework;
-    using RestModels.ExceptionHandlers;
-    using RestModels.Exceptions;
-    using RestModels.Extensions;
-    using RestModels.Filters;
-    using RestModels.Models;
-    using RestModels.EntityFramework.Operations;
-    using RestModels.OrmBase.Extensions;
-    using RestModels.Parsers;
-    using RestModels.Results;
+	using Seltzr.Extensions;
 
-    using TestProject.TestComponents;
+	using TestProject.TestComponents;
 
-    using RestModels.Responses;
-
-    public class Startup
+	public class Startup
     {
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
             app.UseRouting();
-            app.UseEntityFrameworkRestModels<TestModel, TestDbContext>(
+            app.UseEFCoreSeltzr<TestModel, TestDbContext>(
                 "/v1",
                 options =>
                 {

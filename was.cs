@@ -1,4 +1,4 @@
-app.UseRestModels<TestModel, object>(
+app.UseSeltzr<TestModel, object>(
 				"/",
 				options => {
 					// Create: /

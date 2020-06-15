@@ -1,4 +1,4 @@
-app.UseEntityFrameworkRestModels<TestModel, TestDbContext>(options => {
+app.UseEntityFrameworkSeltzr<TestModel, TestDbContext>(options => {
 					options
 						.WriteXml()
 						.StripArrayIfSingleResult()
