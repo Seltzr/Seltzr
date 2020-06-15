@@ -13,5 +13,7 @@ TestProject/bin
 TestProject/TestProject.csproj.user
 
 node_modules
-/docs/docfx_project/_site
-/docs/docfx_project/obj/.cache/build
+/docs-src/docfx_project/obj/.cache/build
+
+/docs-src/
+/docs-src/docfx
