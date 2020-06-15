@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+	  <PackageId>Seltzr.EntityFrameworkCore</PackageId>
+	  <Version>0.1.2</Version>
+	  <Authors>John Lynch</Authors>
+	  <Company>Seltzr</Company>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <PackageTags>entity-framework;rest;api;seltzr;web;ef</PackageTags>
+	  <RepositoryUrl>https://github.com/Seltzr/Seltzr</RepositoryUrl>
+	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

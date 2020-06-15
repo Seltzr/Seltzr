@@ -5,19 +5,15 @@
     <Nullable>enable</Nullable>
       
     <PackageId>Seltzr.OrmBase</PackageId>
-    <Version>0.1.1</Version>
-    <Authors>John Lynch</Authors>
-    <Company>Seltzr</Company>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageTags>entity-framework;rest;api;Seltzr;rest-models;web;ef</PackageTags>
-    <RepositoryUrl>https://github.com/jlynch630/Seltzr</RepositoryUrl>
-	<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	  <Version>0.1.2</Version>
+	  <Authors>John Lynch</Authors>
+	  <Company>Seltzr</Company>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <PackageTags>seltzr;orm</PackageTags>
+	  <RepositoryUrl>https://github.com/Seltzr/Seltzr</RepositoryUrl>
+	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="stylecop.json" />
-  </ItemGroup>
-
+	
   <ItemGroup>
     <AdditionalFiles Include="stylecop.json" />
   </ItemGroup>

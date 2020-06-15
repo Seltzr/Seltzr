@@ -4,8 +4,13 @@
 Seltzr/bin
 Seltzr/obj
 
+/Seltzr.EntityFrameworkCore/obj
+/Seltzr.EntityFrameworkCore/bin
 /Seltzr.EntityFramework/obj
 /Seltzr.EntityFramework/bin
+/Seltzr.OrmBase/obj
+/Seltzr.OrmBase/bin
+
 /Seltzr.sln.DotSettings.user
 
 TestProject/obj
