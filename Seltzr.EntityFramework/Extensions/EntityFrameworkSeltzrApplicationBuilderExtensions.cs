@@ -37,7 +37,7 @@ namespace Microsoft.Extensions.DependencyInjection {
 		/// <param name="routeOptionsHandler">A handler to set ASP.NET Core options</param>
 		/// <param name="primaryKeyProperties">An array of properties that make up the primary key. If omitted, the primary key will be determined automatically</param>
 		/// <returns>The same <see cref="IApplicationBuilder" />, for chaining</returns>
-		public static IApplicationBuilder UseEntityFrameworkSeltzr<TModel, TContext, TUser>(
+		public static IApplicationBuilder AddEntityFrameworkSeltzr<TModel, TContext, TUser>(
 			this IApplicationBuilder app,
 			string route,
 			Action<SeltzrOptionsBuilder<TModel, TUser>> optionsHandler,
@@ -56,7 +56,7 @@ namespace Microsoft.Extensions.DependencyInjection {
 			OptionsBuilder.UseModelProvider(new EntityFrameworkModelProvider<TModel, TContext>());
 			optionsHandler(OptionsBuilder);
 
-			return app.UseSeltzr(OptionsBuilder.BuildAll());
+			return app.AddSeltzr(OptionsBuilder.BuildAll());
 		}
 
 		/// <summary>
@@ -69,12 +69,12 @@ namespace Microsoft.Extensions.DependencyInjection {
 		/// <param name="route">The base route for Seltzr</param>
 		/// <param name="optionsHandler">A handler to set options for this Seltzr API</param>
 		/// <returns>The same <see cref="IApplicationBuilder" />, for chaining</returns>
-		public static IApplicationBuilder UseEntityFrameworkSeltzr<TModel, TContext, TUser>(
+		public static IApplicationBuilder AddEntityFrameworkSeltzr<TModel, TContext, TUser>(
 			this IApplicationBuilder app,
 			string route,
 			Action<SeltzrOptionsBuilder<TModel, TUser>> optionsHandler)
 			where TModel : class where TContext : DbContext where TUser : class {
-			return app.UseEntityFrameworkSeltzr<TModel, TContext, TUser>(route, optionsHandler, null);
+			return app.AddEntityFrameworkSeltzr<TModel, TContext, TUser>(route, optionsHandler, null);
 		}
 
 		/// <summary>
@@ -86,11 +86,11 @@ namespace Microsoft.Extensions.DependencyInjection {
 		/// <param name="app">The app to add Seltzr to</param>
 		/// <param name="optionsHandler">A handler to set options for this Seltzr API</param>
 		/// <returns>The same <see cref="IApplicationBuilder" />, for chaining</returns>
-		public static IApplicationBuilder UseEntityFrameworkSeltzr<TModel, TContext, TUser>(
+		public static IApplicationBuilder AddEntityFrameworkSeltzr<TModel, TContext, TUser>(
 			this IApplicationBuilder app,
 			Action<SeltzrOptionsBuilder<TModel, TUser>> optionsHandler)
 			where TModel : class where TContext : DbContext where TUser : class {
-			return app.UseEntityFrameworkSeltzr<TModel, TContext, TUser>("/", optionsHandler, null);
+			return app.AddEntityFrameworkSeltzr<TModel, TContext, TUser>("/", optionsHandler, null);
 		}
 
 		/// <summary>
@@ -103,13 +103,13 @@ namespace Microsoft.Extensions.DependencyInjection {
 		/// <param name="optionsHandler">A handler to set options for this Seltzr API</param>
 		/// <param name="routeOptionsHandler">A handler to set ASP.NET Core options</param>
 		/// <returns>The same <see cref="IApplicationBuilder" />, for chaining</returns>
-		public static IApplicationBuilder UseEntityFrameworkSeltzr<TModel, TContext>(
+		public static IApplicationBuilder AddEntityFrameworkSeltzr<TModel, TContext>(
 			this IApplicationBuilder app,
 			string route,
 			Action<SeltzrOptionsBuilder<TModel, NoUser>> optionsHandler,
 			Action<IEndpointConventionBuilder>? routeOptionsHandler)
 			where TModel : class where TContext : DbContext {
-			return app.UseEntityFrameworkSeltzr<TModel, TContext, NoUser>(
+			return app.AddEntityFrameworkSeltzr<TModel, TContext, NoUser>(
 				route,
 				optionsHandler,
 				routeOptionsHandler);
@@ -124,12 +124,12 @@ namespace Microsoft.Extensions.DependencyInjection {
 		/// <param name="route">The base route for Seltzr</param>
 		/// <param name="optionsHandler">A handler to set options for this Seltzr API</param>
 		/// <returns>The same <see cref="IApplicationBuilder" />, for chaining</returns>
-		public static IApplicationBuilder UseEntityFrameworkSeltzr<TModel, TContext>(
+		public static IApplicationBuilder AddEntityFrameworkSeltzr<TModel, TContext>(
 			this IApplicationBuilder app,
 			string route,
 			Action<SeltzrOptionsBuilder<TModel, NoUser>> optionsHandler)
 			where TModel : class where TContext : DbContext {
-			return app.UseEntityFrameworkSeltzr<TModel, TContext>(route, optionsHandler, null);
+			return app.AddEntityFrameworkSeltzr<TModel, TContext>(route, optionsHandler, null);
 		}
 
 		/// <summary>
@@ -140,11 +140,11 @@ namespace Microsoft.Extensions.DependencyInjection {
 		/// <param name="app">The app to add Seltzr to</param>
 		/// <param name="optionsHandler">A handler to set options for this Seltzr API</param>
 		/// <returns>The same <see cref="IApplicationBuilder" />, for chaining</returns>
-		public static IApplicationBuilder UseEntityFrameworkSeltzr<TModel, TContext>(
+		public static IApplicationBuilder AddEntityFrameworkSeltzr<TModel, TContext>(
 			this IApplicationBuilder app,
 			Action<SeltzrOptionsBuilder<TModel, NoUser>> optionsHandler)
 			where TModel : class where TContext : DbContext {
-			return app.UseEntityFrameworkSeltzr<TModel, TContext>("/", optionsHandler, null);
+			return app.AddEntityFrameworkSeltzr<TModel, TContext>("/", optionsHandler, null);
 		}
 
 		/// <summary>

@@ -24,7 +24,6 @@ namespace Microsoft.Extensions.DependencyInjection {
 	///     Extension methods for the <see cref="IApplicationBuilder" /> interface.
 	/// </summary>
 	public static class SeltzrApplicationBuilderExtensions {
-
 		/// <summary>
 		///     Adds Seltzr middleware to the app
 		/// </summary>
@@ -34,12 +33,12 @@ namespace Microsoft.Extensions.DependencyInjection {
 		/// <param name="route">The base route for Seltzr</param>
 		/// <param name="optionsHandler">A handler to set options for this Seltzr API</param>
 		/// <returns>The same <see cref="IApplicationBuilder" />, for chaining</returns>
-		public static IApplicationBuilder UseSeltzr<TModel>(
+		public static IApplicationBuilder AddSeltzr<TModel>(
 			this IApplicationBuilder app,
 			string route,
 			Action<SeltzrOptionsBuilder<TModel, NoUser>> optionsHandler)
 			where TModel : class =>
-			app.UseSeltzr<TModel>(route, optionsHandler, null);
+			app.AddSeltzr<TModel>(route, optionsHandler, null);
 
 		/// <summary>
 		///     Adds Seltzr middleware to the app at the root ("/") endpoint
@@ -49,11 +48,11 @@ namespace Microsoft.Extensions.DependencyInjection {
 		/// <param name="app">The app to add Seltzr to</param>
 		/// <param name="optionsHandler">A handler to set options for this Seltzr API</param>
 		/// <returns>The same <see cref="IApplicationBuilder" />, for chaining</returns>
-		public static IApplicationBuilder UseSeltzr<TModel>(
+		public static IApplicationBuilder AddSeltzr<TModel>(
 			this IApplicationBuilder app,
 			Action<SeltzrOptionsBuilder<TModel, NoUser>> optionsHandler)
 			where TModel : class =>
-			app.UseSeltzr<TModel>("/", optionsHandler);
+			app.AddSeltzr<TModel>("/", optionsHandler);
 
 		/// <summary>
 		///     Adds Seltzr middleware to the app
@@ -65,13 +64,13 @@ namespace Microsoft.Extensions.DependencyInjection {
 		/// <param name="optionsHandler">A handler to set options for this Seltzr API</param>
 		/// <param name="routeOptionsHandler">A handler to set ASP.NET Core options</param>
 		/// <returns>The same <see cref="IApplicationBuilder" />, for chaining</returns>
-		public static IApplicationBuilder UseSeltzr<TModel>(
+		public static IApplicationBuilder AddSeltzr<TModel>(
 			this IApplicationBuilder app,
 			string route,
 			Action<SeltzrOptionsBuilder<TModel, NoUser>> optionsHandler,
 			Action<IEndpointConventionBuilder>? routeOptionsHandler)
 			where TModel : class =>
-			app.UseSeltzr<TModel, NoUser>(route, optionsHandler, routeOptionsHandler);
+			app.AddSeltzr<TModel, NoUser>(route, optionsHandler, routeOptionsHandler);
 
 		/// <summary>
 		///     Adds Seltzr middleware to the app
@@ -82,12 +81,12 @@ namespace Microsoft.Extensions.DependencyInjection {
 		/// <param name="route">The base route for Seltzr</param>
 		/// <param name="optionsHandler">A handler to set options for this Seltzr API</param>
 		/// <returns>The same <see cref="IApplicationBuilder" />, for chaining</returns>
-		public static IApplicationBuilder UseSeltzr<TModel, TUser>(
+		public static IApplicationBuilder AddSeltzr<TModel, TUser>(
 			this IApplicationBuilder app,
 			string route,
 			Action<SeltzrOptionsBuilder<TModel, TUser>> optionsHandler)
 			where TModel : class where TUser : class =>
-			app.UseSeltzr(route, optionsHandler, null);
+			app.AddSeltzr(route, optionsHandler, null);
 
 		/// <summary>
 		///     Adds Seltzr middleware to the app at the root ("/") endpoint
@@ -97,11 +96,11 @@ namespace Microsoft.Extensions.DependencyInjection {
 		/// <param name="app">The app to add Seltzr to</param>
 		/// <param name="optionsHandler">A handler to set options for this Seltzr API</param>
 		/// <returns>The same <see cref="IApplicationBuilder" />, for chaining</returns>
-		public static IApplicationBuilder UseSeltzr<TModel, TUser>(
+		public static IApplicationBuilder AddSeltzr<TModel, TUser>(
 			this IApplicationBuilder app,
 			Action<SeltzrOptionsBuilder<TModel, TUser>> optionsHandler)
 			where TModel : class where TUser : class =>
-			app.UseSeltzr("/", optionsHandler);
+			app.AddSeltzr("/", optionsHandler);
 
 		/// <summary>
 		///     Adds Seltzr middleware to the app
@@ -113,7 +112,7 @@ namespace Microsoft.Extensions.DependencyInjection {
 		/// <param name="optionsHandler">A handler to set options for this Seltzr API</param>
 		/// <param name="routeOptionsHandler">A handler to set ASP.NET Core options</param>
 		/// <returns>The same <see cref="IApplicationBuilder" />, for chaining</returns>
-		public static IApplicationBuilder UseSeltzr<TModel, TUser>(
+		public static IApplicationBuilder AddSeltzr<TModel, TUser>(
 			this IApplicationBuilder app,
 			string route,
 			Action<SeltzrOptionsBuilder<TModel, TUser>> optionsHandler,
@@ -122,7 +121,7 @@ namespace Microsoft.Extensions.DependencyInjection {
 			SeltzrOptionsBuilder<TModel, TUser> OptionsBuilder =
 				new SeltzrOptionsBuilder<TModel, TUser>(route, routeOptionsHandler);
 			optionsHandler(OptionsBuilder);
-			return app.UseSeltzr(OptionsBuilder.BuildAll());
+			return app.AddSeltzr(OptionsBuilder.BuildAll());
 		}
 
 		/// <summary>
@@ -134,7 +133,7 @@ namespace Microsoft.Extensions.DependencyInjection {
 		/// <param name="app">The app to add Seltzr to</param>
 		/// <param name="options">The options for Seltzr, keyed to their route patterns</param>
 		/// <returns>The same <see cref="IApplicationBuilder" />, for chaining</returns>
-		public static IApplicationBuilder UseSeltzr<TModel, TUser>(
+		public static IApplicationBuilder AddSeltzr<TModel, TUser>(
 			this IApplicationBuilder app,
 			Dictionary<string, List<SeltzrOptions<TModel, TUser>>> options)
 			where TModel : class where TUser : class {
