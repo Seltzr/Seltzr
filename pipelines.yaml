@@ -6,7 +6,7 @@ pool:
 
 jobs:
 - job: 'buildefcore'
-  displayName: 'Build Seltzr.EntityFramework'
+  displayName: 'Build Seltzr.EntityFrameworkCore'
   workspace:
     clean: outputs
   steps:
@@ -14,12 +14,12 @@ jobs:
     displayName: '.NET Build'
     inputs:
       command: 'build'
-      projects: 'Seltzr.EntityFramework/Seltzr.EntityFramework.csproj'
+      projects: 'Seltzr.EntityFrameworkCore/Seltzr.EntityFrameworkCore.csproj'
   - task: DotNetCoreCLI@2
     displayName: '.NET Pack'
     inputs:
       command: 'pack'
-      packagesToPack: 'Seltzr.EntityFramework/Seltzr.EntityFramework.csproj'
+      packagesToPack: 'Seltzr.EntityFrameworkCore/Seltzr.EntityFrameworkCore.csproj'
       nobuild: true
   - task: NuGetAuthenticate@0
     displayName: 'NuGet Authenticate'
