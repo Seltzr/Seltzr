@@ -13,9 +13,7 @@ Seltzr/obj
 
 /Seltzr.sln.DotSettings.user
 
-TestProject/obj
-TestProject/bin
-TestProject/TestProject.csproj.user
+TestProject/
 
 node_modules
 /docs-src/docfx_project/obj/.cache/build
