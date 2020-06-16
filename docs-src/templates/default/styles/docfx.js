@@ -79,10 +79,30 @@ $(function () {
     }
   }
 
+  window.copyCode = function (caller, id) {
+    const el = document.createElement('textarea');
+    el.value = $(this.document.getElementById(id)).text();
+    el.style.position = "absolute";
+    el.style.left = "-500px";
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+
+    caller.classList.add("copied");
+    caller.innerHTML = "Copied";
+    
+    setTimeout(() => {
+      caller.classList.remove("copied");
+      caller.innerHTML = "Copy";
+    }, 3000);
+  }
+
   // Enable highlight.js
   function highlight() {
+    let compiled = /lang-(csharp|js|html|cshtml|powershell|bash)/.compile();
     $('pre code').each(function (i, block) {
-      if (block.className === "lang-csharp") return;
+      if (block.className.match(compiled)) return;
       hljs.highlightBlock(block);
     });
     $('pre code[highlight-lines]').each(function (i, block) {

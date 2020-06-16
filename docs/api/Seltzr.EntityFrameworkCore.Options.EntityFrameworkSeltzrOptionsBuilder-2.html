@@ -1,0 +1,836 @@
+﻿<!DOCTYPE html>
+
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class EntityFrameworkSeltzrOptionsBuilder&lt;TModel, TUser&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class EntityFrameworkSeltzrOptionsBuilder&lt;TModel, TUser&gt;
+   ">
+    <meta name="generator" content="docfx 2.52.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../favicon.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Seltzr.EntityFrameworkCore.Options.EntityFrameworkSeltzrOptionsBuilder`2">
+  
+  
+  <h1 id="Seltzr_EntityFrameworkCore_Options_EntityFrameworkSeltzrOptionsBuilder_2" data-uid="Seltzr.EntityFrameworkCore.Options.EntityFrameworkSeltzrOptionsBuilder`2" class="text-break">Class EntityFrameworkSeltzrOptionsBuilder&lt;TModel, TUser&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Options builder for an Entity Framework based API</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Seltzr.Options.Builder.SeltzrOptionsBuilder-2.html">SeltzrOptionsBuilder</a>&lt;TModel, TUser&gt;</div>
+    <div class="level2"><span class="xref">EntityFrameworkSeltzrOptionsBuilder&lt;TModel, TUser&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Seltzr.OrmBase.Options.IOrmSeltzrOptionsBuilder-2.html">IOrmSeltzrOptionsBuilder</a>&lt;TModel, TUser&gt;</div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Seltzr.EntityFrameworkCore.Options.html">Seltzr.EntityFrameworkCore.Options</a></h6>
+  <h6><strong>Assembly</strong>: Seltzr.EntityFrameworkCore.dll</h6>
+  <h5 id="Seltzr_EntityFrameworkCore_Options_EntityFrameworkSeltzrOptionsBuilder_2_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <div class="code-header">
+      <span class="language">C#</span>
+    </div>
+    <pre><code><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span><span style='color:black;'> </span><span style='color:#267F99;'>EntityFrameworkSeltzrOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#267F99;'>SeltzrOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>IOrmSeltzrOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TModel</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span><span style='color:black;'> </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span></code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TModel</span></td>
+        <td><p>The model type that the API is being built for</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TUser</span></td>
+        <td><p>The type of authenticated user context</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Seltzr/Seltzr/new/master/apiSpec/new?filename=Seltzr_EntityFrameworkCore_Options_EntityFrameworkSeltzrOptionsBuilder_2_CreateChild_Seltzr_Options_SeltzrOptions__0__1__.md&amp;value=---%0Auid%3A%20Seltzr.EntityFrameworkCore.Options.EntityFrameworkSeltzrOptionsBuilder%602.CreateChild(Seltzr.Options.SeltzrOptions%7B%600%2C%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Seltzr/Seltzr/blob/master/Seltzr.EntityFrameworkCore/Options/EntityFrameworkSeltzrOptionsBuilder.cs/#L71">View Source</a>
+  </span>
+  <a id="Seltzr_EntityFrameworkCore_Options_EntityFrameworkSeltzrOptionsBuilder_2_CreateChild_" data-uid="Seltzr.EntityFrameworkCore.Options.EntityFrameworkSeltzrOptionsBuilder`2.CreateChild*"></a>
+  <h4 id="Seltzr_EntityFrameworkCore_Options_EntityFrameworkSeltzrOptionsBuilder_2_CreateChild_Seltzr_Options_SeltzrOptions__0__1__" data-uid="Seltzr.EntityFrameworkCore.Options.EntityFrameworkSeltzrOptionsBuilder`2.CreateChild(Seltzr.Options.SeltzrOptions{`0,`1})">CreateChild(SeltzrOptions&lt;TModel, TUser&gt;)</h4>
+  <div class="markdown level1 summary"><p>Creates a child instance of the <a class="xref" href="Seltzr.Options.Builder.SeltzrOptionsBuilder-2.html">SeltzrOptionsBuilder&lt;TModel, TUser&gt;</a> type sharing the given base options. When overriden in a derived class, this method can be used to ensure that the entire tree of <a class="xref" href="Seltzr.Options.Builder.SeltzrOptionsBuilder-2.html">SeltzrOptionsBuilder&lt;TModel, TUser&gt;</a> objects share the same derived type</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <div class="code-header">
+      <span class="language">C#</span>
+    </div>
+    <pre><code><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>override</span><span style='color:black;'> </span><span style='color:#267F99;'>SeltzrOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#795E26;'>CreateChild</span><span style='color:#222222;'>(</span><span style='color:#267F99;'>SeltzrOptions</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>baseOptions</span><span style='color:#222222;'>)</span></code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Seltzr.Options.SeltzrOptions-2.html">SeltzrOptions</a>&lt;TModel, TUser&gt;</td>
+        <td><span class="parametername">baseOptions</span></td>
+        <td><p>The base options for the new instance</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Seltzr.Options.Builder.SeltzrOptionsBuilder-2.html">SeltzrOptionsBuilder</a>&lt;TModel, TUser&gt;</td>
+        <td><p>The new <a class="xref" href="Seltzr.Options.Builder.SeltzrOptionsBuilder-2.html">SeltzrOptionsBuilder&lt;TModel, TUser&gt;</a> instance</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Seltzr.Options.Builder.SeltzrOptionsBuilder&lt;TModel, TUser&gt;.CreateChild(Seltzr.Options.SeltzrOptions&lt;TModel, TUser&gt;)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Seltzr/Seltzr/new/master/apiSpec/new?filename=Seltzr_EntityFrameworkCore_Options_EntityFrameworkSeltzrOptionsBuilder_2_GetCreateOperation.md&amp;value=---%0Auid%3A%20Seltzr.EntityFrameworkCore.Options.EntityFrameworkSeltzrOptionsBuilder%602.GetCreateOperation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Seltzr/Seltzr/blob/master/Seltzr.EntityFrameworkCore/Options/EntityFrameworkSeltzrOptionsBuilder.cs/#L91">View Source</a>
+  </span>
+  <a id="Seltzr_EntityFrameworkCore_Options_EntityFrameworkSeltzrOptionsBuilder_2_GetCreateOperation_" data-uid="Seltzr.EntityFrameworkCore.Options.EntityFrameworkSeltzrOptionsBuilder`2.GetCreateOperation*"></a>
+  <h4 id="Seltzr_EntityFrameworkCore_Options_EntityFrameworkSeltzrOptionsBuilder_2_GetCreateOperation" data-uid="Seltzr.EntityFrameworkCore.Options.EntityFrameworkSeltzrOptionsBuilder`2.GetCreateOperation">GetCreateOperation()</h4>
+  <div class="markdown level1 summary"><p>Gets a create <a class="xref" href="Seltzr.Operations.IOperation-2.html">IOperation&lt;TModel, TUser&gt;</a> for this model</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <div class="code-header">
+      <span class="language">C#</span>
+    </div>
+    <pre><code><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#267F99;'>IOperation</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#795E26;'>GetCreateOperation</span><span style='color:#222222;'>(</span><span style='color:#222222;'>)</span></code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Seltzr.Operations.IOperation-2.html">IOperation</a>&lt;TModel, TUser&gt;</td>
+        <td><p>A new create operation for <see cref="!:TModel"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Seltzr/Seltzr/new/master/apiSpec/new?filename=Seltzr_EntityFrameworkCore_Options_EntityFrameworkSeltzrOptionsBuilder_2_GetDeleteOperation.md&amp;value=---%0Auid%3A%20Seltzr.EntityFrameworkCore.Options.EntityFrameworkSeltzrOptionsBuilder%602.GetDeleteOperation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Seltzr/Seltzr/blob/master/Seltzr.EntityFrameworkCore/Options/EntityFrameworkSeltzrOptionsBuilder.cs/#L111">View Source</a>
+  </span>
+  <a id="Seltzr_EntityFrameworkCore_Options_EntityFrameworkSeltzrOptionsBuilder_2_GetDeleteOperation_" data-uid="Seltzr.EntityFrameworkCore.Options.EntityFrameworkSeltzrOptionsBuilder`2.GetDeleteOperation*"></a>
+  <h4 id="Seltzr_EntityFrameworkCore_Options_EntityFrameworkSeltzrOptionsBuilder_2_GetDeleteOperation" data-uid="Seltzr.EntityFrameworkCore.Options.EntityFrameworkSeltzrOptionsBuilder`2.GetDeleteOperation">GetDeleteOperation()</h4>
+  <div class="markdown level1 summary"><p>Gets a delete <a class="xref" href="Seltzr.Operations.IOperation-2.html">IOperation&lt;TModel, TUser&gt;</a> for this model</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <div class="code-header">
+      <span class="language">C#</span>
+    </div>
+    <pre><code><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#267F99;'>IOperation</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#795E26;'>GetDeleteOperation</span><span style='color:#222222;'>(</span><span style='color:#222222;'>)</span></code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Seltzr.Operations.IOperation-2.html">IOperation</a>&lt;TModel, TUser&gt;</td>
+        <td><p>A new delete operation for <see cref="!:TModel"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Seltzr/Seltzr/new/master/apiSpec/new?filename=Seltzr_EntityFrameworkCore_Options_EntityFrameworkSeltzrOptionsBuilder_2_GetPrimaryKey.md&amp;value=---%0Auid%3A%20Seltzr.EntityFrameworkCore.Options.EntityFrameworkSeltzrOptionsBuilder%602.GetPrimaryKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Seltzr/Seltzr/blob/master/Seltzr.EntityFrameworkCore/Options/EntityFrameworkSeltzrOptionsBuilder.cs/#L79">View Source</a>
+  </span>
+  <a id="Seltzr_EntityFrameworkCore_Options_EntityFrameworkSeltzrOptionsBuilder_2_GetPrimaryKey_" data-uid="Seltzr.EntityFrameworkCore.Options.EntityFrameworkSeltzrOptionsBuilder`2.GetPrimaryKey*"></a>
+  <h4 id="Seltzr_EntityFrameworkCore_Options_EntityFrameworkSeltzrOptionsBuilder_2_GetPrimaryKey" data-uid="Seltzr.EntityFrameworkCore.Options.EntityFrameworkSeltzrOptionsBuilder`2.GetPrimaryKey">GetPrimaryKey()</h4>
+  <div class="markdown level1 summary"><p>Gets the properties that make up the primary key of <see cref="!:TModel"></see></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <div class="code-header">
+      <span class="language">C#</span>
+    </div>
+    <pre><code><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#267F99;'>List</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>KeyProperty</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#795E26;'>GetPrimaryKey</span><span style='color:#222222;'>(</span><span style='color:#222222;'>)</span></code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Seltzr.OrmBase.KeyProperty.html">KeyProperty</a>&gt;</td>
+        <td><p>The properties that make up the primary key of <see cref="!:TModel"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Seltzr/Seltzr/new/master/apiSpec/new?filename=Seltzr_EntityFrameworkCore_Options_EntityFrameworkSeltzrOptionsBuilder_2_GetUpdateOperation_System_Reflection_PropertyInfo___Seltzr_ParameterRetrievers_ParameterRetriever___.md&amp;value=---%0Auid%3A%20Seltzr.EntityFrameworkCore.Options.EntityFrameworkSeltzrOptionsBuilder%602.GetUpdateOperation(System.Reflection.PropertyInfo%5B%5D%2CSeltzr.ParameterRetrievers.ParameterRetriever%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Seltzr/Seltzr/blob/master/Seltzr.EntityFrameworkCore/Options/EntityFrameworkSeltzrOptionsBuilder.cs/#L99">View Source</a>
+  </span>
+  <a id="Seltzr_EntityFrameworkCore_Options_EntityFrameworkSeltzrOptionsBuilder_2_GetUpdateOperation_" data-uid="Seltzr.EntityFrameworkCore.Options.EntityFrameworkSeltzrOptionsBuilder`2.GetUpdateOperation*"></a>
+  <h4 id="Seltzr_EntityFrameworkCore_Options_EntityFrameworkSeltzrOptionsBuilder_2_GetUpdateOperation_System_Reflection_PropertyInfo___Seltzr_ParameterRetrievers_ParameterRetriever___" data-uid="Seltzr.EntityFrameworkCore.Options.EntityFrameworkSeltzrOptionsBuilder`2.GetUpdateOperation(System.Reflection.PropertyInfo[],Seltzr.ParameterRetrievers.ParameterRetriever[])">GetUpdateOperation(PropertyInfo[], ParameterRetriever[])</h4>
+  <div class="markdown level1 summary"><p>Gets an update <a class="xref" href="Seltzr.Operations.IOperation-2.html">IOperation&lt;TModel, TUser&gt;</a> for this model</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <div class="code-header">
+      <span class="language">C#</span>
+    </div>
+    <pre><code><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#267F99;'>IOperation</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#795E26;'>GetUpdateOperation</span><span style='color:#222222;'>(</span><span style='color:#267F99;'>PropertyInfo</span><span style='color:#222222;'>[</span><span style='color:#222222;'>]</span><span style='color:black;'> </span><span style='color:#001080;'>properties</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>ParameterRetriever</span><span style='color:#222222;'>[</span><span style='color:#222222;'>]</span><span style='color:black;'> </span><span style='color:#001080;'>retrievers</span><span style='color:#222222;'>)</span></code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Reflection.PropertyInfo</span>[]</td>
+        <td><span class="parametername">properties</span></td>
+        <td><p>The properties to use to compare existing models with parsed models to determine which models to update</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Seltzr.ParameterRetrievers.ParameterRetriever.html">ParameterRetriever</a>[]</td>
+        <td><span class="parametername">retrievers</span></td>
+        <td><p>A list of parameter retrievers to use to get values for the properties. If null, the parsed body will be used instead</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Seltzr.Operations.IOperation-2.html">IOperation</a>&lt;TModel, TUser&gt;</td>
+        <td><p>A new update operation for <see cref="!:TModel"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Seltzr.OrmBase.Options.IOrmSeltzrOptionsBuilder-2.html">IOrmSeltzrOptionsBuilder&lt;TModel, TUser&gt;</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_IgnorePrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__">SeltzrOrmOptionsBuilderExtensions.IgnorePrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_IncludePrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__">SeltzrOrmOptionsBuilderExtensions.IncludePrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_OmitPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__">SeltzrOrmOptionsBuilderExtensions.OmitPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_FilterByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__Seltzr_ParameterRetrievers_ParameterRetriever___">SeltzrOrmOptionsBuilderExtensions.FilterByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, ParameterRetriever[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_FilterByPrimaryKeyQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String___">SeltzrOrmOptionsBuilderExtensions.FilterByPrimaryKeyQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_FilterByPrimaryKeyQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__">SeltzrOrmOptionsBuilderExtensions.FilterByPrimaryKeyQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_FilterByPrimaryKeyRoute__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String___">SeltzrOrmOptionsBuilderExtensions.FilterByPrimaryKeyRoute&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_FilterByPrimaryKeyRoute__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__">SeltzrOrmOptionsBuilderExtensions.FilterByPrimaryKeyRoute&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_Delete__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.Delete&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_DeleteByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_Seltzr_ParameterRetrievers_ParameterRetriever___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.DeleteByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, ParameterRetriever[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_DeleteByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_String___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.DeleteByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, String[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_DeleteByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__">SeltzrOrmOptionsBuilderExtensions.DeleteByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_DeleteByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.DeleteByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_DeleteByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.DeleteByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_DeleteByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.DeleteByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_DeleteByPrimaryKeyQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_String___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.DeleteByPrimaryKeyQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, String[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_DeleteByPrimaryKeyQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.DeleteByPrimaryKeyQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_DeleteByPrimaryKeyQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.DeleteByPrimaryKeyQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_DeleteByPrimaryKeyQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.DeleteByPrimaryKeyQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_Get__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.Get&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_Get__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.Get&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_Get__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__">SeltzrOrmOptionsBuilderExtensions.Get&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_GetByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_Seltzr_ParameterRetrievers_ParameterRetriever___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.GetByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, ParameterRetriever[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_GetByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_String___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.GetByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, String[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_GetByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.GetByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_GetByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.GetByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_GetByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.GetByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_GetByPrimaryKeyQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_String___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.GetByPrimaryKeyQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, String[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_GetByPrimaryKeyQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.GetByPrimaryKeyQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_GetByPrimaryKeyQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.GetByPrimaryKeyQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_GetByPrimaryKeyQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.GetByPrimaryKeyQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_String___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], String[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_String___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], String[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____">SeltzrOrmOptionsBuilderExtensions.PatchUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object___System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object___System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____">SeltzrOrmOptionsBuilderExtensions.PatchUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByBody__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByBody&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByBody__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByBody&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByBody__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByBody&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByBody__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByBody&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByBody__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByBody&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByBody__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByBody&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByParam__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____Seltzr_ParameterRetrievers_ParameterRetriever___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByParam&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], ParameterRetriever[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByParam__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object___Seltzr_ParameterRetrievers_ParameterRetriever_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByParam&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;, ParameterRetriever, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByParam__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____Seltzr_ParameterRetrievers_ParameterRetriever___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByParam&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], ParameterRetriever[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_Seltzr_ParameterRetrievers_ParameterRetriever___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, ParameterRetriever[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_String___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, String[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByPrimaryKeyQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_String___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByPrimaryKeyQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, String[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByPrimaryKeyQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByPrimaryKeyQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByPrimaryKeyQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByPrimaryKeyQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByPrimaryKeyQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByPrimaryKeyQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_String___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], String[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_String___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], String[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object___System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object___System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PatchUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____">SeltzrOrmOptionsBuilderExtensions.PatchUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostCreate__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostCreate&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostCreate__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostCreate&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_String___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], String[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_String___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], String[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____">SeltzrOrmOptionsBuilderExtensions.PostUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object___System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object___System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____">SeltzrOrmOptionsBuilderExtensions.PostUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByBody__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByBody&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByBody__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByBody&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByBody__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____">SeltzrOrmOptionsBuilderExtensions.PostUpdateByBody&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByBody__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByBody&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByBody__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByBody&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByBody__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____">SeltzrOrmOptionsBuilderExtensions.PostUpdateByBody&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByParam__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____Seltzr_ParameterRetrievers_ParameterRetriever___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByParam&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], ParameterRetriever[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByParam__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object___Seltzr_ParameterRetrievers_ParameterRetriever_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByParam&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;, ParameterRetriever, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByParam__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____Seltzr_ParameterRetrievers_ParameterRetriever___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByParam&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], ParameterRetriever[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_Seltzr_ParameterRetrievers_ParameterRetriever___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, ParameterRetriever[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_String___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, String[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__">SeltzrOrmOptionsBuilderExtensions.PostUpdateByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByPrimaryKeyQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_String___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByPrimaryKeyQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, String[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByPrimaryKeyQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByPrimaryKeyQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByPrimaryKeyQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByPrimaryKeyQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByPrimaryKeyQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByPrimaryKeyQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_String___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], String[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_String___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], String[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____">SeltzrOrmOptionsBuilderExtensions.PostUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object___System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object___System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PostUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PostUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____">SeltzrOrmOptionsBuilderExtensions.PostUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_String___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], String[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_String___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], String[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____">SeltzrOrmOptionsBuilderExtensions.PutUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object___System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object___System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateBy__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____">SeltzrOrmOptionsBuilderExtensions.PutUpdateBy&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByBody__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByBody&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByBody__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByBody&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByBody__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____">SeltzrOrmOptionsBuilderExtensions.PutUpdateByBody&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByBody__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByBody&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByBody__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByBody&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByBody__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____">SeltzrOrmOptionsBuilderExtensions.PutUpdateByBody&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByParam__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____Seltzr_ParameterRetrievers_ParameterRetriever___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByParam&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], ParameterRetriever[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByParam__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object___Seltzr_ParameterRetrievers_ParameterRetriever_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByParam&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;, ParameterRetriever, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByParam__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____Seltzr_ParameterRetrievers_ParameterRetriever___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByParam&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], ParameterRetriever[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_Seltzr_ParameterRetrievers_ParameterRetriever___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, ParameterRetriever[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_String___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, String[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__">SeltzrOrmOptionsBuilderExtensions.PutUpdateByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByPrimaryKey__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByPrimaryKey&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByPrimaryKeyQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_String___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByPrimaryKeyQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, String[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByPrimaryKeyQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByPrimaryKeyQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByPrimaryKeyQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByPrimaryKeyQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByPrimaryKeyQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByPrimaryKeyQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_String___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], String[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_String___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], String[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[], Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object_____">SeltzrOrmOptionsBuilderExtensions.PutUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object___System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object___System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, Expression&lt;Func&lt;TModel, Object&gt;&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___">SeltzrOrmOptionsBuilderExtensions.PutUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html#Seltzr_Extensions_SeltzrOrmOptionsBuilderExtensions_PutUpdateByQuery__2_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1__System_String_System_Linq_Expressions_Expression_System_Func___0_System_Object_____">SeltzrOrmOptionsBuilderExtensions.PutUpdateByQuery&lt;TModel, TUser&gt;(SeltzrOptionsBuilder&lt;TModel, TUser&gt;, String, Expression&lt;Func&lt;TModel, Object&gt;&gt;[])</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Seltzr/Seltzr/new/master/apiSpec/new?filename=Seltzr_EntityFrameworkCore_Options_EntityFrameworkSeltzrOptionsBuilder_2.md&amp;value=---%0Auid%3A%20Seltzr.EntityFrameworkCore.Options.EntityFrameworkSeltzrOptionsBuilder%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Seltzr/Seltzr/blob/master/Seltzr.EntityFrameworkCore/Options/EntityFrameworkSeltzrOptionsBuilder.cs/#L30" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

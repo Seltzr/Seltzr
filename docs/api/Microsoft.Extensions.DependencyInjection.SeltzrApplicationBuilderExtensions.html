@@ -88,20 +88,20 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>static</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span><span style='color:black;'> </span><span style='color:#267F99;'>SeltzrApplicationBuilderExtensions</span></code></pre>
+    <pre><code><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>static</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span><span style='color:black;'> </span><span style='color:#267F99;'>SeltzrApplicationBuilderExtensions</span></code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_UseSeltzr__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0_Seltzr_Auth_NoUser___.md&amp;value=---%0Auid%3A%20Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.UseSeltzr%60%601(Microsoft.AspNetCore.Builder.IApplicationBuilder%2CSystem.Action%7BSeltzr.Options.Builder.SeltzrOptionsBuilder%7B%60%600%2CSeltzr.Auth.NoUser%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Seltzr/Seltzr/new/master/apiSpec/new?filename=Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_AddSeltzr__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0_Seltzr_Auth_NoUser___.md&amp;value=---%0Auid%3A%20Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.AddSeltzr%60%601(Microsoft.AspNetCore.Builder.IApplicationBuilder%2CSystem.Action%7BSeltzr.Options.Builder.SeltzrOptionsBuilder%7B%60%600%2CSeltzr.Auth.NoUser%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/Seltzr/Extensions/SeltzrApplicationBuilderExtensions.cs/#L52">View Source</a>
+    <a href="https://github.com/Seltzr/Seltzr/blob/master/Seltzr/Extensions/SeltzrApplicationBuilderExtensions.cs/#L49">View Source</a>
   </span>
-  <a id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_UseSeltzr_" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.UseSeltzr*"></a>
-  <h4 id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_UseSeltzr__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0_Seltzr_Auth_NoUser___" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.UseSeltzr``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Action{Seltzr.Options.Builder.SeltzrOptionsBuilder{``0,Seltzr.Auth.NoUser}})">UseSeltzr&lt;TModel&gt;(IApplicationBuilder, Action&lt;SeltzrOptionsBuilder&lt;TModel, NoUser&gt;&gt;)</h4>
-  <div class="markdown level1 summary"><p>Adds rest models middleware to the app at the root (&quot;/&quot;) endpoint</p>
+  <a id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_AddSeltzr_" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.AddSeltzr*"></a>
+  <h4 id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_AddSeltzr__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0_Seltzr_Auth_NoUser___" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.AddSeltzr``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Action{Seltzr.Options.Builder.SeltzrOptionsBuilder{``0,Seltzr.Auth.NoUser}})">AddSeltzr&lt;TModel&gt;(IApplicationBuilder, Action&lt;SeltzrOptionsBuilder&lt;TModel, NoUser&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds Seltzr middleware to the app at the root (&quot;/&quot;) endpoint</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -109,7 +109,8 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>static</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#795E26;'>UseSeltzr</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>(</span><span style='color:#0000FF;'>this</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#001080;'>app</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Action</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>SeltzrOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>NoUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>optionsHandler</span><span style='color:#222222;'>)</span><br /><span style='color:black;'>    </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TModel</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span></code></pre>
+    <pre><code><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>static</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#795E26;'>AddSeltzr</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>(</span><span style='color:#0000FF;'>this</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#001080;'>app</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Action</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>SeltzrOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>NoUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>optionsHandler</span><span style='color:#222222;'>)</span>
+<span style='color:black;'>    </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TModel</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span></code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -124,13 +125,13 @@
       <tr>
         <td><span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span></td>
         <td><span class="parametername">app</span></td>
-        <td><p>The app to add rest models to</p>
+        <td><p>The app to add Seltzr to</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Action</span>&lt;<a class="xref" href="Seltzr.Options.Builder.SeltzrOptionsBuilder-2.html">SeltzrOptionsBuilder</a>&lt;TModel, <a class="xref" href="Seltzr.Auth.NoUser.html">NoUser</a>&gt;&gt;</td>
         <td><span class="parametername">optionsHandler</span></td>
-        <td><p>A handler to set options for this rest models API</p>
+        <td><p>A handler to set options for this Seltzr API</p>
 </td>
       </tr>
     </tbody>
@@ -169,14 +170,14 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_UseSeltzr__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0_Seltzr_Auth_NoUser___.md&amp;value=---%0Auid%3A%20Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.UseSeltzr%60%601(Microsoft.AspNetCore.Builder.IApplicationBuilder%2CSystem.String%2CSystem.Action%7BSeltzr.Options.Builder.SeltzrOptionsBuilder%7B%60%600%2CSeltzr.Auth.NoUser%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Seltzr/Seltzr/new/master/apiSpec/new?filename=Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_AddSeltzr__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0_Seltzr_Auth_NoUser___.md&amp;value=---%0Auid%3A%20Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.AddSeltzr%60%601(Microsoft.AspNetCore.Builder.IApplicationBuilder%2CSystem.String%2CSystem.Action%7BSeltzr.Options.Builder.SeltzrOptionsBuilder%7B%60%600%2CSeltzr.Auth.NoUser%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/Seltzr/Extensions/SeltzrApplicationBuilderExtensions.cs/#L37">View Source</a>
+    <a href="https://github.com/Seltzr/Seltzr/blob/master/Seltzr/Extensions/SeltzrApplicationBuilderExtensions.cs/#L35">View Source</a>
   </span>
-  <a id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_UseSeltzr_" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.UseSeltzr*"></a>
-  <h4 id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_UseSeltzr__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0_Seltzr_Auth_NoUser___" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.UseSeltzr``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.String,System.Action{Seltzr.Options.Builder.SeltzrOptionsBuilder{``0,Seltzr.Auth.NoUser}})">UseSeltzr&lt;TModel&gt;(IApplicationBuilder, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, NoUser&gt;&gt;)</h4>
-  <div class="markdown level1 summary"><p>Adds rest models middleware to the app</p>
+  <a id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_AddSeltzr_" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.AddSeltzr*"></a>
+  <h4 id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_AddSeltzr__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0_Seltzr_Auth_NoUser___" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.AddSeltzr``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.String,System.Action{Seltzr.Options.Builder.SeltzrOptionsBuilder{``0,Seltzr.Auth.NoUser}})">AddSeltzr&lt;TModel&gt;(IApplicationBuilder, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, NoUser&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds Seltzr middleware to the app</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -184,7 +185,8 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>static</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#795E26;'>UseSeltzr</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>(</span><span style='color:#0000FF;'>this</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#001080;'>app</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#0000FF;'>string</span><span style='color:black;'> </span><span style='color:#001080;'>route</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Action</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>SeltzrOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>NoUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>optionsHandler</span><span style='color:#222222;'>)</span><br /><span style='color:black;'>    </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TModel</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span></code></pre>
+    <pre><code><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>static</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#795E26;'>AddSeltzr</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>(</span><span style='color:#0000FF;'>this</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#001080;'>app</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#0000FF;'>string</span><span style='color:black;'> </span><span style='color:#001080;'>route</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Action</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>SeltzrOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>NoUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>optionsHandler</span><span style='color:#222222;'>)</span>
+<span style='color:black;'>    </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TModel</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span></code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -199,19 +201,19 @@
       <tr>
         <td><span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span></td>
         <td><span class="parametername">app</span></td>
-        <td><p>The app to add rest models to</p>
+        <td><p>The app to add Seltzr to</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">route</span></td>
-        <td><p>The base route for rest models</p>
+        <td><p>The base route for Seltzr</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Action</span>&lt;<a class="xref" href="Seltzr.Options.Builder.SeltzrOptionsBuilder-2.html">SeltzrOptionsBuilder</a>&lt;TModel, <a class="xref" href="Seltzr.Auth.NoUser.html">NoUser</a>&gt;&gt;</td>
         <td><span class="parametername">optionsHandler</span></td>
-        <td><p>A handler to set options for this rest models API</p>
+        <td><p>A handler to set options for this Seltzr API</p>
 </td>
       </tr>
     </tbody>
@@ -250,14 +252,14 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_UseSeltzr__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0_Seltzr_Auth_NoUser___System_Action_Microsoft_AspNetCore_Builder_IEndpointConventionBuilder__.md&amp;value=---%0Auid%3A%20Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.UseSeltzr%60%601(Microsoft.AspNetCore.Builder.IApplicationBuilder%2CSystem.String%2CSystem.Action%7BSeltzr.Options.Builder.SeltzrOptionsBuilder%7B%60%600%2CSeltzr.Auth.NoUser%7D%7D%2CSystem.Action%7BMicrosoft.AspNetCore.Builder.IEndpointConventionBuilder%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Seltzr/Seltzr/new/master/apiSpec/new?filename=Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_AddSeltzr__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0_Seltzr_Auth_NoUser___System_Action_Microsoft_AspNetCore_Builder_IEndpointConventionBuilder__.md&amp;value=---%0Auid%3A%20Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.AddSeltzr%60%601(Microsoft.AspNetCore.Builder.IApplicationBuilder%2CSystem.String%2CSystem.Action%7BSeltzr.Options.Builder.SeltzrOptionsBuilder%7B%60%600%2CSeltzr.Auth.NoUser%7D%7D%2CSystem.Action%7BMicrosoft.AspNetCore.Builder.IEndpointConventionBuilder%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/Seltzr/Extensions/SeltzrApplicationBuilderExtensions.cs/#L68">View Source</a>
+    <a href="https://github.com/Seltzr/Seltzr/blob/master/Seltzr/Extensions/SeltzrApplicationBuilderExtensions.cs/#L64">View Source</a>
   </span>
-  <a id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_UseSeltzr_" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.UseSeltzr*"></a>
-  <h4 id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_UseSeltzr__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0_Seltzr_Auth_NoUser___System_Action_Microsoft_AspNetCore_Builder_IEndpointConventionBuilder__" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.UseSeltzr``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.String,System.Action{Seltzr.Options.Builder.SeltzrOptionsBuilder{``0,Seltzr.Auth.NoUser}},System.Action{Microsoft.AspNetCore.Builder.IEndpointConventionBuilder})">UseSeltzr&lt;TModel&gt;(IApplicationBuilder, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, NoUser&gt;&gt;, Action&lt;IEndpointConventionBuilder&gt;)</h4>
-  <div class="markdown level1 summary"><p>Adds rest models middleware to the app</p>
+  <a id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_AddSeltzr_" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.AddSeltzr*"></a>
+  <h4 id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_AddSeltzr__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0_Seltzr_Auth_NoUser___System_Action_Microsoft_AspNetCore_Builder_IEndpointConventionBuilder__" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.AddSeltzr``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.String,System.Action{Seltzr.Options.Builder.SeltzrOptionsBuilder{``0,Seltzr.Auth.NoUser}},System.Action{Microsoft.AspNetCore.Builder.IEndpointConventionBuilder})">AddSeltzr&lt;TModel&gt;(IApplicationBuilder, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, NoUser&gt;&gt;, Action&lt;IEndpointConventionBuilder&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds Seltzr middleware to the app</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -265,7 +267,8 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>static</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#795E26;'>UseSeltzr</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>(</span><span style='color:#0000FF;'>this</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#001080;'>app</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#0000FF;'>string</span><span style='color:black;'> </span><span style='color:#001080;'>route</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Action</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>SeltzrOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>NoUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>optionsHandler</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Action</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>IEndpointConventionBuilder</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>routeOptionsHandler</span><span style='color:#222222;'>)</span><br /><span style='color:black;'>    </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TModel</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span></code></pre>
+    <pre><code><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>static</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#795E26;'>AddSeltzr</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>(</span><span style='color:#0000FF;'>this</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#001080;'>app</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#0000FF;'>string</span><span style='color:black;'> </span><span style='color:#001080;'>route</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Action</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>SeltzrOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>NoUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>optionsHandler</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Action</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>IEndpointConventionBuilder</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>routeOptionsHandler</span><span style='color:#222222;'>)</span>
+<span style='color:black;'>    </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TModel</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span></code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -280,19 +283,19 @@
       <tr>
         <td><span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span></td>
         <td><span class="parametername">app</span></td>
-        <td><p>The app to add rest models to</p>
+        <td><p>The app to add Seltzr to</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">route</span></td>
-        <td><p>The base route for rest models</p>
+        <td><p>The base route for Seltzr</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Action</span>&lt;<a class="xref" href="Seltzr.Options.Builder.SeltzrOptionsBuilder-2.html">SeltzrOptionsBuilder</a>&lt;TModel, <a class="xref" href="Seltzr.Auth.NoUser.html">NoUser</a>&gt;&gt;</td>
         <td><span class="parametername">optionsHandler</span></td>
-        <td><p>A handler to set options for this rest models API</p>
+        <td><p>A handler to set options for this Seltzr API</p>
 </td>
       </tr>
       <tr>
@@ -337,14 +340,14 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_UseSeltzr__2_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___.md&amp;value=---%0Auid%3A%20Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.UseSeltzr%60%602(Microsoft.AspNetCore.Builder.IApplicationBuilder%2CSystem.Action%7BSeltzr.Options.Builder.SeltzrOptionsBuilder%7B%60%600%2C%60%601%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Seltzr/Seltzr/new/master/apiSpec/new?filename=Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_AddSeltzr__2_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___.md&amp;value=---%0Auid%3A%20Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.AddSeltzr%60%602(Microsoft.AspNetCore.Builder.IApplicationBuilder%2CSystem.Action%7BSeltzr.Options.Builder.SeltzrOptionsBuilder%7B%60%600%2C%60%601%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/Seltzr/Extensions/SeltzrApplicationBuilderExtensions.cs/#L100">View Source</a>
+    <a href="https://github.com/Seltzr/Seltzr/blob/master/Seltzr/Extensions/SeltzrApplicationBuilderExtensions.cs/#L96">View Source</a>
   </span>
-  <a id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_UseSeltzr_" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.UseSeltzr*"></a>
-  <h4 id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_UseSeltzr__2_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.UseSeltzr``2(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Action{Seltzr.Options.Builder.SeltzrOptionsBuilder{``0,``1}})">UseSeltzr&lt;TModel, TUser&gt;(IApplicationBuilder, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</h4>
-  <div class="markdown level1 summary"><p>Adds rest models middleware to the app at the root (&quot;/&quot;) endpoint</p>
+  <a id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_AddSeltzr_" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.AddSeltzr*"></a>
+  <h4 id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_AddSeltzr__2_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.AddSeltzr``2(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Action{Seltzr.Options.Builder.SeltzrOptionsBuilder{``0,``1}})">AddSeltzr&lt;TModel, TUser&gt;(IApplicationBuilder, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds Seltzr middleware to the app at the root (&quot;/&quot;) endpoint</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -352,7 +355,8 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>static</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#795E26;'>UseSeltzr</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>(</span><span style='color:#0000FF;'>this</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#001080;'>app</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Action</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>SeltzrOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>optionsHandler</span><span style='color:#222222;'>)</span><br /><span style='color:black;'>    </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TModel</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span><span style='color:black;'> </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span></code></pre>
+    <pre><code><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>static</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#795E26;'>AddSeltzr</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>(</span><span style='color:#0000FF;'>this</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#001080;'>app</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Action</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>SeltzrOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>optionsHandler</span><span style='color:#222222;'>)</span>
+<span style='color:black;'>    </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TModel</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span><span style='color:black;'> </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span></code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -367,13 +371,13 @@
       <tr>
         <td><span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span></td>
         <td><span class="parametername">app</span></td>
-        <td><p>The app to add rest models to</p>
+        <td><p>The app to add Seltzr to</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Action</span>&lt;<a class="xref" href="Seltzr.Options.Builder.SeltzrOptionsBuilder-2.html">SeltzrOptionsBuilder</a>&lt;TModel, TUser&gt;&gt;</td>
         <td><span class="parametername">optionsHandler</span></td>
-        <td><p>A handler to set options for this rest models API</p>
+        <td><p>A handler to set options for this Seltzr API</p>
 </td>
       </tr>
     </tbody>
@@ -417,14 +421,14 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_UseSeltzr__2_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_Seltzr_Options_SeltzrOptions___0___1____.md&amp;value=---%0Auid%3A%20Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.UseSeltzr%60%602(Microsoft.AspNetCore.Builder.IApplicationBuilder%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.Collections.Generic.List%7BSeltzr.Options.SeltzrOptions%7B%60%600%2C%60%601%7D%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Seltzr/Seltzr/new/master/apiSpec/new?filename=Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_AddSeltzr__2_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_Seltzr_Options_SeltzrOptions___0___1____.md&amp;value=---%0Auid%3A%20Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.AddSeltzr%60%602(Microsoft.AspNetCore.Builder.IApplicationBuilder%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.Collections.Generic.List%7BSeltzr.Options.SeltzrOptions%7B%60%600%2C%60%601%7D%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/Seltzr/Extensions/SeltzrApplicationBuilderExtensions.cs/#L137">View Source</a>
+    <a href="https://github.com/Seltzr/Seltzr/blob/master/Seltzr/Extensions/SeltzrApplicationBuilderExtensions.cs/#L133">View Source</a>
   </span>
-  <a id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_UseSeltzr_" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.UseSeltzr*"></a>
-  <h4 id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_UseSeltzr__2_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_Seltzr_Options_SeltzrOptions___0___1____" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.UseSeltzr``2(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{Seltzr.Options.SeltzrOptions{``0,``1}}})">UseSeltzr&lt;TModel, TUser&gt;(IApplicationBuilder, Dictionary&lt;String, List&lt;SeltzrOptions&lt;TModel, TUser&gt;&gt;&gt;)</h4>
-  <div class="markdown level1 summary"><p>Adds rest models middleware to the app using already built <a class="xref" href="Seltzr.Options.SeltzrOptions-2.html">SeltzrOptions&lt;TModel, TUser&gt;</a>. Not
+  <a id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_AddSeltzr_" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.AddSeltzr*"></a>
+  <h4 id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_AddSeltzr__2_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_Seltzr_Options_SeltzrOptions___0___1____" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.AddSeltzr``2(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{Seltzr.Options.SeltzrOptions{``0,``1}}})">AddSeltzr&lt;TModel, TUser&gt;(IApplicationBuilder, Dictionary&lt;String, List&lt;SeltzrOptions&lt;TModel, TUser&gt;&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds Seltzr middleware to the app using already built <a class="xref" href="Seltzr.Options.SeltzrOptions-2.html">SeltzrOptions&lt;TModel, TUser&gt;</a>. Not
 intended for application use.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -433,7 +437,8 @@ intended for application use.</p>
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>static</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#795E26;'>UseSeltzr</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>(</span><span style='color:#0000FF;'>this</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#001080;'>app</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Dictionary</span><span style='color:#222222;'>&lt;</span><span style='color:#0000FF;'>string</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>List</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>SeltzrOptions</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>options</span><span style='color:#222222;'>)</span><br /><span style='color:black;'>    </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TModel</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span><span style='color:black;'> </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span></code></pre>
+    <pre><code><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>static</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#795E26;'>AddSeltzr</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>(</span><span style='color:#0000FF;'>this</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#001080;'>app</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Dictionary</span><span style='color:#222222;'>&lt;</span><span style='color:#0000FF;'>string</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>List</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>SeltzrOptions</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>options</span><span style='color:#222222;'>)</span>
+<span style='color:black;'>    </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TModel</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span><span style='color:black;'> </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span></code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -448,13 +453,13 @@ intended for application use.</p>
       <tr>
         <td><span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span></td>
         <td><span class="parametername">app</span></td>
-        <td><p>The app to add rest models to</p>
+        <td><p>The app to add Seltzr to</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Seltzr.Options.SeltzrOptions-2.html">SeltzrOptions</a>&lt;TModel, TUser&gt;&gt;&gt;</td>
         <td><span class="parametername">options</span></td>
-        <td><p>The options for rest models, keyed to their route patterns</p>
+        <td><p>The options for Seltzr, keyed to their route patterns</p>
 </td>
       </tr>
     </tbody>
@@ -498,14 +503,14 @@ intended for application use.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_UseSeltzr__2_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___.md&amp;value=---%0Auid%3A%20Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.UseSeltzr%60%602(Microsoft.AspNetCore.Builder.IApplicationBuilder%2CSystem.String%2CSystem.Action%7BSeltzr.Options.Builder.SeltzrOptionsBuilder%7B%60%600%2C%60%601%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Seltzr/Seltzr/new/master/apiSpec/new?filename=Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_AddSeltzr__2_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___.md&amp;value=---%0Auid%3A%20Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.AddSeltzr%60%602(Microsoft.AspNetCore.Builder.IApplicationBuilder%2CSystem.String%2CSystem.Action%7BSeltzr.Options.Builder.SeltzrOptionsBuilder%7B%60%600%2C%60%601%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/Seltzr/Extensions/SeltzrApplicationBuilderExtensions.cs/#L85">View Source</a>
+    <a href="https://github.com/Seltzr/Seltzr/blob/master/Seltzr/Extensions/SeltzrApplicationBuilderExtensions.cs/#L81">View Source</a>
   </span>
-  <a id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_UseSeltzr_" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.UseSeltzr*"></a>
-  <h4 id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_UseSeltzr__2_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.UseSeltzr``2(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.String,System.Action{Seltzr.Options.Builder.SeltzrOptionsBuilder{``0,``1}})">UseSeltzr&lt;TModel, TUser&gt;(IApplicationBuilder, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</h4>
-  <div class="markdown level1 summary"><p>Adds rest models middleware to the app</p>
+  <a id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_AddSeltzr_" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.AddSeltzr*"></a>
+  <h4 id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_AddSeltzr__2_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.AddSeltzr``2(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.String,System.Action{Seltzr.Options.Builder.SeltzrOptionsBuilder{``0,``1}})">AddSeltzr&lt;TModel, TUser&gt;(IApplicationBuilder, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds Seltzr middleware to the app</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -513,7 +518,8 @@ intended for application use.</p>
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>static</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#795E26;'>UseSeltzr</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>(</span><span style='color:#0000FF;'>this</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#001080;'>app</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#0000FF;'>string</span><span style='color:black;'> </span><span style='color:#001080;'>route</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Action</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>SeltzrOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>optionsHandler</span><span style='color:#222222;'>)</span><br /><span style='color:black;'>    </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TModel</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span><span style='color:black;'> </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span></code></pre>
+    <pre><code><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>static</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#795E26;'>AddSeltzr</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>(</span><span style='color:#0000FF;'>this</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#001080;'>app</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#0000FF;'>string</span><span style='color:black;'> </span><span style='color:#001080;'>route</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Action</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>SeltzrOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>optionsHandler</span><span style='color:#222222;'>)</span>
+<span style='color:black;'>    </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TModel</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span><span style='color:black;'> </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span></code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -528,19 +534,19 @@ intended for application use.</p>
       <tr>
         <td><span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span></td>
         <td><span class="parametername">app</span></td>
-        <td><p>The app to add rest models to</p>
+        <td><p>The app to add Seltzr to</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">route</span></td>
-        <td><p>The base route for rest models</p>
+        <td><p>The base route for Seltzr</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Action</span>&lt;<a class="xref" href="Seltzr.Options.Builder.SeltzrOptionsBuilder-2.html">SeltzrOptionsBuilder</a>&lt;TModel, TUser&gt;&gt;</td>
         <td><span class="parametername">optionsHandler</span></td>
-        <td><p>A handler to set options for this rest models API</p>
+        <td><p>A handler to set options for this Seltzr API</p>
 </td>
       </tr>
     </tbody>
@@ -584,14 +590,14 @@ intended for application use.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_UseSeltzr__2_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___System_Action_Microsoft_AspNetCore_Builder_IEndpointConventionBuilder__.md&amp;value=---%0Auid%3A%20Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.UseSeltzr%60%602(Microsoft.AspNetCore.Builder.IApplicationBuilder%2CSystem.String%2CSystem.Action%7BSeltzr.Options.Builder.SeltzrOptionsBuilder%7B%60%600%2C%60%601%7D%7D%2CSystem.Action%7BMicrosoft.AspNetCore.Builder.IEndpointConventionBuilder%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Seltzr/Seltzr/new/master/apiSpec/new?filename=Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_AddSeltzr__2_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___System_Action_Microsoft_AspNetCore_Builder_IEndpointConventionBuilder__.md&amp;value=---%0Auid%3A%20Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.AddSeltzr%60%602(Microsoft.AspNetCore.Builder.IApplicationBuilder%2CSystem.String%2CSystem.Action%7BSeltzr.Options.Builder.SeltzrOptionsBuilder%7B%60%600%2C%60%601%7D%7D%2CSystem.Action%7BMicrosoft.AspNetCore.Builder.IEndpointConventionBuilder%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/Seltzr/Extensions/SeltzrApplicationBuilderExtensions.cs/#L116">View Source</a>
+    <a href="https://github.com/Seltzr/Seltzr/blob/master/Seltzr/Extensions/SeltzrApplicationBuilderExtensions.cs/#L112">View Source</a>
   </span>
-  <a id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_UseSeltzr_" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.UseSeltzr*"></a>
-  <h4 id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_UseSeltzr__2_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___System_Action_Microsoft_AspNetCore_Builder_IEndpointConventionBuilder__" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.UseSeltzr``2(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.String,System.Action{Seltzr.Options.Builder.SeltzrOptionsBuilder{``0,``1}},System.Action{Microsoft.AspNetCore.Builder.IEndpointConventionBuilder})">UseSeltzr&lt;TModel, TUser&gt;(IApplicationBuilder, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;, Action&lt;IEndpointConventionBuilder&gt;)</h4>
-  <div class="markdown level1 summary"><p>Adds rest models middleware to the app</p>
+  <a id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_AddSeltzr_" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.AddSeltzr*"></a>
+  <h4 id="Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions_AddSeltzr__2_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_String_System_Action_Seltzr_Options_Builder_SeltzrOptionsBuilder___0___1___System_Action_Microsoft_AspNetCore_Builder_IEndpointConventionBuilder__" data-uid="Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.AddSeltzr``2(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.String,System.Action{Seltzr.Options.Builder.SeltzrOptionsBuilder{``0,``1}},System.Action{Microsoft.AspNetCore.Builder.IEndpointConventionBuilder})">AddSeltzr&lt;TModel, TUser&gt;(IApplicationBuilder, String, Action&lt;SeltzrOptionsBuilder&lt;TModel, TUser&gt;&gt;, Action&lt;IEndpointConventionBuilder&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds Seltzr middleware to the app</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -599,7 +605,8 @@ intended for application use.</p>
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>static</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#795E26;'>UseSeltzr</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>(</span><span style='color:#0000FF;'>this</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#001080;'>app</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#0000FF;'>string</span><span style='color:black;'> </span><span style='color:#001080;'>route</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Action</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>SeltzrOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>optionsHandler</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Action</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>IEndpointConventionBuilder</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>routeOptionsHandler</span><span style='color:#222222;'>)</span><br /><span style='color:black;'>    </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TModel</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span><span style='color:black;'> </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span></code></pre>
+    <pre><code><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>static</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#795E26;'>AddSeltzr</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>(</span><span style='color:#0000FF;'>this</span><span style='color:black;'> </span><span style='color:#267F99;'>IApplicationBuilder</span><span style='color:black;'> </span><span style='color:#001080;'>app</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#0000FF;'>string</span><span style='color:black;'> </span><span style='color:#001080;'>route</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Action</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>SeltzrOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>optionsHandler</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Action</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>IEndpointConventionBuilder</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>routeOptionsHandler</span><span style='color:#222222;'>)</span>
+<span style='color:black;'>    </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TModel</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span><span style='color:black;'> </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span></code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -614,19 +621,19 @@ intended for application use.</p>
       <tr>
         <td><span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span></td>
         <td><span class="parametername">app</span></td>
-        <td><p>The app to add rest models to</p>
+        <td><p>The app to add Seltzr to</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">route</span></td>
-        <td><p>The base route for rest models</p>
+        <td><p>The base route for Seltzr</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Action</span>&lt;<a class="xref" href="Seltzr.Options.Builder.SeltzrOptionsBuilder-2.html">SeltzrOptionsBuilder</a>&lt;TModel, TUser&gt;&gt;</td>
         <td><span class="parametername">optionsHandler</span></td>
-        <td><p>A handler to set options for this rest models API</p>
+        <td><p>A handler to set options for this Seltzr API</p>
 </td>
       </tr>
       <tr>
@@ -682,10 +689,10 @@ intended for application use.</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions.md&amp;value=---%0Auid%3A%20Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Seltzr/Seltzr/new/master/apiSpec/new?filename=Microsoft_Extensions_DependencyInjection_SeltzrApplicationBuilderExtensions.md&amp;value=---%0Auid%3A%20Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/jlynch630/RestModels/blob/master/Seltzr/Extensions/SeltzrApplicationBuilderExtensions.cs/#L26" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Seltzr/Seltzr/blob/master/Seltzr/Extensions/SeltzrApplicationBuilderExtensions.cs/#L26" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

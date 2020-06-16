@@ -5,14 +5,26 @@
   "files": [
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.EFCoreSeltzrApplicationBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.EFCoreSeltzrApplicationBuilderExtensions.html",
+          "hash": "Ow1Q5h7STzD+fsrTHJiqxA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.EntityFrameworkSeltzrApplicationBuilderExtensions.yml",
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.Extensions.DependencyInjection.EntityFrameworkSeltzrApplicationBuilderExtensions.html",
-          "hash": "in+Ob+/77su4InZM4HhgYQ=="
+          "hash": "5rGI9HX74tR5Qq6u+vUzsQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -21,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.Extensions.DependencyInjection.SeltzrApplicationBuilderExtensions.html",
-          "hash": "MfQwv7q1B0k93i8q3PO++Q=="
+          "hash": "iuOqz3Q507moJho1oMWrsg=="
         }
       },
       "is_incremental": false,
@@ -33,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.Extensions.DependencyInjection.html",
-          "hash": "GFQWv/ZSwsoHFXfuksaeZA=="
+          "hash": "V8UPvmE1aq7W/fk7yWan+w=="
         }
       },
       "is_incremental": false,
@@ -45,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Actions.DelegatePostOpAction-2.html",
-          "hash": "1xgCfA7nIh72hYrHCEzG/A=="
+          "hash": "Ev78aHwDpgm7o8/5hLte4w=="
         }
       },
       "is_incremental": false,
@@ -57,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Actions.DelegatePreOpAction-2.html",
-          "hash": "obAVZ9YvxCCY0ssdyw9bMQ=="
+          "hash": "u+n1BgrYqcxz+OyhoUzEFw=="
         }
       },
       "is_incremental": false,
@@ -69,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Actions.IPostOpAction-2.html",
-          "hash": "5UuuYI4loGOWDAKTAR0aIg=="
+          "hash": "IlhctF/SxH4hOEIdxdyBpA=="
         }
       },
       "is_incremental": false,
@@ -81,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Actions.IPreOpAction-2.html",
-          "hash": "zktENhZjKnv+73haQIlClA=="
+          "hash": "bYUzTo5UNSLlgUX1n6lYyg=="
         }
       },
       "is_incremental": false,
@@ -105,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Auth.BasicAuthProvider-2.html",
-          "hash": "lDGEPol267dytyzXGak1iQ=="
+          "hash": "ZUNUstM8oHfmgs5baL1aCw=="
         }
       },
       "is_incremental": false,
@@ -117,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Auth.DelegateAuthProvider-2.html",
-          "hash": "2RbAWS6YNBCUgHKSi0x5yA=="
+          "hash": "fMuZ29w27+AqD9DBUlOlMw=="
         }
       },
       "is_incremental": false,
@@ -129,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Auth.HeaderAuthProvider-2.html",
-          "hash": "o9PtUwEjosp1nDcLSLDpXw=="
+          "hash": "XHje7Be+WKhruwY7DZ7j2Q=="
         }
       },
       "is_incremental": false,
@@ -141,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Auth.IAuthProvider-2.html",
-          "hash": "MXI0dIJ0bQSAh4dZRjJacQ=="
+          "hash": "ih+Vt4wbaqXmUSRmrABmRQ=="
         }
       },
       "is_incremental": false,
@@ -153,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Auth.IdentityAuthProvider-2.html",
-          "hash": "kDtouOoQDC5qx/E+4oOfUg=="
+          "hash": "uIoURRXbKYGWSyWuQLydDA=="
         }
       },
       "is_incremental": false,
@@ -165,10 +177,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Auth.NoUser.html",
-          "hash": "dmszN5uLWku/HWbwXh6Nbg=="
+          "hash": "ER6LzmL5YlejR1hOz/hCmg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -177,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Auth.QueryAuthProvider-2.html",
-          "hash": "OustiY2rccHtNNxXiC5+LQ=="
+          "hash": "OxDijNEmDPijsbBT1RBBDg=="
         }
       },
       "is_incremental": false,
@@ -201,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Conditions.DelegateCondition-2.html",
-          "hash": "H53d1HegdKyfYce1RK7H3g=="
+          "hash": "Mzm5jdodGf7eceOxX1nAiQ=="
         }
       },
       "is_incremental": false,
@@ -213,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Conditions.ICondition-2.html",
-          "hash": "PhdLztshDkQMz24cAWB0ZQ=="
+          "hash": "oe8+OQQdYmcAGYvfxrG6nQ=="
         }
       },
       "is_incremental": false,
@@ -237,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Context.ApiContext-2.html",
-          "hash": "4RlPWDwlDphlnQeYnZ5GJg=="
+          "hash": "MMBa9kvpVQAfSZ9YrtkyHQ=="
         }
       },
       "is_incremental": false,
@@ -249,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Context.IApiContext-2.html",
-          "hash": "vis7ubS+qLz/k6vb4e6U9w=="
+          "hash": "WjdVPV+UmN3iFxKUYbInCA=="
         }
       },
       "is_incremental": false,
@@ -273,10 +285,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.EntityFramework.EntityFrameworkModelProvider-2.html",
-          "hash": "S9cfEgFPBmayJYXBvRlqNA=="
+          "hash": "aSYjEvv7R/0kS3RdERbHUg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -285,10 +297,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.EntityFramework.Operations.CreateOperation-2.html",
-          "hash": "vlERjG5Pw2CoOFYiIeNLcA=="
+          "hash": "6+SAaAlZzuhygE7xWi2Mow=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -297,10 +309,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.EntityFramework.Operations.DeleteOperation-2.html",
-          "hash": "MQUqpNKABWs/+FiLg14xvg=="
+          "hash": "vgjsYDKbK3DQCxhYGfTRQQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -309,10 +321,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.EntityFramework.Operations.UpdateOperation-2.html",
-          "hash": "FA/8SOvk3BfgNoxZ5DYk+A=="
+          "hash": "uNccAhu0jH2VyZ3zRhVjrQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -324,7 +336,7 @@
           "hash": "StymDuTlhB3YgodF14udRg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -333,7 +345,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.EntityFramework.Options.EntityFrameworkSeltzrOptionsBuilder-2.html",
-          "hash": "4XPCJcPmqedaexlALkeZjw=="
+          "hash": "dMxajbn19J1XJthRw4dTNw=="
         }
       },
       "is_incremental": false,
@@ -360,7 +372,103 @@
           "hash": "Qjjz4b9N5Z2artlEzLcy9g=="
         }
       },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Seltzr.EntityFrameworkCore.EntityFrameworkModelProvider-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Seltzr.EntityFrameworkCore.EntityFrameworkModelProvider-2.html",
+          "hash": "1k/VQ9nPn98W5RJ3ZHHxNw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Seltzr.EntityFrameworkCore.Operations.CreateOperation-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Seltzr.EntityFrameworkCore.Operations.CreateOperation-2.html",
+          "hash": "sL9ET7hk+nsMgSmQ1WPbog=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Seltzr.EntityFrameworkCore.Operations.DeleteOperation-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Seltzr.EntityFrameworkCore.Operations.DeleteOperation-2.html",
+          "hash": "9x4PAS/2AGLnog9d8y6N2A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Seltzr.EntityFrameworkCore.Operations.UpdateOperation-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Seltzr.EntityFrameworkCore.Operations.UpdateOperation-2.html",
+          "hash": "RdPWC740762jyQLdv4NAUA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Seltzr.EntityFrameworkCore.Operations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Seltzr.EntityFrameworkCore.Operations.html",
+          "hash": "DvzAgfQgMa0UUDuNCvvZEw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Seltzr.EntityFrameworkCore.Options.EntityFrameworkSeltzrOptionsBuilder-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Seltzr.EntityFrameworkCore.Options.EntityFrameworkSeltzrOptionsBuilder-2.html",
+          "hash": "vwu20HqMVXMiB7vdk/ZHBw=="
+        }
+      },
       "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Seltzr.EntityFrameworkCore.Options.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Seltzr.EntityFrameworkCore.Options.html",
+          "hash": "0CItlWRmCNid9HSKMrj9OQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Seltzr.EntityFrameworkCore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Seltzr.EntityFrameworkCore.html",
+          "hash": "4k2js2zkyZDS3HVjjOJ7sg=="
+        }
+      },
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -369,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.ExceptionHandlers.AuthFailedExceptionHandler.html",
-          "hash": "cKms/XCWwl5YR8YZZngUig=="
+          "hash": "TLc1wZSYAlh73jG8jMgaPA=="
         }
       },
       "is_incremental": false,
@@ -381,7 +489,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.ExceptionHandlers.DelegateExceptionHandler.html",
-          "hash": "mg6TDrNvPmMLoX9szBX1tA=="
+          "hash": "+eePsKtSsIM0M4O0/X7Mtw=="
         }
       },
       "is_incremental": false,
@@ -393,10 +501,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.ExceptionHandlers.IExceptionHandler.html",
-          "hash": "YPV1MBOoiUimRPkqpAws2A=="
+          "hash": "GsBMqdKvIXzlPIOZ7ZjfvA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -405,7 +513,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.ExceptionHandlers.SimpleExceptionHandler.html",
-          "hash": "f64CNrGJvdrTfjlC5XthyQ=="
+          "hash": "LYNI78CsUyRw/jyY8BP8cw=="
         }
       },
       "is_incremental": false,
@@ -429,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Exceptions.ApiException.html",
-          "hash": "45gyUR1tQUnvIMDkJhe0zQ=="
+          "hash": "75JzB3ufcHHN21FvWhAw4w=="
         }
       },
       "is_incremental": false,
@@ -441,7 +549,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Exceptions.AuthFailedException.html",
-          "hash": "G9Khbxvjb8Tgch4tRp2SPQ=="
+          "hash": "RT4ckY54O+XeKXQ434bNpA=="
         }
       },
       "is_incremental": false,
@@ -453,7 +561,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Exceptions.ConditionFailedException.html",
-          "hash": "SRonVtubUcWy/MluAPct7g=="
+          "hash": "tkLCIGuW3WhNQy3jDth9ng=="
         }
       },
       "is_incremental": false,
@@ -465,7 +573,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Exceptions.ErrorCodes.html",
-          "hash": "7OKMF0dGppMqSfWWPo+RRA=="
+          "hash": "oHs5RpeW5zIddL9wiiy0Bg=="
         }
       },
       "is_incremental": false,
@@ -477,7 +585,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Exceptions.OperationFailedException.html",
-          "hash": "q5R4ggLASqKcToBohgZJVQ=="
+          "hash": "vqr7CKK2jT0euN/1XiliMQ=="
         }
       },
       "is_incremental": false,
@@ -489,7 +597,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Exceptions.OptionsException.html",
-          "hash": "8gjS6r14N+AvFMtghAuJzA=="
+          "hash": "6YdHfJvEovnZnkPyurUBXA=="
         }
       },
       "is_incremental": false,
@@ -501,7 +609,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Exceptions.ParsingFailedException.html",
-          "hash": "gPJbb2Y4jgMrKIleJOhhPg=="
+          "hash": "IZh2elVOx9SRpH8W0Ivbmg=="
         }
       },
       "is_incremental": false,
@@ -513,7 +621,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Exceptions.WritingFailedException.html",
-          "hash": "48/y/ISpgq8cq+1R0E54Kw=="
+          "hash": "N5K8TEHC4CZvs06A7u/TJQ=="
         }
       },
       "is_incremental": false,
@@ -537,7 +645,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Extensions.SeltzrOptionsBuilderExtensions.html",
-          "hash": "H1BTqxAu2Ewegj7FkflJyw=="
+          "hash": "Y2rHz8dQxw82/nFC89cYyA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.html",
+          "hash": "uREdvghkEfkb+qGKVAJfHQ=="
         }
       },
       "is_incremental": false,
@@ -549,7 +669,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Extensions.html",
-          "hash": "p9SbpzRzbtCyVsL/m2QiNw=="
+          "hash": "5vROVyZ3KoN3yXQf2paZvw=="
         }
       },
       "is_incremental": false,
@@ -561,7 +681,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Filters.DelegateFilter-2.html",
-          "hash": "ggsax0bqXsze6070zQE0qQ=="
+          "hash": "5RAARmC+tRPHZpyn4bOn9g=="
         }
       },
       "is_incremental": false,
@@ -573,7 +693,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Filters.IFilter-1.html",
-          "hash": "tLlXcwXbyZxGhMv0GTQD0w=="
+          "hash": "BveCMs3b22I4mTKOd4AKcw=="
         }
       },
       "is_incremental": false,
@@ -585,7 +705,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Filters.IFilter-2.html",
-          "hash": "KDp9dZyj+/kCAH6oYXHb1A=="
+          "hash": "d2EjP+xUhgQ+YQBV4JiCRQ=="
         }
       },
       "is_incremental": false,
@@ -597,10 +717,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Filters.ParameterResolver.html",
-          "hash": "UcILmO5G0gLBHtlL444flQ=="
+          "hash": "IpfkK5D+C8j3dzMmA+vivQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -621,7 +741,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Models.IModelProvider-1.html",
-          "hash": "Z7y4lAWFs6ERAlxd2KtC9A=="
+          "hash": "Sh07xyFQ4R1ZRz7ctp8cmw=="
         }
       },
       "is_incremental": false,
@@ -633,7 +753,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Models.IModelProvider-2.html",
-          "hash": "w+lP9gdLKBg9LsTuEf7a8g=="
+          "hash": "71yAqaPLbU2uqZzMpLYsrQ=="
         }
       },
       "is_incremental": false,
@@ -657,7 +777,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Operations.IOperation-1.html",
-          "hash": "0KLWyWEWb37EWjAVOsYoxQ=="
+          "hash": "Y1W/1Zpl6Mv5AGtF0ibv3Q=="
         }
       },
       "is_incremental": false,
@@ -669,7 +789,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Operations.IOperation-2.html",
-          "hash": "0WqMORSOOrjA8eLuMdhWtw=="
+          "hash": "GAOefCZTccmFl4lDzu752g=="
         }
       },
       "is_incremental": false,
@@ -693,7 +813,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Options.Builder.SeltzrOptionsBuilder-2.html",
-          "hash": "0ugXyqzYNq/2nKxvG546ZA=="
+          "hash": "8wiPUSrDr/TBBJ5+S+goHA=="
         }
       },
       "is_incremental": false,
@@ -717,7 +837,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Options.FormattingOptions.html",
-          "hash": "NSM8gmeZb3nHVLbmczNwnA=="
+          "hash": "1mBF0u2xOpZs7lplhpVgRA=="
         }
       },
       "is_incremental": false,
@@ -729,10 +849,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Options.ParserOptions.html",
-          "hash": "pSczoES7VFI5qx4mJmiI0Q=="
+          "hash": "31bzFxB+sOK3RsXdFiPMPg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -741,7 +861,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Options.SeltzrOptions-2.html",
-          "hash": "wJARkGbO9/lA45jEEYkc5Q=="
+          "hash": "T5xRJLi66QIUa1NVomQJ2Q=="
         }
       },
       "is_incremental": false,
@@ -765,10 +885,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.OrmBase.Filters.PrimaryKeyFilter-1.html",
-          "hash": "qdWHa5vAYJe17kZkpwJnqg=="
+          "hash": "x1qmbm4gs6tbLRrghBgl8A=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -780,7 +900,7 @@
           "hash": "OfGMdK2eaEFDxQbw+yOo+Q=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -789,10 +909,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.OrmBase.IOrmDataProvider-2.html",
-          "hash": "yaDqRCO3uPZJkVHTDQAvqQ=="
+          "hash": "8UD4TCWTX39JOy54Oi4zrw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -801,10 +921,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.OrmBase.KeyProperty.html",
-          "hash": "KLSFgsMn7AMYFzjIwdmBsg=="
+          "hash": "6wB3hhbuvGfFfuND/UI2XQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -813,7 +933,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.OrmBase.Options.IOrmSeltzrOptionsBuilder-2.html",
-          "hash": "q46EDB+v0IgkayRYsFklBA=="
+          "hash": "VJ7GEmbAWu0sMpwc9v0jZw=="
         }
       },
       "is_incremental": false,
@@ -840,7 +960,7 @@
           "hash": "7jO2RGgXUnKg/o1ypqAnIg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -849,7 +969,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.ParameterRetrievers.HeaderRetriever.html",
-          "hash": "YJNYszIy+K3oPxi0VycdaQ=="
+          "hash": "C5jwKhUUisT/dhkeFOb4cA=="
         }
       },
       "is_incremental": false,
@@ -861,7 +981,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.ParameterRetrievers.ParameterRetriever.html",
-          "hash": "UozZ0Nk5UNGJtJrxgyajkw=="
+          "hash": "oYyrC0k/TH28+Z14mz3KxA=="
         }
       },
       "is_incremental": false,
@@ -873,7 +993,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.ParameterRetrievers.QueryParameterRetriever.html",
-          "hash": "WO24PKyZsjIbfJcue8UsfA=="
+          "hash": "fPfvs7n3webFsmYaEmnbXg=="
         }
       },
       "is_incremental": false,
@@ -885,7 +1005,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.ParameterRetrievers.RouteValueRetriever.html",
-          "hash": "1Rh0Zb3Ql6FBBAeTwK8jTg=="
+          "hash": "piVO3i5U5Ewqu36o9cYVbw=="
         }
       },
       "is_incremental": false,
@@ -909,10 +1029,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Parsers.IBodyParser-1.html",
-          "hash": "MFblc/36c8WjwdWBORH4Cw=="
+          "hash": "Zc8pTeb9PDcstnE4rIuPdw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -921,7 +1041,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Parsers.JsonBodyParser-1.html",
-          "hash": "pbmYYY/JN8CgquEcIB37nw=="
+          "hash": "zOxwqy0huBHXADkODKNHDg=="
         }
       },
       "is_incremental": false,
@@ -933,10 +1053,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Parsers.ParseResult-1.html",
-          "hash": "R0wAr4qu3ui2N5/isitW/w=="
+          "hash": "8ym6R9gFVBQH8VI31FVuSQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -945,7 +1065,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Parsers.XmlBodyParser-1.html",
-          "hash": "k5nZTjVRZvHG/mXmHtTtfw=="
+          "hash": "adqEZKQQrw7+ej3S5IYXww=="
         }
       },
       "is_incremental": false,
@@ -969,7 +1089,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Responses.Attributes.ApiVersionAttribute.html",
-          "hash": "kB/ZpoC6LjtJSTuzmZULjQ=="
+          "hash": "fKRr+Gr91PZxDrKvb+kLTw=="
         }
       },
       "is_incremental": false,
@@ -981,7 +1101,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Responses.Attributes.CurrentPageAttribute.html",
-          "hash": "DiIRa1jYXI4LO9aWlZnokQ=="
+          "hash": "D1GCtRgVrPww2yGwqzfHUA=="
         }
       },
       "is_incremental": false,
@@ -993,7 +1113,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Responses.Attributes.DeprecationNoticeAttribute.html",
-          "hash": "aQZMPgC5Z0ha5sbosZdOFw=="
+          "hash": "aV+wnuZLbjY/A+H9iW7aug=="
         }
       },
       "is_incremental": false,
@@ -1005,7 +1125,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Responses.Attributes.ModelCountAttribute.html",
-          "hash": "Lrqf4aJFi1B7vPHm1gdthg=="
+          "hash": "RHih3tGejwDhApbmSzh65g=="
         }
       },
       "is_incremental": false,
@@ -1017,7 +1137,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Responses.Attributes.ResponseValueAttribute.html",
-          "hash": "fsL3tPnDoqxguS0QjrERTQ=="
+          "hash": "pGyU2UrA2S1azFwcw/vdtQ=="
         }
       },
       "is_incremental": false,
@@ -1029,7 +1149,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Responses.Attributes.TotalPagesAttribute.html",
-          "hash": "Eth3JUFlVJ0JNqJb0Thy0Q=="
+          "hash": "7HGwaJQBk2zQOaoz7NbIVw=="
         }
       },
       "is_incremental": false,
@@ -1053,7 +1173,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Responses.BasicResponse-1.html",
-          "hash": "HhSEJiarfM79EBggL+JuCQ=="
+          "hash": "UyfEoEItRHComsfHi+MBFQ=="
         }
       },
       "is_incremental": false,
@@ -1065,7 +1185,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Responses.Response-1.html",
-          "hash": "XPpvKol5MpbYfyxh07bI1Q=="
+          "hash": "LzRHKecaBqvbSjKtPMZ85Q=="
         }
       },
       "is_incremental": false,
@@ -1089,7 +1209,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Results.AcceptDependentResultWriter-2.html",
-          "hash": "bVmWHIrYfQL4K6Zt1TemjA=="
+          "hash": "O53W2sUuENYPecYxRcKsIg=="
         }
       },
       "is_incremental": false,
@@ -1101,7 +1221,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Results.HeaderDependentResultWriter-2.html",
-          "hash": "XiP53YRDmJOUxa6fbcmU1A=="
+          "hash": "4rFPIZbQj2R9jfxMyOutAQ=="
         }
       },
       "is_incremental": false,
@@ -1113,7 +1233,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Results.IResultWriter-1.html",
-          "hash": "eQlizyhNYFB7qPpxeRdn9w=="
+          "hash": "QAA4z9qeQLXPARaq4F+zDw=="
         }
       },
       "is_incremental": false,
@@ -1125,7 +1245,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Results.IResultWriter-2.html",
-          "hash": "Cr4UuFLIQXu9Mz63GbHNGQ=="
+          "hash": "bIVDG7fi5qlpkLXxkoL80g=="
         }
       },
       "is_incremental": false,
@@ -1137,10 +1257,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Results.Json.IModelJsonConverter.html",
-          "hash": "B5kKAzE0ZUivevOGAPMXJQ=="
+          "hash": "K8ezSSJ5eA4KJJkNeYNECQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1149,7 +1269,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Results.Json.JsonResultWriter-1.html",
-          "hash": "92Ic86O6J/MaNMIqs4uUrw=="
+          "hash": "H16gS1BO3Usud5+3zrPBKw=="
         }
       },
       "is_incremental": false,
@@ -1161,7 +1281,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Results.Json.ModelJsonConverter-1.html",
-          "hash": "DHT9ddxIrbRhyc2hYqRA0w=="
+          "hash": "DGsFLltXKu2LpASg77r3yQ=="
         }
       },
       "is_incremental": false,
@@ -1185,7 +1305,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Results.NumberAffectedResultWriter-1.html",
-          "hash": "PxO9UfXIkcBhF8quyVdykA=="
+          "hash": "S0otVGjnTEOWuNlx2y/L+w=="
         }
       },
       "is_incremental": false,
@@ -1197,7 +1317,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Results.QueryDependentResultWriter-2.html",
-          "hash": "pdEId58sxkO545e8Y0uwdA=="
+          "hash": "ntDbqvfROE4IZQBBi398vw=="
         }
       },
       "is_incremental": false,
@@ -1209,7 +1329,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Results.RequestDependentResultWriter-2.html",
-          "hash": "zzkRteCYUrFPajXN4clinQ=="
+          "hash": "YmXeNt7QwiOrB3BYZ9l7jQ=="
         }
       },
       "is_incremental": false,
@@ -1221,7 +1341,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Results.StringResultWriter-1.html",
-          "hash": "Kp0X/PaX9mSI+iW16afQPQ=="
+          "hash": "dnn+qQ1vCJIOhnbvm0qEhA=="
         }
       },
       "is_incremental": false,
@@ -1233,7 +1353,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Seltzr.Results.XmlResultWriter-1.html",
-          "hash": "Sq3tEBps5e7PrWbvXQuthg=="
+          "hash": "LKajJxvAv6FpKLL7syktSw=="
         }
       },
       "is_incremental": false,
@@ -1257,7 +1377,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "LjWZM+0OtlfpF1AVgJRTaA=="
+          "hash": "FHRS8SvpeVCOlqOuzT2EuQ=="
         }
       },
       "is_incremental": false,
@@ -1269,7 +1389,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "drFzTCnS58QRn+Z+GTM8Gg=="
+          "hash": "Kp7NAK6rOzgviQDtm31KIQ=="
         }
       },
       "is_incremental": false,
@@ -1284,7 +1404,22 @@
       "output": {
         ".html": {
           "relative_path": "articles/getting_started/efcore.html",
-          "hash": "QG2cLd0HAME4fLfPgiEvkA=="
+          "hash": "jkILlI86R1nY2uqJZ7/MJw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "UidNotFound"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "articles/getting_started/efcore.old.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/getting_started/efcore.old.html",
+          "hash": "sSp6Gmd9hqOmSIP8DEoTnQ=="
         }
       },
       "is_incremental": false,
@@ -1296,10 +1431,34 @@
       "output": {
         ".html": {
           "relative_path": "articles/getting_started/toc.html",
-          "hash": "D2xSAE2g1QM0VUGT34HQYg=="
+          "hash": "qFDCI/6+uVdlz6TceWnOrg=="
         }
       },
       "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/getting_started/todo_auth.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/getting_started/todo_auth.html",
+          "hash": "oM876PY6E7kkFFIqTvkSdg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/getting_started/todo_pagination.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/getting_started/todo_pagination.html",
+          "hash": "faPbsartZQcdBllycbivqw=="
+        }
+      },
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1308,10 +1467,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "nywRQYFAcjPt5FLI5tfm2g=="
+          "hash": "fBiXT/iRdKtA+Hz8URbucw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1324,7 +1483,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/request_flow/index.html",
-          "hash": "ZaE6vfpOvkGUkpRRL7u37A=="
+          "hash": "bRbNgTt88C00fEur+lmLxg=="
         }
       },
       "is_incremental": false,
@@ -1336,22 +1495,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/request_flow/routing.html",
-          "hash": "0liRUg2NOsXhQY/p9oR6Rw=="
+          "hash": "cWp3fhfAlhcZAm8kg+c7vA=="
         }
       },
       "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "articles/request_flow/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "articles/request_flow/toc.html",
-          "hash": "wr6TokP2EcucP1Y39G3Syw=="
-        }
-      },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1360,7 +1507,18 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "H2IgAgj8Uhv8zw5ay0qGkQ=="
+          "hash": "/v9SFDMhk9SP3bsBuFrx0g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/getting_started/todo/complete.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/getting_started/todo/complete.jpg"
         }
       },
       "is_incremental": false,
@@ -1375,10 +1533,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "3BqHHy+jKwxsLUbkq+4kFg=="
+          "hash": "WbPZ7kkqnuG5yuQBJYc1XA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1406,14 +1564,21 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 6,
-          "skipped_file_count": 4
+          "total_file_count": 9,
+          "skipped_file_count": 9
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 104,
-          "skipped_file_count": 31
+          "total_file_count": 114,
+          "skipped_file_count": 54
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

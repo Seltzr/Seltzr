@@ -25,34 +25,46 @@ const registry = new textmate.Registry({
         createOnigString: (str) => new oniguruma.OnigString(str)
     }),
     loadGrammar: (scopeName) => {
-        if (scopeName === 'source.cs') {
-            return readFile('./csharp.tmLanguage.json').then(data => {
-                let grammar = textmate.parseRawGrammar(data.toString(), ".json");
-                return grammar;
-            });
-        }
-        console.log(`Unknown scope name: ${scopeName}`);
-        return null;
+        return readFile(`./${scopeName}.tmLanguage.json`).then(data => {
+            let grammar = textmate.parseRawGrammar(data.toString(), ".json");
+            return grammar;
+        });
     }
 });
 
-registry.loadGrammar('source.cs').then(grammar => {
-    //updateFile("C:/workspace/Seltzr/docs/docfx_project/_site/articles/request_flow/index.html", grammar);
+async function main() {
+    // edit docfx.js too! line 84
+    let grammars = {
+        "csharp": await registry.loadGrammar('source.cs'),
+        "html": await registry.loadGrammar('text.html.basic'),
+        "js": await registry.loadGrammar('source.js'),
+        "cshtml": await registry.loadGrammar("text.html.cshtml"),
+        "powershell": await registry.loadGrammar("source.powershell"),
+        "bash":  await registry.loadGrammar("source.shell")
+    };
+
     let root = path.resolve(__dirname, "../../docs");
     let files = getAllFiles(root).filter(f => f.endsWith(".html"));
-    files.forEach(f => updateFile(f, grammar));
-});
+    files.forEach(f => updateFile(f, grammars));
+}
 
-async function updateFile(path, grammar) {
+main();
+
+async function updateFile(path, grammars) {
     let contents = (await readFile(path)).toString();
     let rootNode = htmlParser.parse(contents, { pre: true });
     let codeBlocks = rootNode.querySelectorAll("pre");
     let updated = 0;
     for (let i = 0; i < codeBlocks.length; i++) {
         let node = codeBlocks[i];
-        let colorized = colorizeNode(node.text, grammar);
+        let colorized = colorizeNode(node.text, grammars);
         if (colorized){
-            node.set_content(colorized);
+            let parentIndex = node.parentNode.childNodes.indexOf(node);
+            if (colorized.header) { // header
+                node.parentNode.childNodes.splice(parentIndex, 0, colorized.header);
+                node.setAttribute("id", colorized.id);
+            }
+            node.set_content(colorized.text);
             updated++;
         }
     }
@@ -62,17 +74,53 @@ async function updateFile(path, grammar) {
     await writeFile(path, result);
     console.log(`Updated ${updated} codeblocks in ${path}`);
 }
-function colorizeNode(raw, grammar) {
-    if (!raw.startsWith('<code class="lang-csharp">')) return null;
-    raw = raw.substring(26);
+function colorizeNode(raw, grammars) {
+    let startMatch = raw.match(/^<code class="lang-(\w+)"(.*?)(highlight-lines="(.*?)"(.*?))?>/);
+    if (!startMatch) return null;
+    let grammar = grammars[startMatch[1]]
+    if (!grammar) return null;
+    raw = raw.substring(startMatch[0].length);
     if (raw.endsWith('</code>')) raw = raw.substring(0, raw.length - 7);
     const text = raw.split('\n').map(l => l.replace(/\r/g, ""));
+    const highlightLines = startMatch[4] ? startMatch[4].split(",").map(range => {
+        let rangeParts = range.split("-").map(p => parseInt(p));
+        return { start: rangeParts[0], end: rangeParts[rangeParts.length - 1] };
+    }) : [];
+
+    // header
+    let headerMatch = text.length > 0 && text[0].match(/^(\/\/\s)?---\sHeader: (.*)\s(nocopy)?---$/i);
+    let header = null;
+    let id = null;
+    if (headerMatch) {
+        id = randomString(8);
+        let headerText = headerMatch[2];
+        header = new htmlParser.HTMLElement("div", { class: "code-header" });
+        let textContainer = new htmlParser.HTMLElement("span", {class: "language"});
+        textContainer.appendChild(new htmlParser.TextNode(headerText));
+        header.appendChild(textContainer)
+
+        if (!headerMatch[3]){ // nocopy not specified
+            let spacer = new htmlParser.HTMLElement("div", {class: "spacer"});
+            let copyBtn = new htmlParser.HTMLElement("button", {class: "copy-btn"});
+            copyBtn.setAttribute("onclick", `copyCode(this,'${id}')`);
+            copyBtn.appendChild(new htmlParser.TextNode("Copy"));
+            header.appendChild(spacer);
+            header.appendChild(copyBtn);
+        }
+
+        text.splice(0, 1); // remove header
+    }
 
     let output = "";
     let ruleStack = textmate.INITIAL;
     for (let i = 0; i < text.length; i++) {
         const line = text[i];
         const lineTokens = grammar.tokenizeLine(line, ruleStack);
+        const lineNumber = i + 1;
+        const doHighlight = highlightLines.some(r => r.start <= lineNumber && lineNumber <= r.end);
+        if (doHighlight)
+            output += '<span class="line-highlight">';
+
         for (let j = 0; j < lineTokens.tokens.length; j++) {
             const token = lineTokens.tokens[j];
             let sub = line.substring(token.startIndex, token.endIndex);
@@ -91,12 +139,23 @@ function colorizeNode(raw, grammar) {
                 output += `<span style='${style}'>${escapeHtml(sub)}</span>`;
             }
         }
+        
+        if (doHighlight)
+            output += '</span>';
         if (i < (text.length - 1))
-            output += '<br />';
+            output += doHighlight ? '<span class="newline">\n</span>' : '\n';
         ruleStack = lineTokens.ruleStack;
     }
 
-    return new htmlParser.TextNode(`<code class='lang-csharp'>${output}</code>`);
+    return { text: new htmlParser.TextNode(`<code>${output}</code>`), header, id };
+}
+
+function randomString(length) {
+    var randomChar = function () { return String.fromCharCode(Math.floor((Math.random() * (123 - 97)) + 97)); };
+    var str = "";
+    for (var i = 0; i < length; i++)
+        str += randomChar();
+    return str;
 }
 
 function matchScope(scope) {

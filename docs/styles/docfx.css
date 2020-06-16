@@ -840,7 +840,10 @@ footer {
 
 /* For code snippet line highlight */
 pre > code .line-highlight {
-  background-color: #ffffcc;
+  display: block;
+    background-color: #ddf4ff;
+    margin: 0 -9.5px;
+    padding-left: 9.5px;
 }
 
 /* Alerts */
@@ -944,10 +947,12 @@ div.embeddedvideo iframe {
     padding: 15px;
     margin: 0;
     overflow: hidden; }
-    .tabGroup section[role="tabpanel"] > .codeHeader,
+    .tabGroup section[role="tabpanel"] > .code-header,
     .tabGroup section[role="tabpanel"] > pre {
       margin-left: -16px;
       margin-right: -16px; }
+      
+    .tabGroup section[role="tabpanel"] > .code-header:first-child,
     .tabGroup section[role="tabpanel"] > pre:first-child {
       margin-top: -16px; }
     .tabGroup section[role="tabpanel"] > pre:last-child {
@@ -960,4 +965,53 @@ div.embeddedvideo iframe {
 /* Custom */
 img[alt="logo"] {
   max-width: 75px;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+button.copy-btn {
+  outline: 0;
+  border: none;
+  border-left: 1px solid #e3e3e3;
+  padding: 0 15px;
+  height: 30px;
+  border-radius: 0;
+  background: none;
+  color: inherit;
+  transition: background-color 100ms ease;
+  width: 80px;
+}
+
+button.copy-btn:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+button.copy-btn:active {
+  background-color: rgba(0,0,0,0.2);
+}
+
+button.copy-btn.copied {
+  transition: background-color 300ms ease, color 300ms ease;
+  background: #2E7D32;
+  color: white;
+}
+
+span.newline {
+  white-space: normal;
+}
+
+pre {
+  word-break: normal;
+}
+
+.container {
+  padding: 0 15px;
+  margin: 0 80px;
+  width: auto;
+}
+
+body {
+  font-size: 16px;
 }

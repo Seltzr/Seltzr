@@ -1,2 +1,10 @@
 - name: Getting Started with Entity Framework Core
   href: efcore.md
+- name: Getting Started with Entity Framework Core (Old)
+  href: efcore.old.md
+- name: Extending the Todo App
+  items:
+  - name: "Pagination"
+    href: todo_pagination.md
+  - name: "Authentication"
+    href: todo_auth.md
