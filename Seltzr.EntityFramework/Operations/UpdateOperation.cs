@@ -8,6 +8,7 @@
 namespace Seltzr.EntityFramework.Operations {
 	using System;
 	using System.Collections.Generic;
+	using System.Data.Entity;
 	using System.Linq;
 	using System.Linq.Expressions;
 	using System.Reflection;
@@ -110,7 +111,9 @@ namespace Seltzr.EntityFramework.Operations {
 					}
 
 					UpdatedList.Add(Existing);
-					DatabaseContext.Set<TModel>().Update(Existing);
+					
+					// Shouldn't have to update b/c change tracking
+					//DatabaseContext.Set<TModel>().Update(Existing);
 				}
 			}
 

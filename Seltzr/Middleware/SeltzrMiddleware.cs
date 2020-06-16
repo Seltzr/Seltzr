@@ -224,7 +224,7 @@ namespace Seltzr.Middleware {
 		/// </summary>
 		/// <param name="context">The current api context</param>
 		/// <returns>The parsed model, or null if there are no body parsers specified</returns>
-		/// <exception cref="InvalidParserException">If none of the available parsers can properly parse the request</exception>
+		/// <exception cref="ParsingFailedException">If none of the available parsers can properly parse the request</exception>
 		private async Task<ParseResult<TModel>[]?> ParseBody(ApiContext<TModel, TUser> context) {
 			if (this.Options.BodyParsers == null) return null;
 
