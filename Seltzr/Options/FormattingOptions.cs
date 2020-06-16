@@ -22,7 +22,7 @@ namespace Seltzr.Options {
 		/// <remarks>
 		///     For example, in JSON, this would be the difference between returning [{ ... }] and { ... }
 		/// </remarks>
-		public bool StripArrayIfSingleElement { get; set; } = true;
+		public bool StripArrayIfSingleElement { get; set; }
 
 		/// <summary>
 		///     Gets or sets a list of properties that should be included in the result
