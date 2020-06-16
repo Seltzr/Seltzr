@@ -11,8 +11,6 @@ namespace Seltzr.Options.Builder {
 	/// <summary>
 	///     Builder for <see cref="SeltzrOptions{TModel, TUser}" />
 	/// </summary>
-	/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
-	/// <typeparam name="TUser">The type of authenticated user context</typeparam>
 	public partial class SeltzrOptionsBuilder<TModel, TUser>
 		where TModel : class where TUser : class {
 		/// <summary>
@@ -52,7 +50,7 @@ namespace Seltzr.Options.Builder {
 		/// </summary>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public SeltzrOptionsBuilder<TModel, TUser> CanPatch() {
-			return this.AddRequestMethod("DELETE");
+			return this.AddRequestMethod("PATCH");
 		}
 
 		/// <summary>

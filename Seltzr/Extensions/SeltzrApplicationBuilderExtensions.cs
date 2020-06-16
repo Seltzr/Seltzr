@@ -28,7 +28,6 @@ namespace Microsoft.Extensions.DependencyInjection {
 		///     Adds Seltzr middleware to the app
 		/// </summary>
 		/// <typeparam name="TModel">The type of model to use with the API</typeparam>
-		/// <typeparam name="TUser">The user to authenticate with the API</typeparam>
 		/// <param name="app">The app to add Seltzr to</param>
 		/// <param name="route">The base route for Seltzr</param>
 		/// <param name="optionsHandler">A handler to set options for this Seltzr API</param>
@@ -44,7 +43,6 @@ namespace Microsoft.Extensions.DependencyInjection {
 		///     Adds Seltzr middleware to the app at the root ("/") endpoint
 		/// </summary>
 		/// <typeparam name="TModel">The type of model to use with the API</typeparam>
-		/// <typeparam name="TUser">The user to authenticate with the API</typeparam>
 		/// <param name="app">The app to add Seltzr to</param>
 		/// <param name="optionsHandler">A handler to set options for this Seltzr API</param>
 		/// <returns>The same <see cref="IApplicationBuilder" />, for chaining</returns>
@@ -58,7 +56,6 @@ namespace Microsoft.Extensions.DependencyInjection {
 		///     Adds Seltzr middleware to the app
 		/// </summary>
 		/// <typeparam name="TModel">The type of model to use with the API</typeparam>
-		/// <typeparam name="TUser">The user to authenticate with the API</typeparam>
 		/// <param name="app">The app to add Seltzr to</param>
 		/// <param name="route">The base route for Seltzr</param>
 		/// <param name="optionsHandler">A handler to set options for this Seltzr API</param>
