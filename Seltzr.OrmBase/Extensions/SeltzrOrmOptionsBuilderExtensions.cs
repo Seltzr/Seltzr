@@ -23,7 +23,7 @@ namespace Seltzr.Extensions {
 	/// <summary>
 	///     Extension methods for the <see cref="SeltzrOptionsBuilder{TModel,TUser}" /> class
 	/// </summary>
-	public static partial class SeltzrOptionsBuilderExtensions {
+	public static partial class SeltzrOrmOptionsBuilderExtensions {
 		/// <summary>
 		///     Ensures that the primary key of the <typeparamref name="TModel" /> will not be parsed from the request body
 		/// </summary>
@@ -34,7 +34,7 @@ namespace Seltzr.Extensions {
 		public static SeltzrOptionsBuilder<TModel, TUser> IgnorePrimaryKey<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder)
 			where TModel : class where TUser : class {
-			foreach (KeyProperty Property in SeltzrOptionsBuilderExtensions.GetPrimaryKey(builder))
+			foreach (KeyProperty Property in SeltzrOrmOptionsBuilderExtensions.GetPrimaryKey(builder))
 				builder.Ignore(Property.PropertyInfo);
 			return builder;
 		}
@@ -49,7 +49,7 @@ namespace Seltzr.Extensions {
 		public static SeltzrOptionsBuilder<TModel, TUser> IncludePrimaryKey<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder)
 			where TModel : class where TUser : class {
-			foreach (KeyProperty Property in SeltzrOptionsBuilderExtensions.GetPrimaryKey(builder))
+			foreach (KeyProperty Property in SeltzrOrmOptionsBuilderExtensions.GetPrimaryKey(builder))
 				builder.Include(Property.PropertyInfo);
 			return builder;
 		}
@@ -65,7 +65,7 @@ namespace Seltzr.Extensions {
 		public static SeltzrOptionsBuilder<TModel, TUser> OmitPrimaryKey<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder)
 			where TModel : class where TUser : class {
-			foreach (KeyProperty Property in SeltzrOptionsBuilderExtensions.GetPrimaryKey(builder))
+			foreach (KeyProperty Property in SeltzrOrmOptionsBuilderExtensions.GetPrimaryKey(builder))
 				builder.Omit(Property.PropertyInfo);
 			return builder;
 		}
@@ -83,7 +83,7 @@ namespace Seltzr.Extensions {
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			params ParameterRetriever[] parameters)
 			where TModel : class where TUser : class {
-			return builder.AddFilter(new PrimaryKeyFilter<TModel>(SeltzrOptionsBuilderExtensions.GetPrimaryKey(builder), parameters));
+			return builder.AddFilter(new PrimaryKeyFilter<TModel>(SeltzrOrmOptionsBuilderExtensions.GetPrimaryKey(builder), parameters));
 		}
 
 		/// <summary>
@@ -98,7 +98,7 @@ namespace Seltzr.Extensions {
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			params string[] parameterNames)
 			where TModel : class where TUser : class =>
-			SeltzrOptionsBuilderExtensions.FilterByPrimaryKey<TModel, TUser, QueryParameterRetriever>(
+			SeltzrOrmOptionsBuilderExtensions.FilterByPrimaryKey<TModel, TUser, QueryParameterRetriever>(
 				builder,
 				parameterNames);
 
@@ -113,7 +113,7 @@ namespace Seltzr.Extensions {
 		public static SeltzrOptionsBuilder<TModel, TUser> FilterByPrimaryKeyQuery<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder)
 			where TModel : class where TUser : class =>
-			builder.FilterByPrimaryKeyQuery(SeltzrOptionsBuilderExtensions.GetKeyNames(builder));
+			builder.FilterByPrimaryKeyQuery(SeltzrOrmOptionsBuilderExtensions.GetKeyNames(builder));
 
 		/// <summary>
 		///     Filter's this route's dataset by route values compared to the primary key of the model
@@ -127,7 +127,7 @@ namespace Seltzr.Extensions {
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			params string[] parameterNames)
 			where TModel : class where TUser : class =>
-			SeltzrOptionsBuilderExtensions.FilterByPrimaryKey<TModel, TUser, RouteValueRetriever>(
+			SeltzrOrmOptionsBuilderExtensions.FilterByPrimaryKey<TModel, TUser, RouteValueRetriever>(
 				builder,
 				parameterNames);
 
@@ -142,7 +142,7 @@ namespace Seltzr.Extensions {
 		public static SeltzrOptionsBuilder<TModel, TUser> FilterByPrimaryKeyRoute<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder)
 			where TModel : class where TUser : class =>
-			builder.FilterByPrimaryKeyRoute(SeltzrOptionsBuilderExtensions.GetKeyNames(builder));
+			builder.FilterByPrimaryKeyRoute(SeltzrOrmOptionsBuilderExtensions.GetKeyNames(builder));
 
 		/// <summary>
 		///     Filter's this route's dataset by a query parameter that is compared to the primary key of the model
@@ -171,10 +171,10 @@ namespace Seltzr.Extensions {
 		/// <returns>camelCased versions of the primary key property names, in order</returns>
 		private static string[] GetKeyNames<TModel, TUser>(SeltzrOptionsBuilder<TModel, TUser> builder)
 			where TModel : class where TUser : class {
-			List<KeyProperty> KeyProperties = SeltzrOptionsBuilderExtensions.GetPrimaryKey(builder);
+			List<KeyProperty> KeyProperties = SeltzrOrmOptionsBuilderExtensions.GetPrimaryKey(builder);
 
 			IEnumerable<string> Names =
-				KeyProperties.Select(p => SeltzrOptionsBuilderExtensions.CamelCase(p.Name));
+				KeyProperties.Select(p => SeltzrOrmOptionsBuilderExtensions.CamelCase(p.Name));
 			return Names.ToArray();
 		}
 

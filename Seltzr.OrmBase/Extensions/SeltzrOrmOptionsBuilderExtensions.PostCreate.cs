@@ -17,7 +17,7 @@ namespace Seltzr.Extensions {
 	/// <summary>
 	///     Extension methods for the <see cref="SeltzrOptionsBuilder{TModel,TUser}" /> class
 	/// </summary>
-	public static partial class SeltzrOptionsBuilderExtensions {
+	public static partial class SeltzrOrmOptionsBuilderExtensions {
 		/// <summary>
 		///     Sets this route up to handle a POST creation request using an ORM
 		/// </summary>

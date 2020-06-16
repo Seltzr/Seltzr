@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="SeltzrOptionsBuilderExtensions.PatchUpdate.cs" company="John Lynch">
+// <copyright file="SeltzrOptionsBuilderExtensions.PostUpdate.cs" company="John Lynch">
 //   This file is licensed under the MIT license
 //   Copyright (c) 2020 John Lynch
 // </copyright>
@@ -24,9 +24,9 @@ namespace Seltzr.Extensions {
 	/// <summary>
 	///     Extension methods for the <see cref="SeltzrOptionsBuilder{TModel,TUser}" /> class
 	/// </summary>
-	public static partial class SeltzrOptionsBuilderExtensions {
+	public static partial class SeltzrOrmOptionsBuilderExtensions {
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+		///     Sets this route up to handle a POST update request using an ORM, comparing the given property with a
 		///     route value to determine which elements to update
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
@@ -37,21 +37,21 @@ namespace Seltzr.Extensions {
 		/// <param name="routeValues">The route value names to use to get the property values for a request</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateBy<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateBy<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			string routePattern,
 			Expression<Func<TModel, object>>[] propertyExpressions,
 			string[] routeValues,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateByParam(
+			builder.PostUpdateByParam(
 				routePattern,
 				propertyExpressions,
 				routeValues.Select(p => (ParameterRetriever)new RouteValueRetriever(p)).ToArray(),
 				optionsHandler);
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+		///     Sets this route up to handle a POST update request using an ORM, comparing the given property with a
 		///     route value to determine which elements to update. The names of the route values will be camelCase versions of the
 		///     C# properties to compare. If these route values do not yet exist, they will be added to the end of the route
 		///     pattern in order.
@@ -63,7 +63,7 @@ namespace Seltzr.Extensions {
 		/// <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateBy<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateBy<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			string routePattern,
 			Expression<Func<TModel, object>>[] propertyExpressions,
@@ -75,18 +75,18 @@ namespace Seltzr.Extensions {
 
 			string NewPattern = routePattern;
 			IEnumerable<string> ExistingNames = TemplateParser.Parse(ExistingPattern).Parameters.Select(p => p.Name);
-			string[] KeyNames = propertyExpressions.Select(SeltzrOptionsBuilderExtensions.ExtractProperty)
-				.Select(p => SeltzrOptionsBuilderExtensions.CamelCase(p.Name)).ToArray();
+			string[] KeyNames = propertyExpressions.Select(SeltzrOrmOptionsBuilderExtensions.ExtractProperty)
+				.Select(p => SeltzrOrmOptionsBuilderExtensions.CamelCase(p.Name)).ToArray();
 			foreach (string KeyName in KeyNames.Except(ExistingNames)) {
 				if (!NewPattern.EndsWith("/")) NewPattern += "/";
 				NewPattern += $"{{{KeyName}}}/";
 			}
 
-			return builder.PatchUpdateBy(NewPattern, propertyExpressions, KeyNames, optionsHandler);
+			return builder.PostUpdateBy(NewPattern, propertyExpressions, KeyNames, optionsHandler);
 		}
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM at the same route pattern, comparing the
+		///     Sets this route up to handle a POST update request using an ORM at the same route pattern, comparing the
 		///     given property with a route value to determine which elements to update
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
@@ -96,16 +96,16 @@ namespace Seltzr.Extensions {
 		/// <param name="routeValues">The route value names to use to get the property values for a request</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateBy<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateBy<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			Expression<Func<TModel, object>>[] propertyExpressions,
 			string[] routeValues,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateBy("", propertyExpressions, routeValues, optionsHandler);
+			builder.PostUpdateBy("", propertyExpressions, routeValues, optionsHandler);
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+		///     Sets this route up to handle a POST update request using an ORM, comparing the given property with a
 		///     route value to determine which elements to update. The names of the route values will be camelCase versions of the
 		///     C# properties to compare. If these route values do not yet exist, they will be added to the end of the route
 		///     pattern in order.
@@ -116,15 +116,15 @@ namespace Seltzr.Extensions {
 		/// <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateBy<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateBy<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			Expression<Func<TModel, object>>[] propertyExpressions,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateBy("", propertyExpressions, optionsHandler);
+			builder.PostUpdateBy("", propertyExpressions, optionsHandler);
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+		///     Sets this route up to handle a POST update request using an ORM, comparing the given property with a
 		///     route value to determine which elements to update. The names of the route values will be camelCase versions of the
 		///     C# properties to compare. If these route values do not yet exist, they will be added to the end of the route
 		///     pattern in order.
@@ -134,14 +134,14 @@ namespace Seltzr.Extensions {
 		/// <param name="builder">The options builder to perform the operation on</param>
 		/// <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateBy<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateBy<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			params Expression<Func<TModel, object>>[] propertyExpressions)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateBy(propertyExpressions, null);
+			builder.PostUpdateBy(propertyExpressions, null);
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+		///     Sets this route up to handle a POST update request using an ORM, comparing the given property with a
 		///     route value to determine which elements to update
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
@@ -152,17 +152,17 @@ namespace Seltzr.Extensions {
 		/// <param name="routeValue">The route value names to use to get the property values for a request</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateBy<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateBy<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			string routePattern,
 			Expression<Func<TModel, object>> propertyExpression,
 			string routeValue,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateBy(routePattern, new[] { propertyExpression }, new[] { routeValue }, optionsHandler);
+			builder.PostUpdateBy(routePattern, new[] { propertyExpression }, new[] { routeValue }, optionsHandler);
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+		///     Sets this route up to handle a POST update request using an ORM, comparing the given property with a
 		///     route value to determine which elements to update
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
@@ -172,16 +172,16 @@ namespace Seltzr.Extensions {
 		/// <param name="routeValue">The route value names to use to get the property values for a request</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateBy<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateBy<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			Expression<Func<TModel, object>> propertyExpression,
 			string routeValue,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateBy("", propertyExpression, routeValue, optionsHandler);
+			builder.PostUpdateBy("", propertyExpression, routeValue, optionsHandler);
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM at the same route, comparing the given
+		///     Sets this route up to handle a POST update request using an ORM at the same route, comparing the given
 		///     property with a route value to determine which elements to update. The name of the route value will be a camelCase
 		///     version of the C# property to compare. If this route value does not yet exist, it will be added to the end of the
 		///     route pattern.
@@ -192,16 +192,16 @@ namespace Seltzr.Extensions {
 		/// <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateBy<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateBy<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			Expression<Func<TModel, object>> propertyExpression,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
 			where TModel : class where TUser : class {
-			return builder.PatchUpdateBy(new[] { propertyExpression }, optionsHandler);
+			return builder.PostUpdateBy(new[] { propertyExpression }, optionsHandler);
 		}
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM at the same route, comparing the given
+		///     Sets this route up to handle a POST update request using an ORM at the same route, comparing the given
 		///     property with a route value to determine which elements to update. The name of the route value will be a camelCase
 		///     version of the C# property to compare. If this route value does not yet exist, it will be added to the end of the
 		///     route pattern.
@@ -213,17 +213,17 @@ namespace Seltzr.Extensions {
 		/// <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateBy<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateBy<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			string routePattern,
 			Expression<Func<TModel, object>> propertyExpression,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
 			where TModel : class where TUser : class {
-			return builder.PatchUpdateBy(routePattern, new[] { propertyExpression }, optionsHandler);
+			return builder.PostUpdateBy(routePattern, new[] { propertyExpression }, optionsHandler);
 		}
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM at the same route, comparing the given
+		///     Sets this route up to handle a POST update request using an ORM at the same route, comparing the given
 		///     property with a route value to determine which elements to update. The name of the route value will be a camelCase
 		///     version of the C# property to compare. If this route value does not yet exist, it will be added to the end of the
 		///     route pattern.
@@ -234,15 +234,15 @@ namespace Seltzr.Extensions {
 		/// <param name="routePattern">The route pattern to set up the request for</param>
 		/// <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateBy<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateBy<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			string routePattern,
 			params Expression<Func<TModel, object>>[] propertyExpressions)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateBy(routePattern, propertyExpressions, null);
+			builder.PostUpdateBy(routePattern, propertyExpressions, null);
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM. The property to compare is assumed to be
+		///     Sets this route up to handle a POST update request using an ORM. The property to compare is assumed to be
 		///     directly set in the parsed model
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
@@ -252,17 +252,17 @@ namespace Seltzr.Extensions {
 		/// <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByBody<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByBody<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			string routePattern,
 			Expression<Func<TModel, object>> propertyExpression,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
 			where TModel : class where TUser : class {
-			return builder.PatchUpdateByParam(routePattern, new[] { propertyExpression }, null, optionsHandler);
+			return builder.PostUpdateByParam(routePattern, new[] { propertyExpression }, null, optionsHandler);
 		}
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM. The property to compare is assumed to be
+		///     Sets this route up to handle a POST update request using an ORM. The property to compare is assumed to be
 		///     directly set in the parsed model
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
@@ -271,15 +271,15 @@ namespace Seltzr.Extensions {
 		/// <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByBody<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByBody<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			Expression<Func<TModel, object>> propertyExpression,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateByParam("", propertyExpression, null, optionsHandler);
+			builder.PostUpdateByParam("", propertyExpression, null, optionsHandler);
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM. The properties to compare are assumed to
+		///     Sets this route up to handle a POST update request using an ORM. The properties to compare are assumed to
 		///     be directly set in the parsed model
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
@@ -288,15 +288,15 @@ namespace Seltzr.Extensions {
 		/// <param name="routePattern">The route pattern to set up the request for</param>
 		/// <param name="propertyExpressions">Expressions representing the properties to compare when update the model</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByBody<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByBody<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			string routePattern,
 			params Expression<Func<TModel, object>>[] propertyExpressions)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateByBody(routePattern, propertyExpressions, null);
+			builder.PostUpdateByBody(routePattern, propertyExpressions, null);
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM. The properties to compare are assumed to
+		///     Sets this route up to handle a POST update request using an ORM. The properties to compare are assumed to
 		///     be directly set in the parsed model
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
@@ -306,16 +306,16 @@ namespace Seltzr.Extensions {
 		/// <param name="propertyExpressions">Expressions representing the properties to compare when update the model</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByBody<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByBody<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			string routePattern,
 			Expression<Func<TModel, object>>[] propertyExpressions,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateByParam(routePattern, propertyExpressions, null, optionsHandler);
+			builder.PostUpdateByParam(routePattern, propertyExpressions, null, optionsHandler);
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM. The properties to compare are assumed to
+		///     Sets this route up to handle a POST update request using an ORM. The properties to compare are assumed to
 		///     be directly set in the parsed model
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
@@ -324,15 +324,15 @@ namespace Seltzr.Extensions {
 		/// <param name="propertyExpressions">Expressions representing the properties to compare when update the model</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByBody<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByBody<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			Expression<Func<TModel, object>>[] propertyExpressions,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateByParam(propertyExpressions, null, optionsHandler);
+			builder.PostUpdateByParam(propertyExpressions, null, optionsHandler);
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM. The properties to compare are assumed to
+		///     Sets this route up to handle a POST update request using an ORM. The properties to compare are assumed to
 		///     be directly set in the parsed model
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
@@ -340,14 +340,14 @@ namespace Seltzr.Extensions {
 		/// <param name="builder">The options builder to perform the operation on</param>
 		/// <param name="propertyExpressions">Expressions representing the properties to compare when update the model</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByBody<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByBody<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			params Expression<Func<TModel, object>>[] propertyExpressions)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateByParam(propertyExpressions, null);
+			builder.PostUpdateByParam(propertyExpressions, null);
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM
+		///     Sets this route up to handle a POST update request using an ORM
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
 		/// <typeparam name="TUser">The type of authenticated user context</typeparam>
@@ -357,7 +357,7 @@ namespace Seltzr.Extensions {
 		/// <param name="retrievers">The parameters to use to get the property values for a request</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByParam<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByParam<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			string routePattern,
 			Expression<Func<TModel, object>>[] propertyExpressions,
@@ -366,12 +366,12 @@ namespace Seltzr.Extensions {
 			where TModel : class where TUser : class {
 			if (!(builder is IOrmSeltzrOptionsBuilder<TModel, TUser> OrmBuilder))
 				throw new OptionsException(
-					$"PatchUpdate may only be called on a builder that inherits from {nameof(IOrmSeltzrOptionsBuilder<TModel, TUser>)}");
-			PropertyInfo[] Infos = propertyExpressions.Select(SeltzrOptionsBuilderExtensions.ExtractProperty)
+					$"PostUpdate may only be called on a builder that inherits from {nameof(IOrmSeltzrOptionsBuilder<TModel, TUser>)}");
+			PropertyInfo[] Infos = propertyExpressions.Select(SeltzrOrmOptionsBuilderExtensions.ExtractProperty)
 				.ToArray();
 			IOperation<TModel, TUser> Operation = OrmBuilder.GetUpdateOperation(Infos, retrievers);
 
-			return builder.SetupPatch(
+			return builder.SetupPost(
 				routePattern,
 				o => {
 					o.UseOperation(Operation);
@@ -380,7 +380,7 @@ namespace Seltzr.Extensions {
 		}
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM
+		///     Sets this route up to handle a POST update request using an ORM
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
 		/// <typeparam name="TUser">The type of authenticated user context</typeparam>
@@ -390,14 +390,14 @@ namespace Seltzr.Extensions {
 		/// <param name="retriever">The parameter to use to get the property values for a request</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByParam<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByParam<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			string routePattern,
 			Expression<Func<TModel, object>> propertyExpression,
 			ParameterRetriever? retriever,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
 			where TModel : class where TUser : class {
-			return builder.PatchUpdateByParam(
+			return builder.PostUpdateByParam(
 				routePattern,
 				new[] { propertyExpression },
 				retriever == null ? null : new[] { retriever },
@@ -405,7 +405,7 @@ namespace Seltzr.Extensions {
 		}
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM.
+		///     Sets this route up to handle a POST update request using an ORM.
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
 		/// <typeparam name="TUser">The type of authenticated user context</typeparam>
@@ -414,16 +414,16 @@ namespace Seltzr.Extensions {
 		/// <param name="retrievers">The parameters to use to get the property values for a request</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByParam<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByParam<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			Expression<Func<TModel, object>>[] propertyExpressions,
 			ParameterRetriever[]? retrievers,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateByParam("", propertyExpressions, retrievers, optionsHandler);
+			builder.PostUpdateByParam("", propertyExpressions, retrievers, optionsHandler);
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update by primary key request using an ORM
+		///     Sets this route up to handle a POST update by primary key request using an ORM
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
 		/// <typeparam name="TUser">The type of authenticated user context</typeparam>
@@ -432,7 +432,7 @@ namespace Seltzr.Extensions {
 		/// <param name="parameters">The parameters that will make up the primary key to filter by</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByPrimaryKey<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByPrimaryKey<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			string routePattern,
 			ParameterRetriever[] parameters,
@@ -440,13 +440,13 @@ namespace Seltzr.Extensions {
 			where TModel : class where TUser : class {
 			if (!(builder is IOrmSeltzrOptionsBuilder<TModel, TUser> OrmBuilder))
 				throw new OptionsException(
-					$"PatchUpdate may only be called on a builder that inherits from {nameof(IOrmSeltzrOptionsBuilder<TModel, TUser>)}");
-			PropertyInfo[] Properties = SeltzrOptionsBuilderExtensions.GetPrimaryKey(builder)
+					$"PostUpdate may only be called on a builder that inherits from {nameof(IOrmSeltzrOptionsBuilder<TModel, TUser>)}");
+			PropertyInfo[] Properties = SeltzrOrmOptionsBuilderExtensions.GetPrimaryKey(builder)
 				.Select(p => p.PropertyInfo).ToArray();
 
 			IOperation<TModel, TUser> Operation = OrmBuilder.GetUpdateOperation(Properties, parameters);
 
-			return builder.SetupPatch(
+			return builder.SetupPost(
 				routePattern,
 				o => {
 					o.UseOperation(
@@ -456,7 +456,7 @@ namespace Seltzr.Extensions {
 		}
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request by route values using an ORM
+		///     Sets this route up to handle a POST update request by route values using an ORM
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
 		/// <typeparam name="TUser">The type of authenticated user context</typeparam>
@@ -465,20 +465,20 @@ namespace Seltzr.Extensions {
 		/// <param name="parameterNames">The names of the route value parameters to use</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByPrimaryKey<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByPrimaryKey<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			string routePattern,
 			string[] parameterNames,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
 			where TModel : class where TUser : class {
-			return builder.PatchUpdateByPrimaryKey(
+			return builder.PostUpdateByPrimaryKey(
 				routePattern,
 				parameterNames.Select(p => (ParameterRetriever)new RouteValueRetriever(p)).ToArray(),
 				optionsHandler);
 		}
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request by route values using an ORM. The names of the route
+		///     Sets this route up to handle a POST update request by route values using an ORM. The names of the route
 		///     values
 		///     will be camelCased versions of the C# property name. If these route parameters do not already exist they will be
 		///     added in order, e.g. /key1/key2.
@@ -487,13 +487,13 @@ namespace Seltzr.Extensions {
 		/// <typeparam name="TUser">The type of authenticated user context</typeparam>
 		/// <param name="builder">The options builder to perform the operation on</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByPrimaryKey<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByPrimaryKey<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateByPrimaryKey(null);
+			builder.PostUpdateByPrimaryKey(null);
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request by route values using an ORM. The names of the route
+		///     Sets this route up to handle a POST update request by route values using an ORM. The names of the route
 		///     values
 		///     will be camelCased versions of the C# property name. If these route parameters do not already exist they will be
 		///     added in order, e.g. /key1/key2.
@@ -503,14 +503,14 @@ namespace Seltzr.Extensions {
 		/// <param name="builder">The options builder to perform the operation on</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByPrimaryKey<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByPrimaryKey<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateByPrimaryKey("", optionsHandler);
+			builder.PostUpdateByPrimaryKey("", optionsHandler);
 
 		/// <summary>
-		///     Sets a route up to handle a PATCH update request by route values using an ORM. The names of the route
+		///     Sets a route up to handle a POST update request by route values using an ORM. The names of the route
 		///     values
 		///     will be camelCased versions of the C# property name. If these route parameters do not already exist they will be
 		///     added in order, e.g. /key1/key2.
@@ -521,7 +521,7 @@ namespace Seltzr.Extensions {
 		/// <param name="routePattern">The route pattern to set up the request for</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByPrimaryKey<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByPrimaryKey<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			string routePattern,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
@@ -532,17 +532,17 @@ namespace Seltzr.Extensions {
 
 			string NewPattern = routePattern;
 			IEnumerable<string> ExistingNames = TemplateParser.Parse(ExistingPattern).Parameters.Select(p => p.Name);
-			string[] KeyNames = SeltzrOptionsBuilderExtensions.GetKeyNames(builder);
+			string[] KeyNames = SeltzrOrmOptionsBuilderExtensions.GetKeyNames(builder);
 			foreach (string KeyName in KeyNames.Except(ExistingNames)) {
 				if (!NewPattern.EndsWith("/")) NewPattern += "/";
 				NewPattern += $"{{{KeyName}}}/";
 			}
 
-			return builder.PatchUpdateByPrimaryKey(NewPattern, KeyNames, optionsHandler);
+			return builder.PostUpdateByPrimaryKey(NewPattern, KeyNames, optionsHandler);
 		}
 
 		/// <summary>
-		///     Sets a route up to handle a PATCH update request by route values using an ORM
+		///     Sets a route up to handle a POST update request by route values using an ORM
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
 		/// <typeparam name="TUser">The type of authenticated user context</typeparam>
@@ -551,17 +551,17 @@ namespace Seltzr.Extensions {
 		/// <param name="parameterName">The name of the route value parameter to use</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByPrimaryKey<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByPrimaryKey<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			string routePattern,
 			string parameterName,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
 			where TModel : class where TUser : class {
-			return builder.PatchUpdateByPrimaryKey(routePattern, new[] { parameterName }, optionsHandler);
+			return builder.PostUpdateByPrimaryKey(routePattern, new[] { parameterName }, optionsHandler);
 		}
 
 		/// <summary>
-		///     Sets a route up to handle a PATCH update request by query parameters using an ORM
+		///     Sets a route up to handle a POST update request by query parameters using an ORM
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
 		/// <typeparam name="TUser">The type of authenticated user context</typeparam>
@@ -570,20 +570,20 @@ namespace Seltzr.Extensions {
 		/// <param name="parameterNames">The names of the route value parameters to use</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByPrimaryKeyQuery<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByPrimaryKeyQuery<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			string routePattern,
 			string[] parameterNames,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
 			where TModel : class where TUser : class {
-			return builder.PatchUpdateByPrimaryKey(
+			return builder.PostUpdateByPrimaryKey(
 				routePattern,
 				parameterNames.Select(p => (ParameterRetriever)new QueryParameterRetriever(p)).ToArray(),
 				optionsHandler);
 		}
 
 		/// <summary>
-		///     Sets a route up to handle a PATCH update request by a primary key query parameter using an ORM
+		///     Sets a route up to handle a POST update request by a primary key query parameter using an ORM
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
 		/// <typeparam name="TUser">The type of authenticated user context</typeparam>
@@ -592,17 +592,17 @@ namespace Seltzr.Extensions {
 		/// <param name="parameterName">The name of the route value parameter to use</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByPrimaryKeyQuery<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByPrimaryKeyQuery<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			string routePattern,
 			string parameterName,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
 			where TModel : class where TUser : class {
-			return builder.PatchUpdateByPrimaryKeyQuery(routePattern, new[] { parameterName }, optionsHandler);
+			return builder.PostUpdateByPrimaryKeyQuery(routePattern, new[] { parameterName }, optionsHandler);
 		}
 
 		/// <summary>
-		///     Sets a route up to handle a PATCH update request by query parameters using an ORM. The names of the
+		///     Sets a route up to handle a POST update request by query parameters using an ORM. The names of the
 		///     query
 		///     parameters will be camelCased names of the primary key of the entity
 		/// </summary>
@@ -612,18 +612,18 @@ namespace Seltzr.Extensions {
 		/// <param name="routePattern">The route pattern to set up the request for</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByPrimaryKeyQuery<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByPrimaryKeyQuery<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			string routePattern,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateByPrimaryKeyQuery(
+			builder.PostUpdateByPrimaryKeyQuery(
 				routePattern,
-				SeltzrOptionsBuilderExtensions.GetKeyNames(builder),
+				SeltzrOrmOptionsBuilderExtensions.GetKeyNames(builder),
 				optionsHandler);
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request by query parameters on the same route pattern using Entity
+		///     Sets this route up to handle a POST update request by query parameters on the same route pattern using Entity
 		///     Framework.
 		///     The names of the query parameters will be camelCased names of the primary key of the entity
 		/// </summary>
@@ -632,17 +632,17 @@ namespace Seltzr.Extensions {
 		/// <param name="builder">The options builder to perform the operation on</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByPrimaryKeyQuery<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByPrimaryKeyQuery<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateByPrimaryKeyQuery(
+			builder.PostUpdateByPrimaryKeyQuery(
 				"",
-				SeltzrOptionsBuilderExtensions.GetKeyNames(builder),
+				SeltzrOrmOptionsBuilderExtensions.GetKeyNames(builder),
 				optionsHandler);
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+		///     Sets this route up to handle a POST update request using an ORM, comparing the given property with a
 		///     query parameter to determine which elements to update
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
@@ -653,21 +653,21 @@ namespace Seltzr.Extensions {
 		/// <param name="queryParameters">The query parameter names to use to get the property values for a request</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByQuery<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByQuery<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			string routePattern,
 			Expression<Func<TModel, object>>[] propertyExpressions,
 			string[] queryParameters,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateByParam(
+			builder.PostUpdateByParam(
 				routePattern,
 				propertyExpressions,
 				queryParameters.Select(p => (ParameterRetriever)new QueryParameterRetriever(p)).ToArray(),
 				optionsHandler);
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+		///     Sets this route up to handle a POST update request using an ORM, comparing the given property with a
 		///     query parameter to determine which elements to update. The names of the query parameters will be camelCase versions
 		///     of the
 		///     C# properties to compare.
@@ -679,19 +679,19 @@ namespace Seltzr.Extensions {
 		/// <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByQuery<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByQuery<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			string routePattern,
 			Expression<Func<TModel, object>>[] propertyExpressions,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler)
 			where TModel : class where TUser : class {
-			string[] KeyNames = propertyExpressions.Select(SeltzrOptionsBuilderExtensions.ExtractProperty)
-				.Select(p => SeltzrOptionsBuilderExtensions.CamelCase(p.Name)).ToArray();
-			return builder.PatchUpdateByQuery(routePattern, propertyExpressions, KeyNames, optionsHandler);
+			string[] KeyNames = propertyExpressions.Select(SeltzrOrmOptionsBuilderExtensions.ExtractProperty)
+				.Select(p => SeltzrOrmOptionsBuilderExtensions.CamelCase(p.Name)).ToArray();
+			return builder.PostUpdateByQuery(routePattern, propertyExpressions, KeyNames, optionsHandler);
 		}
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM at the same route pattern, comparing the
+		///     Sets this route up to handle a POST update request using an ORM at the same route pattern, comparing the
 		///     given property with a query parameter to determine which elements to update
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
@@ -701,16 +701,16 @@ namespace Seltzr.Extensions {
 		/// <param name="queryParameters">The query parameter names to use to get the property values for a request</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByQuery<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByQuery<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			Expression<Func<TModel, object>>[] propertyExpressions,
 			string[] queryParameters,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateByQuery("", propertyExpressions, queryParameters, optionsHandler);
+			builder.PostUpdateByQuery("", propertyExpressions, queryParameters, optionsHandler);
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+		///     Sets this route up to handle a POST update request using an ORM, comparing the given property with a
 		///     query parameter to determine which elements to update. The names of the query parameters will be camelCase versions
 		///     of the
 		///     C# properties to compare.
@@ -721,15 +721,15 @@ namespace Seltzr.Extensions {
 		/// <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByQuery<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByQuery<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			Expression<Func<TModel, object>>[] propertyExpressions,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateByQuery("", propertyExpressions, optionsHandler);
+			builder.PostUpdateByQuery("", propertyExpressions, optionsHandler);
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+		///     Sets this route up to handle a POST update request using an ORM, comparing the given property with a
 		///     query parameter to determine which elements to update. The names of the query parameters will be camelCase versions
 		///     of the
 		///     C# properties to compare.
@@ -739,14 +739,14 @@ namespace Seltzr.Extensions {
 		/// <param name="builder">The options builder to perform the operation on</param>
 		/// <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByQuery<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByQuery<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			params Expression<Func<TModel, object>>[] propertyExpressions)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateByQuery(propertyExpressions, null);
+			builder.PostUpdateByQuery(propertyExpressions, null);
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+		///     Sets this route up to handle a POST update request using an ORM, comparing the given property with a
 		///     query parameter to determine which elements to update
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
@@ -757,21 +757,21 @@ namespace Seltzr.Extensions {
 		/// <param name="queryParameter">The query parameter names to use to get the property values for a request</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByQuery<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByQuery<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			string routePattern,
 			Expression<Func<TModel, object>> propertyExpression,
 			string queryParameter,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateByQuery(
+			builder.PostUpdateByQuery(
 				routePattern,
 				new[] { propertyExpression },
 				new[] { queryParameter },
 				optionsHandler);
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+		///     Sets this route up to handle a POST update request using an ORM, comparing the given property with a
 		///     query parameter to determine which elements to update
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
@@ -781,16 +781,16 @@ namespace Seltzr.Extensions {
 		/// <param name="queryParameter">The query parameter names to use to get the property values for a request</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByQuery<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByQuery<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			Expression<Func<TModel, object>> propertyExpression,
 			string queryParameter,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateByQuery("", propertyExpression, queryParameter, optionsHandler);
+			builder.PostUpdateByQuery("", propertyExpression, queryParameter, optionsHandler);
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM at the same route, comparing the given
+		///     Sets this route up to handle a POST update request using an ORM at the same route, comparing the given
 		///     property with a query parameter to determine which elements to update. The name of the query parameter will be a
 		///     camelCase
 		///     version of the C# property to compare. If this query parameter does not yet exist, it will be added to the end of
@@ -803,16 +803,16 @@ namespace Seltzr.Extensions {
 		/// <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByQuery<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByQuery<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			Expression<Func<TModel, object>> propertyExpression,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
 			where TModel : class where TUser : class {
-			return builder.PatchUpdateByQuery(new[] { propertyExpression }, optionsHandler);
+			return builder.PostUpdateByQuery(new[] { propertyExpression }, optionsHandler);
 		}
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM at the same route, comparing the given
+		///     Sets this route up to handle a POST update request using an ORM at the same route, comparing the given
 		///     property with a query parameter to determine which elements to update. The name of the query parameter will be a
 		///     camelCase
 		///     version of the C# property to compare. If this query parameter does not yet exist, it will be added to the end of
@@ -826,17 +826,17 @@ namespace Seltzr.Extensions {
 		/// <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByQuery<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByQuery<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			string routePattern,
 			Expression<Func<TModel, object>> propertyExpression,
 			Action<SeltzrOptionsBuilder<TModel, TUser>>? optionsHandler = null)
 			where TModel : class where TUser : class {
-			return builder.PatchUpdateByQuery(routePattern, new[] { propertyExpression }, optionsHandler);
+			return builder.PostUpdateByQuery(routePattern, new[] { propertyExpression }, optionsHandler);
 		}
 
 		/// <summary>
-		///     Sets this route up to handle a PATCH update request using an ORM at the same route, comparing the given
+		///     Sets this route up to handle a POST update request using an ORM at the same route, comparing the given
 		///     property with a query parameter to determine which elements to update. The name of the query parameter will be a
 		///     camelCase
 		///     version of the C# property to compare. If this query parameter does not yet exist, it will be added to the end of
@@ -849,11 +849,11 @@ namespace Seltzr.Extensions {
 		/// <param name="routePattern">The route pattern to set up the request for</param>
 		/// <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static SeltzrOptionsBuilder<TModel, TUser> PatchUpdateByQuery<TModel, TUser>(
+		public static SeltzrOptionsBuilder<TModel, TUser> PostUpdateByQuery<TModel, TUser>(
 			this SeltzrOptionsBuilder<TModel, TUser> builder,
 			string routePattern,
 			params Expression<Func<TModel, object>>[] propertyExpressions)
 			where TModel : class where TUser : class =>
-			builder.PatchUpdateByQuery(routePattern, propertyExpressions, null);
+			builder.PostUpdateByQuery(routePattern, propertyExpressions, null);
 	}
 }

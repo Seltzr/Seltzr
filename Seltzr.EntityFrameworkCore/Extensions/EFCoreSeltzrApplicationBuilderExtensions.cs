@@ -21,7 +21,7 @@ namespace Microsoft.Extensions.DependencyInjection {
 	/// <summary>
 	///     Extension methods for the <see cref="IApplicationBuilder" /> interface.
 	/// </summary>
-	public static class EntityFrameworkSeltzrApplicationBuilderExtensions {
+	public static class EFCoreSeltzrApplicationBuilderExtensions {
 		/// <summary>
 		///     Adds Seltzr middleware with Entity Framework to the app
 		/// </summary>

@@ -4,7 +4,7 @@
 	<TargetFramework>netcoreapp3.1</TargetFramework>
 	<Nullable>enable</Nullable>
 	<PackageId>Seltzr</PackageId>
-	<Version>0.1.4</Version>
+	<Version>0.1.5</Version>
 	<Authors>John Lynch</Authors>
 	<Company>Seltzr</Company>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>

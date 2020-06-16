@@ -52,32 +52,32 @@ namespace Seltzr.Options.Builder {
 		}
 
 		/// <summary>
-		///     Adds a requirement to this route that will ensure the parsed body meets the given condition
+		///     Adds a requirement to this route that will ensure the parsed body meets the given condition. If there is no parsed body, this condition will always pass.
 		/// </summary>
 		/// <param name="condition">The delegate to use to determine if the parsed body meets a condition</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public SeltzrOptionsBuilder<TModel, TUser> RequireInput(Func<TModel[], bool> condition) {
-			this.Require((c, d) => condition(c.Parsed.Select(p => p.ParsedModel).ToArray()));
+		public SeltzrOptionsBuilder<TModel, TUser> RequireInput(Func<TModel[]?, bool> condition) {
+			this.Require((c, d) => c.Parsed == null || condition(c.Parsed?.Select(p => p.ParsedModel).ToArray()));
 			return this;
 		}
 
 		/// <summary>
-		///     Adds a requirement to this route that will ensure the parsed body meets the given condition
+		///     Adds a requirement to this route that will ensure the parsed body meets the given condition. If there is no parsed body, this condition will always pass.
 		/// </summary>
 		/// <param name="condition">The delegate to use to determine if the parsed body meets a condition</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public SeltzrOptionsBuilder<TModel, TUser> RequireAllInput(Func<TModel, bool> condition) {
-			this.RequireInput(p => p.All(condition));
+			this.RequireInput(p => p?.All(condition) ?? true);
 			return this;
 		}
 
 		/// <summary>
-		///     Adds a requirement to this route that will ensure the parsed body meets the given condition
+		///     Adds a requirement to this route that will ensure the parsed body meets the given condition. If there is no parsed body, this condition will always pass.
 		/// </summary>
 		/// <param name="condition">The delegate to use to determine if the parsed body meets a condition</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public SeltzrOptionsBuilder<TModel, TUser> RequireInputAsync(Func<TModel[], Task<bool>> condition) {
-			this.RequireAsync((c, d) => condition(c.Parsed.Select(p => p.ParsedModel).ToArray()));
+			this.RequireAsync(async (c, d) => c.Parsed == null || await condition(c.Parsed.Select(p => p.ParsedModel).ToArray()));
 			return this;
 		}
 
@@ -131,7 +131,7 @@ namespace Seltzr.Options.Builder {
 		/// <param name="count">The number of elements that should be in the dataset</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public SeltzrOptionsBuilder<TModel, TUser> RequireInputHasExactly(int count) =>
-			this.RequireInput(p => p.Length == count);
+			this.RequireInput(p => p == null || p.Length == count);
 
 		/// <summary>
 		///     Ensures that there is exactly one element in the dataset
