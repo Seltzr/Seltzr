@@ -198,7 +198,7 @@ article h4{
 }
 
 article span.small.pull-right{
-  margin-top: 20px;
+  /*margin-top: 12px;*/
 }
 
 article section {
@@ -1014,4 +1014,25 @@ pre {
 
 body {
   font-size: 16px;
+}
+
+.parameter:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.parameter-type {
+  margin-left: 8px;
+}
+
+.element-title {
+  display: flex;
+  align-items: baseline;
+  flex-flow: row-reverse;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+}
+
+.element-title > h4 {
+  border-bottom: none;
+  flex-grow: 1;
 }

@@ -425,5 +425,101 @@ namespace Seltzr.Options.Builder {
 		public SeltzrOptionsBuilder<TModel, TUser> SetValueQuery(
 			Expression<Func<TModel, object?>> property) =>
 			this.SetValueQuery(SeltzrOptionsBuilder<TModel, TUser>.ExtractProperty(property));
+
+		/// <summary>
+		///		Runs a given action for each parsed request body before the operation is executed
+		/// </summary>
+		/// <param name="action">The action which will be passed a parsed model</param>
+		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		/// <example>
+		///		<para>
+		///			Trim a string property of a parsed model before it's saved:
+		///			<code>
+		///				options.ForEachInput(m => m.Name = m.Name.Trim());
+		///			</code>
+		///		</para>
+		///		<para>
+		///			Split a name into first and last before creating a model
+		///			<code>
+		///				options.PostCreate(create => {
+		///					create.ForEachInput(m => {
+		///						string[] Name = m.Name.Split(' ');
+		///						m.First = Name[0];
+		///						m.Last = Name[1];
+		///					});
+		///				});
+		///			</code>
+		///		</para>
+		/// </example>
+		/// <seealso cref="ForEachInputAsync(Func{TModel, Task})"/>
+		/// <seealso cref="ForEach(Action{TModel})"/>
+		/// <seealso cref="ForEachAsync(Func{TModel, Task})"/>
+		public SeltzrOptionsBuilder<TModel, TUser> ForEachInput(Action<TModel> action) {
+			return this.Before(
+				(c, d) => {
+					if (c.Parsed == null) return;
+					foreach (TModel Model in c.Parsed) action(Model);
+				});
+		}
+
+		/// <summary>
+		///		Runs a given action asynchronously for each parsed request body before the operation is executed
+		/// </summary>
+		/// <param name="action">The action which will be passed a parsed model</param>
+		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		/// <seealso cref="ForEachInput(Action{TModel})"/>
+		/// <seealso cref="ForEachAsync(Func{TModel, Task})"/>
+		/// <seealso cref="ForEach(Action{TModel})"/>
+		public SeltzrOptionsBuilder<TModel, TUser> ForEachInputAsync(Func<TModel, Task> action) {
+			return this.BeforeAsync(
+				async (c, d) => {
+					if (c.Parsed == null) return;
+					foreach (TModel Model in c.Parsed) await action(Model);
+				});
+		}
+
+		/// <summary>
+		///		Runs a given action for each model in the dataset after the operation is executed
+		/// </summary>
+		/// <param name="action">The action which will be passed a parsed model</param>
+		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		/// <remarks>
+		///		Changes made to models will not be persisted to the database, but will be reflected in the HTTP response.
+		/// </remarks>
+		/// <example>
+		///		<para>
+		///			Hide a property before returning it, but don't omit it outright
+		///			<code>
+		///				options.ForEach(m => m.Address = "Hidden");
+		///			</code>
+		///		</para>
+		/// </example>
+		/// <seealso cref="ForEachAsync(Func{TModel, Task})"/>
+		/// <seealso cref="ForEachInput(Action{TModel})"/>
+		/// <seealso cref="ForEachInputAsync(Func{TModel, Task})"/>
+		public SeltzrOptionsBuilder<TModel, TUser> ForEach(Action<TModel> action) {
+			return this.After(
+				(c, d) => {
+					foreach (TModel Model in d) action(Model);
+				});
+		}
+
+		/// <summary>
+		///		Runs a given action for each model in the dataset after the operation is executed
+		/// </summary>
+		/// <param name="action">The action which will be passed a parsed model</param>
+		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		/// <remarks>
+		///		Changes made to models will not be persisted to the database, but will be reflected in the HTTP response.
+		/// </remarks>
+		/// <seealso cref="ForEach(Action{TModel})"/>
+		/// <seealso cref="ForEachInputAsync(Func{TModel, Task})"/>
+		/// <seealso cref="ForEachInput(Action{TModel})"/>
+		public SeltzrOptionsBuilder<TModel, TUser> ForEachAsync(Func<TModel, Task> action) {
+			return this.AfterAsync(
+				async (c, d) => {
+					foreach (TModel Model in d) await action(Model);
+				});
+		}
 	}
 }

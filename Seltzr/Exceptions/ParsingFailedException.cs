@@ -29,7 +29,7 @@ namespace Seltzr.Exceptions {
 		/// </summary>
 		/// <param name="message">A message explaining the exception</param>
 		/// <param name="inner">The inner exception that caused this one</param>
-		public ParsingFailedException(string message, Exception inner)
+		public ParsingFailedException(string message, Exception? inner)
 			: base(message, inner, ErrorCodes.ParsingFailed) { }
 
 		/// <summary>
@@ -46,7 +46,7 @@ namespace Seltzr.Exceptions {
 		/// <param name="message">A message explaining the exception</param>
 		/// <param name="inner">The inner exception that caused this one</param>
 		/// <param name="errorCode">A unique error code for the error that occurred</param>
-		public ParsingFailedException(string message, Exception inner, int errorCode)
+		public ParsingFailedException(string message, Exception? inner, int errorCode)
 			: base(message, inner, errorCode) { }
 	}
 }

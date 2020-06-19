@@ -148,25 +148,28 @@ For more details on what these commands are doing, refer to EF Core's [getting s
 	* [PatchUpdateByPrimaryKey()](xref:Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.PatchUpdateByPrimaryKey``2(Seltzr.Options.Builder.SeltzrOptionsBuilder{``0,``1})) defines a `PATCH` request that similarly accepts a value for `Id` and updates the `Todo` using the values provided in the request body.
 	* [PostCreate()](xref:Seltzr.Extensions.SeltzrOrmOptionsBuilderExtensions.PostCreate``2(Seltzr.Options.Builder.SeltzrOptionsBuilder{``0,``1},System.Action{Seltzr.Options.Builder.SeltzrOptionsBuilder{``0,``1}})) defines a `POST` request that accepts a JSON request body and creates a new `Todo`
 
+> [!NOTE]
+> Those four methods aren't the only ones that create routes. See <xref:routing> for a comprehensive list.
+
 ## Run the app
-* With all four CRUD routes defined, run the app by hitting the play button in Visual Studio or executing `dotnet run` in a terminal.
+* With all four routes defined, run the app by hitting the play button in Visual Studio or executing `dotnet run` in a terminal.
 * If a browser doesn't open automatically, open one and browse to the link output in the console.
 * When the website loads, use the field at the bottom of the page to type in a new todo item and hit **Create**.
 * A new todo item should be created and displayed alongside its `Id` above the text field. Try entering new text into the displayed item and hitting `Enter`. A blue flash indicates that the todo item has been updated. 
 * Hitting the red `X` will delete the todo item.
 * Hovering over the `Id` will display the creation date for the todo item. There's no logic to set that yet, however, so it will display a placeholder value.
 
+> [!NOTE]
+> Any any point when you're running the app, hit `Ctrl+Shift+I` (`Cmd+Shift+I` on MacOS) and click on the **Network** tab in the window that appears to observe the raw network requests and responses from the API.
+
 ## Extending the API
-* Though the simple API works fine, these next steps cover some nice features to polish it off.
+* Though the simple API works fine, these next steps cover some nice features you can add to polish it off.
 #### Sorting the `Todo` Items
 * Use the [OrderBy](xref:Seltzr.Options.Builder.SeltzrOptionsBuilder`2.OrderBy``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})) method to sort the todo items alphabetically by their `Text` property:
 [!code-csharp[Startup.cs](../../code/getting_started/todo/Startup.cs?name=step4&highlight=6)]
 
 * Under the hood, this method adds a [**Filter**](xref:filters) to the route. A filter is anything that modifies the dataset, even if it doesn't actually "filter" models out.
 * Run the app and create a new todo item. It should be inserted alphabetically into the todo list.
-
-> [!TIP]
-> You can also try sorting by `Id` and, later, `Creation` as well using the [OrderBy](xref:Seltzr.Options.Builder.SeltzrOptionsBuilder`2.OrderBy``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})) and [OrderByDescending](xref:Seltzr.Options.Builder.SeltzrOptionsBuilder`2.OrderByDescending``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})) methods
 
 #### Requiring Non-Empty Input
 * Currently, when creating or updating a todo item, empty or whitespace-only text is accepted as a valid value for the item. Use the <xref:Seltzr.Options.Builder.SeltzrOptionsBuilder`2.RequireAllInput(System.Func{`0,System.Boolean})> method to prevent this.
@@ -181,7 +184,7 @@ For more details on what these commands are doing, refer to EF Core's [getting s
 > Try putting the call to `RequireAllInput` at the end of the chain, after `PostCreate`. You'll notice it's possible to create empty todo items again. **Why?** Calls to Seltzr's options builder only apply to all **future** routes (methods like `Get()` and `DeleteByPrimaryKey()` are what create routes), any previous routes don't have those options applied to them.
 
 > [!TIP]
-> Try using the [SetValue((model) => Property, (context)=> object)](xref:Seltzr.Options.Builder.SeltzrOptionsBuilder`2.SetValue(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Func{Seltzr.Context.IApiContext{`0,`1},System.Object})) (don't worry about context for now) and `String.Trim()` methods to also trim any excess whitespace from the ends of the todo item.
+> Try adding [.ForEachInput(t => t.Text = t.Text.Trim())](xref:) to also trim any excess whitespace from the ends of the todo item.
 
 #### Setting a creation date
 * Every method that creates a route, like `Get()` and `PostCreate()` also accepts an options handler of its own which can be used to set up additional options that **only apply to that route**. Use it here to default the `Created` property on `Todo` to the current date and time.
@@ -192,11 +195,15 @@ For more details on what these commands are doing, refer to EF Core's [getting s
 * Run the app and create a new todo item.
 * Hovering over the ID for that todo should display the creation date.
 
+
+> [!TIP]
+> With `Created` initialized, try updating the [OrderBy](xref:Seltzr.Options.Builder.SeltzrOptionsBuilder`2.OrderBy``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})) method to [OrderByDescending](xref:Seltzr.Options.Builder.SeltzrOptionsBuilder`2.OrderByDescending``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})) and sorting by `Created` instead.
+
 > [!NOTE]
-> Even though the website doesn't, an HTTP `POST` request to `/todos` can still provide the `Created` property. To force `Created` to always be set to `DateTime.Now`, use `Default()` in conjunction with [Ignore((Todo) => property)](xref:Seltzr.Options.Builder.SeltzrOptionsBuilder`2.Ignore(System.Linq.Expressions.Expression{System.Func{`0,System.Object}}))
+> Even though the website doesn't, an HTTP `POST` request to `/todos` can still provide the `Created` property. To force `Created` to always be set to `DateTime.Now`, use `Default()` in conjunction with [Ignore](xref:Seltzr.Options.Builder.SeltzrOptionsBuilder`2.Ignore(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})) to ignore the `Created` property on any request body.
 
 #### Getting a random `Todo`
-* Define a new route that uses [Filter((dataset) => dataset)](xref:Seltzr.Options.Builder.SeltzrOptionsBuilder`2.Filter(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}})) to perform an advanced operation.
+* Define a new route that uses [Filter](xref:Seltzr.Options.Builder.SeltzrOptionsBuilder`2.Filter(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}})) to perform an advanced operation.
 * To avoid colliding with the existing `GET` request, define this route on the `/todos/random` route pattern.
 
 [!code-csharp[Startup.cs](../../code/getting_started/todo/Startup.cs?name=step7&highlight=9-11)]
@@ -209,9 +216,10 @@ For more details on what these commands are doing, refer to EF Core's [getting s
 [!code-js[site.js](../../code/getting_started/todo/site.js?name=random)]
 
 * Run the app. A random todo item should appear at the top of the page.
+* Additionally, try browsing to `/todos/random`. You should see a random todo item returned in a JSON array.
 
 > [!NOTE]
-> **Why does `/todos/random` return an array?** Seltzr won't make assumptions that a route will always return a single element, even if it is always true. In fact, a `GET` request to `/todos/random` will return an empty array if there are no todo items. To make this route behave more like a traditional API, use the <xref:Seltzr.Options.Builder.SeltzrOptionsBuilder`2.RequireExactlyOne> and <xref:Seltzr.Options.Builder.SeltzrOptionsBuilder`2.StripArrayIfSingleResult(System.Boolean)> methods alongside `Filter`.
+> **Why does `/todos/random` return an array?** Seltzr won't make assumptions that a route will always return a single element, even if it is always true. In fact, a `GET` request to `/todos/random` will return an empty array if there are no todo items. To make this route behave more like a traditional API and always return a single element, use the <xref:Seltzr.Options.Builder.SeltzrOptionsBuilder`2.RequireExactlyOne> and <xref:Seltzr.Options.Builder.SeltzrOptionsBuilder`2.StripArrayIfSingleResult(System.Boolean)> methods alongside `Filter`.
 
 ## Summary
 * In this guide, you learned how to:

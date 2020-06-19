@@ -14,6 +14,7 @@ namespace Seltzr.Middleware {
 	using System.Linq;
 	using System.Threading.Tasks;
 
+	using Microsoft.AspNetCore.Builder;
 	using Microsoft.AspNetCore.Http;
 
 	using Seltzr.Actions;
@@ -29,11 +30,12 @@ namespace Seltzr.Middleware {
 
 	/// <summary>
 	///     Middleware for Seltzr.
-	///     It's not traditional ASP.NET Core middleware, but it's essentially the same thing
+	///     It's not traditional ASP.NET Core middleware, but it does essentially the same job
 	/// </summary>
 	/// <typeparam name="TModel">The type of model being handled by this middleware</typeparam>
 	/// <typeparam name="TUser">The type of authenticated user context, if any</typeparam>
-	internal class SeltzrMiddleware<TModel, TUser>
+	/// <remarks>This type is not meant for application use. Use the extension methods on <see cref="IApplicationBuilder"/> instead.</remarks>
+	public class SeltzrMiddleware<TModel, TUser>
 		where TModel : class where TUser : class {
 		/// <summary>
 		///     The options to use for determining the route actions
@@ -228,7 +230,6 @@ namespace Seltzr.Middleware {
 		private async Task<ParseResult<TModel>[]?> ParseBody(ApiContext<TModel, TUser> context) {
 			if (this.Options.BodyParsers == null) return null;
 
-			// todo: scoped services, response?
 			await using MemoryStream Stream = new MemoryStream();
 			await context.Request.Body.CopyToAsync(Stream);
 			byte[] BodyContents = Stream.ToArray();
@@ -248,7 +249,6 @@ namespace Seltzr.Middleware {
 					/* Just keep moving, by design */
 				}
 
-// todo: check null ios okay for Last
 			return ParseSuccess ? Parsed : throw new ParsingFailedException("No valid parsers found for request body", Last);
 		}
 

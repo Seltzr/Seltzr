@@ -606,18 +606,28 @@ namespace Seltzr.Options.Builder {
 		/// </summary>
 		/// <param name="propertyExpression">An expression that returns the property to make optional</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public SeltzrOptionsBuilder<TModel, TUser> Optional(Expression<Func<TModel, object>> propertyExpression) =>
-			this.Optional(SeltzrOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
+		public SeltzrOptionsBuilder<TModel, TUser> OptionalProperty(Expression<Func<TModel, object>> propertyExpression) =>
+			this.OptionalProperty(SeltzrOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
 
 		/// <summary>
 		///     Makes a property of the <typeparamref name="TModel" /> optional in the request body
 		/// </summary>
 		/// <param name="property">The property to make optional</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public SeltzrOptionsBuilder<TModel, TUser> Optional(PropertyInfo property) {
+		public SeltzrOptionsBuilder<TModel, TUser> OptionalProperty(PropertyInfo property) {
 			this.Options.ParserOptions.RequiredParseProperties.Remove(property);
 			return this;
 		}
+
+		/// <summary>
+		///     Makes all properties of the <typeparamref name="TModel" /> optional in the request body
+		/// </summary>
+		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public SeltzrOptionsBuilder<TModel, TUser> OptionalAllProperties() {
+			this.Options.ParserOptions.RequiredParseProperties.Clear();
+			return this;
+		}
+
 
 		/// <summary>
 		///     Requires all properties of the <typeparamref name="TModel" /> to be present in the request body

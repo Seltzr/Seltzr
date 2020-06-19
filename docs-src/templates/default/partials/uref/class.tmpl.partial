@@ -24,9 +24,6 @@
 <h5 class="decalaration">{{__global.declaration}}</h5>
 {{#syntax}}
 <div class="codewrapper">
-  <div class="code-header">
-    <span class="language">C#</span>
-  </div>
   <pre><code class="lang-{{syntax.content.0.lang}}">{{syntax.content.0.value}}</code></pre>
 </div>
 {{#parameters.0}}

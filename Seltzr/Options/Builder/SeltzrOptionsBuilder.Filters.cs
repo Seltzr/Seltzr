@@ -8,6 +8,7 @@
 namespace Seltzr.Options.Builder {
 	using System;
 	using System.Collections.Generic;
+	using System.Diagnostics;
 	using System.Linq;
 	using System.Linq.Expressions;
 	using System.Reflection;
@@ -165,7 +166,7 @@ namespace Seltzr.Options.Builder {
 		}
 
 		/// <summary>
-		///     Enables zero-indexed pagination of the API output
+		///     Enables one-indexed pagination of the API output
 		/// </summary>
 		/// <param name="pageParamName">The name of the query parameter that defines what page to return</param>
 		/// <param name="pageSize">The number of elements to include in each page</param>
@@ -274,8 +275,8 @@ namespace Seltzr.Options.Builder {
 		/// </summary>
 		/// <param name="predicate">The predicate to use to determine if an element should be included in the dataset or not</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public SeltzrOptionsBuilder<TModel, TUser> FilterWhere(Func<IApiContext<TModel, TUser>, TModel, bool> predicate) {
-			this.Filter((c, d) => d.Where(m => predicate(c, m)));
+		public SeltzrOptionsBuilder<TModel, TUser> FilterWhere(Expression<Func<IApiContext<TModel, TUser>, TModel, bool>> predicate) {
+			this.Filter((c, d) => d.Where(new FilterWhereExpressionModifier<TModel, TUser>(c).Modify(predicate)));
 			return this;
 		}
 

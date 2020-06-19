@@ -40,6 +40,36 @@ namespace Seltzr.Extensions {
 		}
 
 		/// <summary>
+		///     Requires that the primary key of the <typeparamref name="TModel" /> be present in the request body
+		/// </summary>
+		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
+		/// <typeparam name="TUser">The type of authenticated user context</typeparam>
+		/// <param name="builder">The options builder to perform the operation on</param>
+		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public static SeltzrOptionsBuilder<TModel, TUser> RequirePrimaryKeyProperties<TModel, TUser>(
+			this SeltzrOptionsBuilder<TModel, TUser> builder)
+			where TModel : class where TUser : class {
+			foreach (KeyProperty Property in SeltzrOrmOptionsBuilderExtensions.GetPrimaryKey(builder))
+				builder.RequireProperty(Property.PropertyInfo);
+			return builder;
+		}
+
+		/// <summary>
+		///     Specifies that the primary key of the <typeparamref name="TModel" /> is optional in the request body
+		/// </summary>
+		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
+		/// <typeparam name="TUser">The type of authenticated user context</typeparam>
+		/// <param name="builder">The options builder to perform the operation on</param>
+		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public static SeltzrOptionsBuilder<TModel, TUser> OptionalPrimaryKeyProperties<TModel, TUser>(
+			this SeltzrOptionsBuilder<TModel, TUser> builder)
+			where TModel : class where TUser : class {
+			foreach (KeyProperty Property in SeltzrOrmOptionsBuilderExtensions.GetPrimaryKey(builder))
+				builder.OptionalProperty(Property.PropertyInfo);
+			return builder;
+		}
+
+		/// <summary>
 		///     Ensures that the primary key of the <typeparamref name="TModel" /> will be included in the response body
 		/// </summary>
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>

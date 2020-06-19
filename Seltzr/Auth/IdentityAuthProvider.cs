@@ -70,7 +70,7 @@ namespace Seltzr.Auth {
 			SignInManager<TUser> SignInManager = context.Services.GetRequiredService<SignInManager<TUser>>();
 			UserManager<TUser> UserManager = context.Services.GetRequiredService<UserManager<TUser>>();
 
-			if (context.User == null || !SignInManager.IsSignedIn(context.HttpContext.User))
+			if (context.HttpContext.User == null || !SignInManager.IsSignedIn(context.HttpContext.User))
 				throw new AuthFailedException("Failed to authenticate user with Identity auth");
 
 			if (this.Policy != null) {

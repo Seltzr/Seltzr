@@ -100,7 +100,7 @@ $(function () {
 
   // Enable highlight.js
   function highlight() {
-    let compiled = /lang-(csharp|js|html|cshtml|powershell|bash)/.compile();
+    let compiled = /lang-(csharp|js|html|cshtml|powershell|bash|json)/.compile();
     $('pre code').each(function (i, block) {
       if (block.className.match(compiled)) return;
       hljs.highlightBlock(block);

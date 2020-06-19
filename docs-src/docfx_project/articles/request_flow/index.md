@@ -11,7 +11,7 @@ This article assumes you have a basic understanding of the following topics:
 * How to setup a basic Seltzr app (See <xref:getting-started>)
 
 ## The Ten Step Process
-On every request, each of the following ten steps is run (if applicable): Routing, Parsing, Authentication, Providing Models, Filtering, Checking Conditions, Running Pre-Operation Actions, Running the Operation, Running Post-Operation Actions, and Writing the Result. Additionally, if an error occurs at any point in this process, any registered Exception Handlers are called.
+On every request, each of the following ten steps is run: Routing, Parsing, Authentication, Providing Models, Filtering, Checking Conditions, Running Pre-Operation Actions, Running the Operation, Running Post-Operation Actions, and Writing the Result. Additionally, if an error occurs at any point in this process, any registered Exception Handlers are called.
 
 > [!IMPORTANT]
 > These steps are always run in the order listed below, regardless of the order in which you add options to the API.
@@ -35,7 +35,7 @@ app.UseSeltzr<MyModel>("v1", api => {
 ```
 
 > [!WARNING]
-> Only routes that have both a request method (`GET`, `POST`, etc.) and a [Result Writer](#{todo-link}) will be matched. In the above example, any requests to `/v1` alone will return a `404 Not Found` response.
+> Only routes that have both a request method (`GET`, `POST`, etc.) and a [Result Writer](xref:result-writers) will be matched. In the above example, any requests to `/v1` alone will return a `404 Not Found` response.
 
 ## Parsing
 **See Also:** [Parsing](xref:parsing)
@@ -43,7 +43,7 @@ app.UseSeltzr<MyModel>("v1", api => {
 Once the request has been matched with a route, the request body is parsed. If the route has any <xref:Seltzr.Parsers.IBodyParser`1> registered, then there *must* be a body to parse. If there is no request body, then a <xref:Seltzr.Exceptions.ParsingFailedException> will be thrown. If there are no body parsers registered, then this step is skipped and any request body will be ignored.
 
 ### Example
-The following example sets up the api to parse JSON request bodies either as single objects, `{...}`, or arrays, `[{...}, {...}]`. Using `ParseJson` instead would only accept objects. Regardless of which method is used, the <xref:Seltzr.Context.ApiContext`2> will always contain an array of <xref:Seltzr.Parsers.ParseResult`1> objects.
+The following example sets up the API to parse JSON request bodies either as single objects, `{...}`, or arrays, `[{...}, {...}]`. Using `ParseJson` instead would only accept objects. Regardless of which method is used, the <xref:Seltzr.Context.ApiContext`2> will always contain an array of <xref:Seltzr.Parsers.ParseResult`1> objects.
 ```csharp
 app.UseSeltzr<MyModel>("v1", api => {
     api.ParseJsonArrays();

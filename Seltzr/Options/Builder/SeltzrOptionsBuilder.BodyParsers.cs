@@ -81,6 +81,16 @@ namespace Seltzr.Options.Builder {
 		///     Sets this route up to parse XML request bodies as a single object or an array
 		/// </summary>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		/// <example>
+		///		<![CDATA[
+		///			```xml
+		///			<ArrayOfWhatever>
+		///				<Whatever></Whatever>
+		///				<Whatever><Element>4</Element></Whatever>
+		///			</ArrayOfWhatever>
+		///			```
+		///		]]>
+		/// </example>
 		public SeltzrOptionsBuilder<TModel, TUser> ParseXmlArrays() {
 			this.AcceptArrays();
 			return this.ParseXml();

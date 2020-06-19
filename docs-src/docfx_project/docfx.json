@@ -7,7 +7,9 @@
             "**.csproj"
           ],
           "exclude": [
-            "TestProject/**"
+            "TestProject/**",
+            "Seltzr.Tests/**",
+            "Seltzr.TestGenerator/**"
           ],
           "src": "../.."
         }
@@ -54,6 +56,9 @@
     ],
     "template": [
       "../templates/default"
+    ],
+    "xrefservice": [
+      "https://xref.docs.microsoft.com/query?uid={uid}"
     ],
     "dest": "../../docs",
     "globalMetadataFiles": [],

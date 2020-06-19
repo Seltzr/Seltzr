@@ -32,6 +32,16 @@ const registry = new textmate.Registry({
     }
 });
 
+let names = {
+    "csharp": "C#",
+    "html": "HTML",
+    "js": "Javascript",
+    "cshtml": "Razor",
+    "powershell": "Powershell",
+    "bash":  "Bash",
+    "json": "JSON"
+}
+
 async function main() {
     // edit docfx.js too! line 84
     let grammars = {
@@ -40,12 +50,32 @@ async function main() {
         "js": await registry.loadGrammar('source.js'),
         "cshtml": await registry.loadGrammar("text.html.cshtml"),
         "powershell": await registry.loadGrammar("source.powershell"),
-        "bash":  await registry.loadGrammar("source.shell")
+        "bash":  await registry.loadGrammar("source.shell"),
+        "json":  await registry.loadGrammar("source.json")
     };
 
     let root = path.resolve(__dirname, "../../docs");
     let files = getAllFiles(root).filter(f => f.endsWith(".html"));
-    files.forEach(f => updateFile(f, grammars));
+    let finishedFiles = [];
+    files.forEach(async f => {
+        await updateFile(f, grammars);
+        finishedFiles.push(f);
+    });
+    let donePromise = new Promise(async resolve => {
+        while (finishedFiles.length != files.length) { await delay(100); }
+        resolve();
+    });
+
+    await Promise.race([donePromise, delay(5000)]);
+    if (finishedFiles.length != files.length) {
+        console.log("The following files timed out", files.filter(f => finishedFiles.indexOf(f) === -1));
+    }
+
+    process.exit(0);
+}
+
+async function delay(ms) {
+    return new Promise(resolve => {setTimeout(resolve, ms);});
 }
 
 main();
@@ -76,13 +106,15 @@ async function updateFile(path, grammars) {
 }
 function colorizeNode(raw, grammars) {
     let startMatch = raw.match(/^<code class="lang-(\w+)"(.*?)(highlight-lines="(.*?)"(.*?))?>/);
-    if (!startMatch) return null;
-    let grammar = grammars[startMatch[1]]
+    let genericMatch = raw.match(/^<code\s*>/);
+    if (!startMatch && !genericMatch) return null;
+    let lang = startMatch ? startMatch[1] : "csharp";
+    let grammar = grammars[lang]
     if (!grammar) return null;
-    raw = raw.substring(startMatch[0].length);
+    raw = raw.substring(startMatch ? startMatch[0].length : genericMatch[0].length);
     if (raw.endsWith('</code>')) raw = raw.substring(0, raw.length - 7);
     const text = raw.split('\n').map(l => l.replace(/\r/g, ""));
-    const highlightLines = startMatch[4] ? startMatch[4].split(",").map(range => {
+    const highlightLines = (startMatch && startMatch[4]) ? startMatch[4].split(",").map(range => {
         let rangeParts = range.split("-").map(p => parseInt(p));
         return { start: rangeParts[0], end: rangeParts[rangeParts.length - 1] };
     }) : [];
@@ -91,15 +123,15 @@ function colorizeNode(raw, grammars) {
     let headerMatch = text.length > 0 && text[0].match(/^(\/\/\s)?---\sHeader: (.*)\s(nocopy)?---$/i);
     let header = null;
     let id = null;
-    if (headerMatch) {
+    if (true /*headerMatch*/) { // every block should have a header now that I think about it
         id = randomString(8);
-        let headerText = headerMatch[2];
+        let headerText = headerMatch ? headerMatch[2] : names[lang];
         header = new htmlParser.HTMLElement("div", { class: "code-header" });
         let textContainer = new htmlParser.HTMLElement("span", {class: "language"});
         textContainer.appendChild(new htmlParser.TextNode(headerText));
         header.appendChild(textContainer)
 
-        if (!headerMatch[3]){ // nocopy not specified
+        if (!headerMatch || !headerMatch[3]){ // nocopy not specified
             let spacer = new htmlParser.HTMLElement("div", {class: "spacer"});
             let copyBtn = new htmlParser.HTMLElement("button", {class: "copy-btn"});
             copyBtn.setAttribute("onclick", `copyCode(this,'${id}')`);
@@ -108,7 +140,20 @@ function colorizeNode(raw, grammars) {
             header.appendChild(copyBtn);
         }
 
-        text.splice(0, 1); // remove header
+        if (headerMatch)
+            text.splice(0, 1); // remove header
+    }
+
+    if (genericMatch) {
+        // trim whitespace
+        let shortestWhitespace = Number.MAX_VALUE;
+        for (let i = 0; i < text.length; i++) {
+            let whitespace = text[i].match(/^\s*/)[0].length;
+            if (whitespace < shortestWhitespace) shortestWhitespace = whitespace;
+        }
+
+        for (let i = 0; i < text.length; i++)  
+            text[i] = text[i].substring(shortestWhitespace);
     }
 
     let output = "";

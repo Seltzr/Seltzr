@@ -7,8 +7,10 @@
 
 namespace Seltzr.OrmBase.Options {
 	using System.Collections.Generic;
+	using System.Linq;
 	using System.Reflection;
 
+	using Seltzr.Context;
 	using Seltzr.Operations;
 	using Seltzr.OrmBase;
 	using Seltzr.ParameterRetrievers;
@@ -19,15 +21,15 @@ namespace Seltzr.OrmBase.Options {
 	public interface IOrmSeltzrOptionsBuilder<TModel, in TUser>
 		where TModel : class where TUser : class {
 		/// <summary>
-		///     Gets the properties that make up the primary key of <see cref="TModel" />
+		///     Gets the properties that make up the primary key of <typeparamref name="TModel"/>
 		/// </summary>
-		/// <returns>The properties that make up the primary key of <see cref="TModel" /></returns>
+		/// <returns>The properties that make up the primary key of <typeparamref name="TModel"/></returns>
 		List<KeyProperty> GetPrimaryKey();
 
 		/// <summary>
 		///		Gets a create <see cref="IOperation{TModel, TUser}"/> for this model
 		/// </summary>
-		/// <returns>A new create operation for <see cref="TModel"/></returns>
+		/// <returns>A new create operation for <typeparamref name="TModel"/></returns>
 		IOperation<TModel, TUser> GetCreateOperation();
 
 		/// <summary>
@@ -35,13 +37,13 @@ namespace Seltzr.OrmBase.Options {
 		/// </summary>
 		/// <param name="properties">The properties to use to compare existing models with parsed models to determine which models to update</param>
 		/// <param name="retrievers">A list of parameter retrievers to use to get values for the properties. If null, the parsed body will be used instead</param>
-		/// <returns>A new update operation for <see cref="TModel"/></returns>
+		/// <returns>A new update operation for <typeparamref name="TModel"/></returns>
 		IOperation<TModel, TUser> GetUpdateOperation(PropertyInfo[] properties, ParameterRetriever[]? retrievers);
 
 		/// <summary>
 		///		Gets a delete <see cref="IOperation{TModel, TUser}"/> for this model
 		/// </summary>
-		/// <returns>A new delete operation for <see cref="TModel"/></returns>
+		/// <returns>A new delete operation for <typeparamref name="TModel"/></returns>
 		IOperation<TModel, TUser> GetDeleteOperation();
 	}
 }

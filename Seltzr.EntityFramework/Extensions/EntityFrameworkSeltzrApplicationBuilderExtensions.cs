@@ -11,6 +11,7 @@ namespace Microsoft.Extensions.DependencyInjection {
 	using System;
 	using System.Collections.Generic;
 	using System.Data.Entity;
+	using System.Data.Entity.Infrastructure;
 	using System.Linq;
 	using System.Linq.Expressions;
 	using System.Reflection;
@@ -54,6 +55,13 @@ namespace Microsoft.Extensions.DependencyInjection {
 				new EntityFrameworkSeltzrOptionsBuilder<TModel, TUser>(app, typeof(TContext), PrimaryKey, route, routeOptionsHandler);
 
 			OptionsBuilder.UseModelProvider(new EntityFrameworkModelProvider<TModel, TContext>());
+
+			// disable change tracking post request
+			OptionsBuilder.After((c, d) => {
+				TContext Context = c.HttpContext.RequestServices.GetRequiredService<TContext>();
+				foreach (DbEntityEntry<TModel> Model in d.Select(Context.Entry))
+					Model.State = EntityState.Detached;
+			});
 			optionsHandler(OptionsBuilder);
 
 			return app.AddSeltzr(OptionsBuilder.BuildAll());

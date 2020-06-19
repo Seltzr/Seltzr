@@ -88,7 +88,7 @@ namespace Seltzr.EntityFrameworkCore.Operations {
 
 				// so that ef can still use sql queries, let's generate an expression tree for it to use
 				ParameterExpression ModelParameter = Expression.Parameter(typeof(TModel));
-
+				
 				// generate expressions. boils down to: ModelParameter.Property == Values[i]
 				Expression[] ComparisonExpressions = this.Properties.Zip(Values).Select(
 					v => (Expression)Expression.Equal(

@@ -29,9 +29,6 @@
 <h6><strong>{{__global.assembly}}</strong>: {{assemblies.0}}.dll</h6>
 <h5 id="{{id}}_syntax">{{__global.syntax}}</h5>
 <div class="codewrapper">
-  <div class="code-header">
-    <span class="language">C#</span>
-  </div>
   <pre><code class="lang-{{_lang}}">{{syntax.content.0.value}}</code></pre>
 </div>
 {{#syntax.parameters.0}}
@@ -76,24 +73,18 @@
 {{/syntax.return}}
 {{#syntax.typeParameters.0}}
 <h5 class="typeParameters">{{__global.typeParameters}}</h5>
-<table class="table table-bordered table-striped table-condensed">
-  <thead>
-    <tr>
-      <th>{{__global.name}}</th>
-      <th>{{__global.description}}</th>
-    </tr>
-  </thead>
-  <tbody>
+<div class="parameter-list">
 {{/syntax.typeParameters.0}}
 {{#syntax.typeParameters}}
-    <tr>
-      <td><span class="parametername">{{{id}}}</span></td>
-      <td>{{{description}}}</td>
-    </tr>
+  <div class="parameter">
+		<div>
+			<code>{{{id}}}</code>
+		</div>
+		{{{description}}}
+	</div>
 {{/syntax.typeParameters}}
 {{#syntax.typeParameters.0}}
-  </tbody>
-</table>
+</div>
 {{/syntax.typeParameters.0}}
 {{#remarks}}
 <h5 id="{{id}}_remarks"><strong>{{__global.remarks}}</strong></h5>
