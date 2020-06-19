@@ -26,7 +26,7 @@ namespace Seltzr.EntityFramework {
 		/// </summary>
 		/// <param name="context">The current API context</param>
 		/// <returns>An <see cref="IQueryable{T}" /> of all of the models available</returns>
-		public async Task<IQueryable<TModel>> GetModelsAsync(IApiContext<TModel, object> context) {
+		public virtual async Task<IQueryable<TModel>> GetModelsAsync(IApiContext<TModel, object> context) {
 			TContext DatabaseContext = context.Services.GetRequiredService<TContext>();
 			return DatabaseContext.Set<TModel>();
 		}

@@ -28,7 +28,7 @@ namespace Seltzr.ExceptionHandlers {
 		///     <see langword="true"/> if the request should continue and attempt to use the next middleware registered for this
 		///     route, <see langword="false"/> to halt request execution, <code>null</code> to continue with the next exception handler.
 		/// </returns>
-		public async Task<bool?> HandleException(Exception exception, HttpContext context, bool hasNext) {
+		public virtual async Task<bool?> HandleException(Exception exception, HttpContext context, bool hasNext) {
 			context.Response.ContentType = "text/plain";
 			switch (exception) {
 				case ConditionFailedException _:

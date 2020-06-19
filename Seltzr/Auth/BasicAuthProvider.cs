@@ -41,7 +41,7 @@ namespace Seltzr.Auth {
 		/// </summary>
 		/// <param name="context">The current API context</param>
 		/// <returns>The currently authenticated user context</returns>
-		public async Task<TUser> AuthenticateAsync(IApiContext<TModel, TUser> context) {
+		public virtual async Task<TUser> AuthenticateAsync(IApiContext<TModel, TUser> context) {
 			string AuthHeader = context.HttpContext.Request.Headers[HeaderNames.Authorization];
 
 			byte[] DecodedCredentialBytes = Convert.FromBase64String(AuthHeader.Substring(6)); // "Basic "
@@ -62,7 +62,7 @@ namespace Seltzr.Auth {
 		/// <returns> 
 		///     <see langword="true"/> if this request contains an Authorization header that starts with "Basic", <see langword="false"/> otherwise.
 		/// </returns>
-		public async Task<bool> CanAuthAsync(IApiContext<TModel, TUser> context) =>
+		public virtual async Task<bool> CanAuthAsync(IApiContext<TModel, TUser> context) =>
 			context.Request.Headers.ContainsKey(HeaderNames.Authorization)
 			&& context.Request.Headers[HeaderNames.Authorization].Count == 1
 			&& context.Request.Headers[HeaderNames.Authorization][0].StartsWith("Basic ");

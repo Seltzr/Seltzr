@@ -52,7 +52,7 @@ namespace Seltzr.Responses {
 		/// </summary>
 		/// <typeparam name="TAttribute">The attribute to match on the properties to set</typeparam>
 		/// <param name="value">The value to assign to that property</param>
-		public void Set<TAttribute>(object value) where TAttribute : Attribute {
+		public virtual void Set<TAttribute>(object value) where TAttribute : Attribute {
 			PropertyInfo[] Matching = this.Properties.Where(p => p.GetCustomAttribute<TAttribute>(false) != null).ToArray();
 			foreach (PropertyInfo ToSet in Matching) {
 				ToSet.GetSetMethod()?.Invoke(this, new[] { value });
@@ -65,7 +65,7 @@ namespace Seltzr.Responses {
 		/// </summary>
 		/// <param name="name">The name given to the <see cref="ResponseValueAttribute"/> on the properties to set</param>
 		/// <param name="value">The value to assign to that property</param>
-		public void Set(string name, object value) {
+		public virtual void Set(string name, object value) {
 			if (name == null) throw new ArgumentNullException(nameof(name));
 			PropertyInfo[] Matching = this.Properties.Where(p => p.GetCustomAttribute<ResponseValueAttribute>()?.Name == name).ToArray();
 			foreach (PropertyInfo ToSet in Matching) {
@@ -82,7 +82,7 @@ namespace Seltzr.Responses {
 		/// <remarks>
 		///		This method will attempt to convert the string value to a supported type if the type of the matching property is not string.
 		/// </remarks>
-		public void SetString(string name, string value) {
+		public virtual void SetString(string name, string value) {
 			if (name == null) throw new ArgumentNullException(nameof(name));
 			PropertyInfo[] Matching = this.Properties.Where(p => p.GetCustomAttribute<ResponseValueAttribute>()?.Name == name).ToArray();
 			foreach (PropertyInfo ToSet in Matching) {
@@ -101,7 +101,7 @@ namespace Seltzr.Responses {
 		/// <remarks>
 		///		This method will attempt to convert the string value to a supported type if the type of the matching property is not string.
 		/// </remarks>
-		public void SetString<TAttribute>(string value) where TAttribute : Attribute {
+		public virtual void SetString<TAttribute>(string value) where TAttribute : Attribute {
 			PropertyInfo[] Matching = this.Properties.Where(p => p.GetCustomAttribute<TAttribute>(false) != null).ToArray();
 			foreach (PropertyInfo ToSet in Matching) {
 				ToSet.GetSetMethod()?.Invoke(
@@ -116,7 +116,7 @@ namespace Seltzr.Responses {
 		/// </summary>
 		/// <param name="models">The model dataset</param>
 		/// <param name="shouldStrip"><see langword="true"/> to strip the array if there's only one element, <see langword="false"/> otherwise</param>
-		public void Populate(TModel[] models, bool shouldStrip) {
+		public virtual void Populate(TModel[] models, bool shouldStrip) {
 			// todo: check for attributes like [thisisthesinglepropertyattribute]?
 			PropertyInfo[] Properties = this.GetType().GetProperties();
 

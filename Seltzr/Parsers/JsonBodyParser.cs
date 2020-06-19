@@ -47,7 +47,7 @@ namespace Seltzr.Parsers {
 		/// </summary>
 		/// <param name="context">The context for the HTTP request</param>
 		/// <returns><see langword="true"/> if the request body can be parsed by this <see cref="IBodyParser{TModel}"/>, <see langword="false"/> otherwise</returns>
-		public async Task<bool> CanParse(HttpContext context) => context.Request.ContentType == "application/json";
+		public virtual async Task<bool> CanParse(HttpContext context) => context.Request.ContentType == "application/json";
 
 		/// <summary>
 		///     Parses a request body
@@ -56,7 +56,7 @@ namespace Seltzr.Parsers {
 		/// <param name="options">Options for the parser</param>
 		/// <param name="context">The context for the HTTP request</param>
 		/// <returns>The parsed object</returns>
-		public async Task<ParseResult<TModel>[]> Parse(byte[] body, ParserOptions options, HttpContext context) {
+		public virtual async Task<ParseResult<TModel>[]> Parse(byte[] body, ParserOptions options, HttpContext context) {
 			using JsonDocument Document = JsonDocument.Parse(body);
 			JsonElement Root = Document.RootElement;
 			if (Root.ValueKind != JsonValueKind.Array) return new[] { this.ParseModel(Root, options) };

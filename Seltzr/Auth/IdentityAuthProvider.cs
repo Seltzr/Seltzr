@@ -66,7 +66,7 @@ namespace Seltzr.Auth {
 		/// </summary>
 		/// <param name="context">The current API context</param>
 		/// <returns>The currently authenticated user context</returns>
-		public async Task<TUser> AuthenticateAsync(IApiContext<TModel, TUser> context) {
+		public virtual async Task<TUser> AuthenticateAsync(IApiContext<TModel, TUser> context) {
 			SignInManager<TUser> SignInManager = context.Services.GetRequiredService<SignInManager<TUser>>();
 			UserManager<TUser> UserManager = context.Services.GetRequiredService<UserManager<TUser>>();
 
@@ -93,6 +93,6 @@ namespace Seltzr.Auth {
 		/// <returns>
 		///     <see langword="true"/> always
 		/// </returns>
-		public async Task<bool> CanAuthAsync(IApiContext<TModel, TUser> context) => true;
+		public virtual async Task<bool> CanAuthAsync(IApiContext<TModel, TUser> context) => true;
 	}
 }

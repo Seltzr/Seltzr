@@ -47,7 +47,7 @@ namespace Seltzr.Auth {
 		/// </summary>
 		/// <param name="context">The current API context</param>
 		/// <returns>The currently authenticated user context</returns>
-		public async Task<TUser> AuthenticateAsync(IApiContext<TModel, TUser> context) {
+		public virtual async Task<TUser> AuthenticateAsync(IApiContext<TModel, TUser> context) {
 			string HeaderValue = context.Request.Headers[this.HeaderName];
 			if (HeaderValue == null)
 				throw new AuthFailedException("Failed to authorize user with Header key authentication");
@@ -62,7 +62,7 @@ namespace Seltzr.Auth {
 		/// <returns>
 		///     <see langword="true"/> if this request contains the header value this <see cref="HeaderAuthProvider{TModel, TUser}"/> authenticates with
 		/// </returns>
-		public async Task<bool> CanAuthAsync(IApiContext<TModel, TUser> context) =>
+		public virtual async Task<bool> CanAuthAsync(IApiContext<TModel, TUser> context) =>
 			context.Request.Headers.ContainsKey(this.HeaderName);
 	}
 }

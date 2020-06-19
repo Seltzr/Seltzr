@@ -50,7 +50,7 @@ namespace Seltzr.OrmBase.Filters {
 		/// <param name="context">The current API context</param>
 		/// <param name="dataset">The current dataset to be filtered</param>
 		/// <returns>The filtered dataset</returns>
-		public async Task<IQueryable<TModel>> FilterDataAsync(
+		public virtual async Task<IQueryable<TModel>> FilterDataAsync(
 			IApiContext<TModel, object> context,
 			IQueryable<TModel> dataset) {
 			// step one is just get the keys

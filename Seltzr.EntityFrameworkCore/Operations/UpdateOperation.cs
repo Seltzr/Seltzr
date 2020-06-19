@@ -59,7 +59,7 @@ namespace Seltzr.EntityFrameworkCore.Operations {
 		/// <param name="context">The current API context</param>
 		/// <param name="dataset">The filtered dataset to operate on</param>
 		/// <returns>The affected models</returns>
-		public async Task<IEnumerable<TModel>> OperateAsync(
+		public virtual async Task<IEnumerable<TModel>> OperateAsync(
 			IApiContext<TModel, object> context,
 			IQueryable<TModel> dataset) {
 			TContext DatabaseContext = context.Services.GetRequiredService<TContext>();

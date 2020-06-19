@@ -39,7 +39,7 @@ namespace Seltzr.Results {
 		/// </summary>
 		/// <param name="request">The request to test if a result can be written for it</param>
 		/// <returns><see langword="true"/></returns>
-		public async Task<bool> CanWriteAsync(HttpRequest request) => true;
+		public virtual async Task<bool> CanWriteAsync(HttpRequest request) => true;
 
 		/// <summary>
 		///     Formats the API result
@@ -48,7 +48,7 @@ namespace Seltzr.Results {
 		/// <param name="data">The dataset to format</param>
 		/// <param name="options">Options for formatting the result</param>
 		/// <returns>When the result has been sent</returns>
-		public async Task WriteResultAsync(IApiContext<TModel, object> context, IEnumerable<TModel> data, FormattingOptions options) {
+		public virtual async Task WriteResultAsync(IApiContext<TModel, object> context, IEnumerable<TModel> data, FormattingOptions options) {
 			// set content type first, then actually write the xml
 			context.HttpResponse.ContentType = "application/xml";
 

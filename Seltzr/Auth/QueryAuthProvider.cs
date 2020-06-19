@@ -47,7 +47,7 @@ namespace Seltzr.Auth {
 		/// </summary>
 		/// <param name="context">The current API context</param>
 		/// <returns>The currently authenticated user context</returns>
-		public async Task<TUser> AuthenticateAsync(IApiContext<TModel, TUser> context) {
+		public virtual async Task<TUser> AuthenticateAsync(IApiContext<TModel, TUser> context) {
 			string QueryValue = context.Request.Query[this.ParameterName];
 			if (QueryValue == null)
 				throw new AuthFailedException("Failed to authorize user with query parameter authentication");
@@ -63,7 +63,7 @@ namespace Seltzr.Auth {
 		///     <see langword="true"/> if this request contains the query parameter this
 		///     <see cref="IAuthProvider{TModel, TUser}" /> authenticates with, <see langword="false"/> otherwise.
 		/// </returns>
-		public async Task<bool> CanAuthAsync(IApiContext<TModel, TUser> context) =>
+		public virtual async Task<bool> CanAuthAsync(IApiContext<TModel, TUser> context) =>
 			context.Request.Query.ContainsKey(this.ParameterName);
 	}
 }

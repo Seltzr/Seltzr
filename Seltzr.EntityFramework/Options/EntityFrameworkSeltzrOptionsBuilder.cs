@@ -88,7 +88,7 @@ namespace Seltzr.EntityFramework.Options {
 		///		Gets the properties that make up the primary key of <see cref="TModel"/>
 		/// </summary>
 		/// <returns>The properties that make up the primary key of <see cref="TModel"/></returns>
-		public List<KeyProperty> GetPrimaryKey() {
+		public virtual List<KeyProperty> GetPrimaryKey() {
 			if (this.PrimaryKey != null) return this.PrimaryKey;
 
 			using IServiceScope Scope = this.App.ApplicationServices.CreateScope();
@@ -111,7 +111,7 @@ namespace Seltzr.EntityFramework.Options {
 		///		Gets a create <see cref="IOperation{TModel, TUser}"/> for this model
 		/// </summary>
 		/// <returns>A new create operation for <see cref="TModel"/></returns>
-		public IOperation<TModel, TUser> GetCreateOperation() => this.NewOperation(typeof(CreateOperation<,>));
+		public virtual IOperation<TModel, TUser> GetCreateOperation() => this.NewOperation(typeof(CreateOperation<,>));
 
 		/// <summary>
 		///		Gets an update <see cref="IOperation{TModel, TUser}"/> for this model
@@ -119,7 +119,7 @@ namespace Seltzr.EntityFramework.Options {
 		/// <param name="properties">The properties to use to compare existing models with parsed models to determine which models to update</param>
 		/// <param name="retrievers">A list of parameter retrievers to use to get values for the properties. If null, the parsed body will be used instead</param>
 		/// <returns>A new update operation for <see cref="TModel"/></returns>
-		public IOperation<TModel, TUser> GetUpdateOperation(
+		public virtual IOperation<TModel, TUser> GetUpdateOperation(
 			PropertyInfo[] properties,
 			ParameterRetriever[]? retrievers) {
 			return (IOperation<TModel, TUser>)Activator.CreateInstance(
@@ -131,7 +131,7 @@ namespace Seltzr.EntityFramework.Options {
 		///		Gets a delete <see cref="IOperation{TModel, TUser}"/> for this model
 		/// </summary>
 		/// <returns>A new delete operation for <see cref="TModel"/></returns>
-		public IOperation<TModel, TUser> GetDeleteOperation() => this.NewOperation(typeof(DeleteOperation<,>));
+		public virtual IOperation<TModel, TUser> GetDeleteOperation() => this.NewOperation(typeof(DeleteOperation<,>));
 
 		/// <summary>
 		///     Creates a new operation
