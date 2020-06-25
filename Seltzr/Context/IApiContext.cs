@@ -14,10 +14,13 @@ namespace Seltzr.Context {
 	using Seltzr.Responses;
 
 	/// <summary>
-	///     Context for an API request
+	///     Context for an API request.
 	/// </summary>
 	/// <typeparam name="TModel">The type of model being managed by the AP</typeparam>
 	/// <typeparam name="TUser">The type of authenticated user context</typeparam>
+	/// <remarks>
+	///		The API Context lives for the duration of a single route execution and contains a number of useful properties which are passed to many steps of the request flow. The API Context provides access to the parsed request body, the response wrapper, and a scoped service provider to Auth Providers, Conditions, Filters, Model Providers, Operations, Parsers, and Result Writers.
+	/// </remarks>
 	public interface IApiContext<TModel, out TUser>
 		where TModel : class where TUser : class {
 		/// <summary>
@@ -26,7 +29,7 @@ namespace Seltzr.Context {
 		public HttpContext HttpContext { get; }
 
 		/// <summary>
-		///     Gets the current HTTP response context. Shortcut to <see cref="HttpContext.Response" />
+		///     Gets the current HTTP response context. Shortcut to <see cref="Microsoft.AspNetCore.Http.HttpContext.Response" />
 		/// </summary>
 		public HttpResponse HttpResponse { get; }
 

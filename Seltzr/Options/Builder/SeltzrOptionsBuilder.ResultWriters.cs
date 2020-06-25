@@ -42,10 +42,9 @@ namespace Seltzr.Options.Builder {
 			string[] MimeTypes = { "application/json", "application/xml" };
 			JsonResultWriter<TModel> Json = new JsonResultWriter<TModel>(options);
 			XmlResultWriter<TModel> Xml = new XmlResultWriter<TModel>();
-
 			HeaderDependentResultWriter<TModel, TUser> ContentTypeWriter = new HeaderDependentResultWriter<TModel, TUser>(HeaderNames.ContentType, MimeTypes, new IResultWriter<TModel, TUser>[] { Json, Xml }, 0);
 			QueryDependentResultWriter<TModel, TUser> QueryDependentResultWriter = new QueryDependentResultWriter<TModel, TUser>("format", new[] {"json", "xml"}, new IResultWriter<TModel, TUser>[] {Json, Xml, ContentTypeWriter }, 2);
-			AcceptDependentResultWriter<TModel, TUser> AcceptDependentResultWriter = new AcceptDependentResultWriter<TModel, TUser>(MimeTypes, new IResultWriter<TModel, TUser>[] { Json, Xml, QueryDependentResultWriter}, 2);
+			AcceptDependentResultWriter<TModel, TUser> AcceptDependentResultWriter = new AcceptDependentResultWriter<TModel, TUser>(MimeTypes, new IResultWriter<TModel, TUser>[] { Json, Xml, QueryDependentResultWriter }, 2);
 			return this.UseResultWriter(AcceptDependentResultWriter);
 		}
 
