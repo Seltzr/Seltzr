@@ -20,5 +20,4 @@ TestProject/
 node_modules
 /docs-src/docfx_project/obj/.cache/build
 
-/docs-src/
-/docs-src/docfx
+/docs-src/docfx/

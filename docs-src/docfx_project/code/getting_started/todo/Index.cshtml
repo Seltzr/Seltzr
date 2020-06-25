@@ -1,0 +1,36 @@
+﻿<!-- <main> -->
+--- Header: Index.cshtml ---
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Todo";
+}
+
+<div class="text-center">
+    <h1 class="display-4">To-Do</h1>
+    <section id="todo-container" class="col">
+        <ul id="todo-list" class="list-group"></ul>
+        <div class="row m-0">    
+            <input type="text" class="form-control col-9 m-2" placeholder="Todo..." id="new-todo">
+            <button type="button" class="btn btn-primary col m-2" id="create-btn">Create</button>
+        </div>
+    </section>
+</div>
+<!-- </main> -->
+
+<!-- <random> -->
+--- Header: Index.cshtml ---
+<div class="text-center">
+    <h1 class="display-4">To-Do</h1>
+    <section id="todo-container" class="col">        
+        <ul class="list-group mb-2">
+            <li class="list-group-item">Random To-Do: <span id="random-todo"></span></li>
+        </ul>
+        <ul id="todo-list" class="list-group"></ul>
+        <div class="row m-0">    
+            <input type="text" class="form-control col-9 m-2" placeholder="Todo..." id="new-todo">
+            <button type="button" class="btn btn-primary col m-2" id="create-btn">Create</button>
+        </div>
+    </section>
+</div>
+<!-- </random> -->

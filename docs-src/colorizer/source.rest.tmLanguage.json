@@ -1,0 +1,28 @@
+{
+	"name": "REST",
+	"scopeName": "source.rest",
+	"patterns": [{
+		"name": "keyword.preprocessor",
+		"begin": "^",
+		"end": "$",
+		"patterns": [
+			{
+				"name": "variable",
+				"match": "^(\\w|-)+:"
+			},
+			{
+				"name": "keyword.control",
+				"match": "^[A-Z]+"
+			},
+			{
+				"name": "text",
+				"match": "(&|\\?)(\\w+)(=([^&]+))?",
+				"captures": {
+					"1": { "name": "constant.numeric" },
+					"2": { "name": "variable" },
+					"4": { "name": "entity.name.label" }
+				}
+			}
+		]
+	}]
+}		
