@@ -29,3 +29,6 @@ dotnet_diagnostic.SA1312.severity = none
 
 # SA1519: Braces should not be omitted from multi-line child statement
 dotnet_diagnostic.SA1519.severity = none
+
+# SA1121: Use built-in type alias
+dotnet_diagnostic.SA1121.severity = none
