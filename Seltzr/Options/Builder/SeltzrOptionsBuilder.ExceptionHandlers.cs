@@ -46,9 +46,10 @@ namespace Seltzr.Options.Builder {
 		/// <summary>
 		///     Sets this route up to catch exceptions, writing the exception message to the response body
 		/// </summary>
+		/// <param name="isDevelopment"><see langword="true"/> if the app is in a development environment, <see langword="false"/> otherwise</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public SeltzrOptionsBuilder<TModel, TUser> CatchExceptions() {
-			return this.AddExceptionHandler<SimpleExceptionHandler>();
+		public SeltzrOptionsBuilder<TModel, TUser> CatchExceptions(bool isDevelopment = false) {
+			return this.AddExceptionHandler(new SimpleExceptionHandler(isDevelopment));
 		}
 
 		/// <summary>
@@ -254,6 +255,7 @@ namespace Seltzr.Options.Builder {
 			return this;
 		}
 		
+
 		/// <summary>
 		///     Adds an exception handler to this route that handles a specific type of exception
 		/// </summary>

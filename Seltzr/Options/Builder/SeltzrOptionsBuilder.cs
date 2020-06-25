@@ -30,7 +30,7 @@ namespace Seltzr.Options.Builder {
 	/// </summary>
 	/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
 	/// <typeparam name="TUser">The type of authenticated user context</typeparam>
-	public partial class SeltzrOptionsBuilder<TModel, TUser>
+	public partial class SeltzrOptionsBuilder<TModel, TUser> : SeltzrOptionsBuilderBase
 		where TModel : class where TUser : class {
 		/// <summary>
 		///     The children options being built off of this one
@@ -57,12 +57,12 @@ namespace Seltzr.Options.Builder {
 		/// <param name="routeOptionsHandler">ASP.NET core specific route options</param>
 		public SeltzrOptionsBuilder(string baseRoute, Action<IEndpointConventionBuilder>? routeOptionsHandler)
 			: this() {
-			this.Options.RoutePattern = SeltzrOptionsBuilder<TModel, TUser>.FixRoute(baseRoute);
+			this.Options.RoutePattern = SeltzrOptionsBuilderBase.FixRoute(baseRoute);
 			this.Options.RouteOptionsHandler = routeOptionsHandler;
 		}
 
 		/// <summary>
-		///     The route pattern for this builder
+		///     Gets the route pattern for this builder
 		/// </summary>
 		public string RoutePattern => this.Options.RoutePattern;
 
@@ -184,6 +184,15 @@ namespace Seltzr.Options.Builder {
 		}
 
 		/// <summary>
+		///     Adds a condition to this route, which much be met for the request to succeed
+		/// </summary>
+		/// <typeparam name="TCondition">The type of the condition to add</typeparam>
+		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public SeltzrOptionsBuilder<TModel, TUser> AddCondition<TCondition>() where TCondition : ICondition<TModel, TUser>, new() {
+			return this.AddCondition(new TCondition());
+		}
+
+		/// <summary>
 		///     Adds a filter to this route, which will filter the dataset retrieved
 		/// </summary>
 		/// <param name="filter">The filter to add</param>
@@ -191,6 +200,15 @@ namespace Seltzr.Options.Builder {
 		public SeltzrOptionsBuilder<TModel, TUser> AddFilter(IFilter<TModel, TUser> filter) {
 			this.Options.Filters.Add(filter);
 			return this;
+		}
+
+		/// <summary>
+		///     Adds a filter to this route, which will filter the dataset retrieved
+		/// </summary>
+		/// <typeparam name="TFilter">The type of the filter to add</typeparam>
+		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public SeltzrOptionsBuilder<TModel, TUser> AddFilter<TFilter>() where TFilter : IFilter<TModel, TUser>, new() {
+			return this.AddFilter(new TFilter());
 		}
 
 		/// <summary>
@@ -217,11 +235,11 @@ namespace Seltzr.Options.Builder {
 			List<SeltzrOptions<TModel, TUser>> MyOptions = new List<SeltzrOptions<TModel, TUser>> { this.Options };
 			Dictionary<string, List<SeltzrOptions<TModel, TUser>>> AllOptions =
 				new Dictionary<string, List<SeltzrOptions<TModel, TUser>>> {
-					                                                              {
-						                                                              this.Options.RoutePattern,
-						                                                              MyOptions
-					                                                              }
-				                                                              };
+					                                                           {
+						                                                           this.Options.RoutePattern,
+						                                                           MyOptions
+					                                                           }
+				                                                           };
 			foreach (SeltzrOptionsBuilder<TModel, TUser> Builder in this.Children)
 			foreach ((string Key, List<SeltzrOptions<TModel, TUser>> OptionsList) in Builder.BuildAll())
 				if (AllOptions.ContainsKey(Key)) AllOptions[Key].AddRange(OptionsList);
@@ -361,7 +379,7 @@ namespace Seltzr.Options.Builder {
 		public SeltzrOptionsBuilder<TModel, TUser> Default<TProperty>(
 			Expression<Func<TModel, TProperty>> propertyExpression,
 			Func<TProperty> defaultValue) {
-			PropertyInfo Info = SeltzrOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression);
+			PropertyInfo Info = SeltzrOptionsBuilderBase.ExtractProperty(propertyExpression);
 
 			// double lambda looks silly but we can't cast Func<TProperty> to Func<object> without making it constrained to reference types
 			// todo: would there ever be a non-reference type in a model though?
@@ -379,7 +397,7 @@ namespace Seltzr.Options.Builder {
 		public SeltzrOptionsBuilder<TModel, TUser> Default<TProperty>(
 			Expression<Func<TModel, TProperty>> propertyExpression,
 			TProperty defaultValue) {
-			PropertyInfo Info = SeltzrOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression);
+			PropertyInfo Info = SeltzrOptionsBuilderBase.ExtractProperty(propertyExpression);
 			this.Options.ParserOptions.DefaultPropertyValues.Add(Info, () => defaultValue);
 			return this;
 		}
@@ -440,7 +458,7 @@ namespace Seltzr.Options.Builder {
 			Action<IEndpointConventionBuilder>? routeOptionsHandler) {
 			// create a copy of the options and use that for the new route
 			SeltzrOptions<TModel, TUser> Copy = this.Options.Copy();
-			Copy.RoutePattern += SeltzrOptionsBuilder<TModel, TUser>.FixRoute(pattern);
+			Copy.RoutePattern += SeltzrOptionsBuilderBase.FixRoute(pattern);
 			if (routeOptionsHandler != null) Copy.RouteOptionsHandler = routeOptionsHandler;
 			SeltzrOptionsBuilder<TModel, TUser> Child = this.CreateChild(Copy);
 			this.Children.Add(Child);
@@ -454,7 +472,7 @@ namespace Seltzr.Options.Builder {
 		/// <param name="propertyExpression">An expression that returns the property to be ignored</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public SeltzrOptionsBuilder<TModel, TUser> Ignore(Expression<Func<TModel, object>> propertyExpression) {
-			return this.Ignore(SeltzrOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
+			return this.Ignore(SeltzrOptionsBuilderBase.ExtractProperty(propertyExpression));
 		}
 
 		/// <summary>
@@ -468,8 +486,7 @@ namespace Seltzr.Options.Builder {
 			                                   && !property.DeclaringType.IsSubclassOf(typeof(TModel)))
 				throw new OptionsException("Cannot ignore a property that doesn't belong to the model class");
 			this.Options.ParserOptions.IgnoredParseProperties.Add(property);
-			if (this.Options.ParserOptions.RequiredParseProperties != null)
-				this.Options.ParserOptions.RequiredParseProperties.Remove(property);
+			this.Options.ParserOptions.RequiredParseProperties?.Remove(property);
 			return this;
 		}
 
@@ -480,6 +497,7 @@ namespace Seltzr.Options.Builder {
 		public SeltzrOptionsBuilder<TModel, TUser> IgnoreAll() {
 			this.Options.ParserOptions.IgnoredParseProperties.AddRange(
 				typeof(TModel).GetProperties().Where(p => p.CanWrite));
+			this.Options.ParserOptions.RequiredParseProperties?.Clear();
 			return this;
 		}
 
@@ -489,7 +507,7 @@ namespace Seltzr.Options.Builder {
 		/// <param name="propertyExpression">An expression that returns the property to be included</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public SeltzrOptionsBuilder<TModel, TUser> Include(Expression<Func<TModel, object>> propertyExpression) =>
-			this.Include(SeltzrOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
+			this.Include(SeltzrOptionsBuilderBase.ExtractProperty(propertyExpression));
 
 		/// <summary>
 		///     Ensures that a property of the <typeparamref name="TModel" /> will be included in the response body
@@ -590,7 +608,7 @@ namespace Seltzr.Options.Builder {
 		/// <param name="propertyExpression">An expression that returns the property to be omitted</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public SeltzrOptionsBuilder<TModel, TUser> Omit(Expression<Func<TModel, object>> propertyExpression) =>
-			this.Omit(SeltzrOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
+			this.Omit(SeltzrOptionsBuilderBase.ExtractProperty(propertyExpression));
 
 		/// <summary>
 		///     Ensures that no properties of the <typeparamref name="TModel" /> will be included in the response body
@@ -607,7 +625,7 @@ namespace Seltzr.Options.Builder {
 		/// <param name="propertyExpression">An expression that returns the property to make optional</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public SeltzrOptionsBuilder<TModel, TUser> OptionalProperty(Expression<Func<TModel, object>> propertyExpression) =>
-			this.OptionalProperty(SeltzrOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
+			this.OptionalProperty(SeltzrOptionsBuilderBase.ExtractProperty(propertyExpression));
 
 		/// <summary>
 		///     Makes a property of the <typeparamref name="TModel" /> optional in the request body
@@ -636,6 +654,7 @@ namespace Seltzr.Options.Builder {
 		public SeltzrOptionsBuilder<TModel, TUser> RequireAllProperties() {
 			this.Options.ParserOptions.RequiredParseProperties.AddRange(
 				typeof(TModel).GetProperties().Where(p => p.CanWrite));
+			this.Options.ParserOptions.IgnoredParseProperties?.Clear();
 			return this;
 		}
 
@@ -646,7 +665,7 @@ namespace Seltzr.Options.Builder {
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public SeltzrOptionsBuilder<TModel, TUser> RequireProperty(
 			Expression<Func<TModel, object>> propertyExpression) =>
-			this.RequireProperty(SeltzrOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
+			this.RequireProperty(SeltzrOptionsBuilderBase.ExtractProperty(propertyExpression));
 
 		/// <summary>
 		///     Requires a property of the <typeparamref name="TModel" /> to be present in the request body
@@ -655,12 +674,13 @@ namespace Seltzr.Options.Builder {
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public SeltzrOptionsBuilder<TModel, TUser> RequireProperty(PropertyInfo property) {
 			this.Options.ParserOptions.RequiredParseProperties.Add(property);
+			this.Options.ParserOptions.IgnoredParseProperties?.Remove(property);
 			return this;
 		}
 
 		/// <summary>
 		///     Resets this <see cref="SeltzrOptionsBuilder{TModel, TUser}" />, clearing all lists and resetting all values
-		///     except for the route pattern
+		///     except for the route pattern and model provider
 		/// </summary>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public SeltzrOptionsBuilder<TModel, TUser> Reset() {
@@ -700,6 +720,15 @@ namespace Seltzr.Options.Builder {
 		}
 
 		/// <summary>
+		///     Sets the model provider to use for this route
+		/// </summary>
+		/// <typeparam name="TProvider">The type of the model provider to use</typeparam>
+		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public SeltzrOptionsBuilder<TModel, TUser> UseModelProvider<TProvider>() where TProvider : IModelProvider<TModel, TUser>, new() {
+			return this.UseModelProvider(new TProvider());
+		}
+
+		/// <summary>
 		///     Sets the operation to use for this route, like create, update, or delete
 		/// </summary>
 		/// <param name="operation">The operation to use</param>
@@ -707,6 +736,15 @@ namespace Seltzr.Options.Builder {
 		public SeltzrOptionsBuilder<TModel, TUser> UseOperation(IOperation<TModel, TUser> operation) {
 			this.Options.Operation = operation;
 			return this;
+		}
+
+		/// <summary>
+		///     Sets the operation to use for this route, like create, update, or delete
+		/// </summary>
+		/// <typeparam name="TOperation">The type of the operation to use</typeparam>
+		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public SeltzrOptionsBuilder<TModel, TUser> UseOperation<TOperation>() where TOperation : IOperation<TModel, TUser>, new() {
+			return this.UseOperation(new TOperation());
 		}
 
 		/// <summary>
@@ -747,54 +785,6 @@ namespace Seltzr.Options.Builder {
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public SeltzrOptionsBuilder<TModel, TUser> WrapResponse() {
 			return this.WrapResponse<BasicResponse<TModel>>();
-		}
-
-		/// <summary>
-		///     Extracts a property from an expression
-		/// </summary>
-		/// <param name="propertyExpression">The expression that refers to a property</param>
-		/// <typeparam name="TProperty">The type of the property to extract</typeparam>
-		/// <returns>The extracted property</returns>
-		private static PropertyInfo ExtractProperty<TProperty>(Expression<Func<TModel, TProperty>> propertyExpression) {
-			MemberExpression MemberExpression;
-			if (propertyExpression.Body is UnaryExpression Body)
-				MemberExpression = (MemberExpression)Body.Operand;
-			else MemberExpression = (MemberExpression)propertyExpression.Body;
-
-			return (PropertyInfo)MemberExpression.Member;
-		}
-
-		/// <summary>
-		///     Fixes a route string provided through user input
-		/// </summary>
-		/// <param name="routeString">The inputted route string</param>
-		/// <returns>The route string, ensuring that it ends with a / and starts with a letter</returns>
-		private static string FixRoute(string? routeString) {
-			if (routeString == null) return string.Empty;
-			if (routeString.StartsWith("/")) routeString = routeString.Substring(1);
-			if (routeString.Length != 0 && !routeString.EndsWith("/")) routeString += "/";
-			return routeString;
-		}
-
-		/// <summary>
-		///		camelCases a string
-		/// </summary>
-		/// <param name="str">The string to camelCase</param>
-		/// <returns>The string in camelCase format</returns>
-		private static string CamelCase(string str) {
-			// little more complex to deal with ACRONYMCase --> acronymCase
-			int LastUppercase = 0;
-			while (LastUppercase < str.Length) {
-				char Char = str[LastUppercase];
-				if (Char >= 'a' && Char <= 'z')
-					break;
-				LastUppercase++;
-			}
-
-			LastUppercase--; // last uppercase is one before first lowercase
-
-			if (LastUppercase < 1) LastUppercase = 1; // NotAnAcronym or alreadyCamelCase
-			return str.Substring(0, LastUppercase).ToLower() + str.Substring(LastUppercase);
 		}
 	}
 }

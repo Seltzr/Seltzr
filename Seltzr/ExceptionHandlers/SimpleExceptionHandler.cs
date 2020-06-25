@@ -19,6 +19,17 @@ namespace Seltzr.ExceptionHandlers {
 	/// </summary>
 	public class SimpleExceptionHandler : IExceptionHandler {
 		/// <summary>
+		///		<see langword="true"/> if the app is in a development environment, <see langword="false"/> otherwise
+		/// </summary>
+		private bool IsDevelopment;
+
+		/// <summary>
+		///		Initializes a new instance of the <see cref="SimpleExceptionHandler"/> class.
+		/// </summary>
+		/// <param name="isDevelopment"><see langword="true"/> if the app is in a development environment, <see langword="false"/> otherwise</param>
+		public SimpleExceptionHandler(bool isDevelopment) => this.IsDevelopment = isDevelopment;
+
+		/// <summary>
 		///     Handles API exceptions
 		/// </summary>
 		/// <param name="exception">The exception that was thrown</param>
@@ -42,10 +53,12 @@ namespace Seltzr.ExceptionHandlers {
 					context.Response.StatusCode = StatusCodes.Status401Unauthorized;
 					break;
 				default:
+					if (this.IsDevelopment) throw exception;
 					context.Response.StatusCode = StatusCodes.Status500InternalServerError;
 					await context.Response.WriteAsync("An unexpected error occurred");
 					return false;
 			}
+
 
 			string Message = exception.Message;
 			if (exception.InnerException != null)

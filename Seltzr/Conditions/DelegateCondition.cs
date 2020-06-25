@@ -28,13 +28,16 @@ namespace Seltzr.Conditions {
 		///     Initializes a new instance of the <see cref="DelegateCondition{TModel, TUser}" /> class.
 		/// </summary>
 		/// <param name="conditionDelegate">The delegate to use to check the status of the condition</param>
-		public DelegateCondition(Func<IApiContext<TModel, TUser>, IQueryable<TModel>, Task<bool>> conditionDelegate) =>
+		/// <param name="failureMessage">The message of the exception to throw when the condition is not met</param>
+		public DelegateCondition(Func<IApiContext<TModel, TUser>, IQueryable<TModel>, Task<bool>> conditionDelegate, string? failureMessage = null) {
 			this.ConditionDelegate = conditionDelegate;
+			this.FailureMessage = failureMessage ?? "A required condition was not met";
+		}
 
 		/// <summary>
 		///     Gets a message indicating why the condition might have failed
 		/// </summary>
-		public string FailureMessage { get; } = "A required condition was not met";
+		public string FailureMessage { get; }
 
 		/// <summary>
 		///     Verifies that the current request meets a condition

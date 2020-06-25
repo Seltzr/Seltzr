@@ -124,19 +124,17 @@ namespace Seltzr.Middleware {
 		/// <returns>When the request is completed</returns>
 		[SuppressMessage("ReSharper", "PossibleMultipleEnumeration", Justification = "Result may be enumerated twice but likely only on a type where thats okay")]
 		private async Task HandleRequest(HttpContext context) {
-			// ReSharper disable once InvalidXmlDocComment
-			/**
+			/*
 			 *		- CHECK if we can even serialize the result
 			 *		- PARSE body if there are body parsers present
-			   |		- then parse the request body, and pass that along
-			   |	- AUTH if there are auth providers present
-			   |		- then ask them what the deal is and either pass one or all
-			   |    - QUERY the dataset with our parsed data and auth
-			   |	- FILTER the dbset by the filters provided
-			   |	- CHECK if any conditions need to be met
-			   |	- MODIFY data if there are any IOperations
-			   |	- RETURN formatted output
-			 
+			    		- then parse the request body, and pass that along
+			    	- AUTH if there are auth providers present
+			    		- then ask them what the deal is and either pass one or all
+			        - QUERY the dataset with our parsed data and auth
+			    	- FILTER the dbset by the filters provided
+			    	- CHECK if any conditions need to be met
+			    	- MODIFY data if there are any IOperations
+			    	- RETURN formatted output
 				note that the only required element should be the result writer AND the request method
 				(even an empty result writer is required to return a blank result)
 			*/
@@ -197,6 +195,10 @@ namespace Seltzr.Middleware {
 			IEnumerable<TModel> Result = this.Options.Operation != null
 				                             ? await this.Options.Operation.OperateAsync(ApiContext, Dataset)
 				                             : Dataset;
+
+			// if we don't make result an array, multiple queries to the database could occur when doing post operation actions
+			if (this.Options.PostOpActions.Any())
+				Result = Result.ToArray();
 			//////////////////////
 			Stopwatch.Stop();
 			Debug.WriteLine($"Op\t{Stopwatch.ElapsedMilliseconds}");
@@ -243,8 +245,7 @@ namespace Seltzr.Middleware {
 					Parsed = await Parser.Parse(BodyContents, this.Options.ParserOptions, context.HttpContext);
 					ParseSuccess = true;
 					break;
-				}
-				catch (ParsingFailedException e) {
+				} catch (ParsingFailedException e) {
 					Last = e;
 					/* Just keep moving, by design */
 				}
@@ -266,10 +267,9 @@ namespace Seltzr.Middleware {
 				try {
 					if (!await Condition.VerifyAsync(context, dataset))
 						throw new ConditionFailedException(Condition.FailureMessage ?? "Condition was not met");
-				}
-				catch (Exception e) when (!(e is ConditionFailedException)) {
+				} catch (Exception e) when (!(e is ConditionFailedException)) {
 					// wrap everything in a condition failed exception
-					throw new ConditionFailedException("Condition was not met", e);
+					throw new ConditionFailedException(Condition.FailureMessage ?? "Condition was not met", e);
 				}
 		}
 	}

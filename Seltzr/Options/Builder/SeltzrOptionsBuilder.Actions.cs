@@ -204,7 +204,7 @@ namespace Seltzr.Options.Builder {
 		///     after the operation, if any.
 		/// </summary>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public SeltzrOptionsBuilder<TModel, TUser> WriteResponseCount() {
+		public SeltzrOptionsBuilder<TModel, TUser> WriteResponseCountValue() {
 			return this.WriteResponseValue<ModelCountAttribute>((c, d) => d.Count());
 		}
 
@@ -315,7 +315,7 @@ namespace Seltzr.Options.Builder {
 		public SeltzrOptionsBuilder<TModel, TUser> SetValue(
 			Expression<Func<TModel, object>> property,
 			Func<IApiContext<TModel, TUser>, object?> valueGetter) =>
-			this.SetValue(SeltzrOptionsBuilder<TModel, TUser>.ExtractProperty(property), valueGetter);
+			this.SetValue(SeltzrOptionsBuilderBase.ExtractProperty(property), valueGetter);
 
 		/// <summary>
 		///     Sets a value on parsed models before the operation occurs.
@@ -326,7 +326,7 @@ namespace Seltzr.Options.Builder {
 		public SeltzrOptionsBuilder<TModel, TUser> SetValueAsync(
 			Expression<Func<TModel, object>> property,
 			Func<IApiContext<TModel, TUser>, Task<object?>> valueGetter) =>
-			this.SetValueAsync(SeltzrOptionsBuilder<TModel, TUser>.ExtractProperty(property), valueGetter);
+			this.SetValueAsync(SeltzrOptionsBuilderBase.ExtractProperty(property), valueGetter);
 
 		/// <summary>
 		///     Sets a value on parsed models before the operation occurs.
@@ -350,7 +350,7 @@ namespace Seltzr.Options.Builder {
 		public SeltzrOptionsBuilder<TModel, TUser> SetValue(
 			Expression<Func<TModel, object?>> property,
 			ParameterRetriever retriever) =>
-			this.SetValue(SeltzrOptionsBuilder<TModel, TUser>.ExtractProperty(property), retriever);
+			this.SetValue(SeltzrOptionsBuilderBase.ExtractProperty(property), retriever);
 
 		/// <summary>
 		///     Sets a value obtained from a query parameter on parsed models before the operation occurs.
@@ -370,7 +370,7 @@ namespace Seltzr.Options.Builder {
 		public SeltzrOptionsBuilder<TModel, TUser> SetValueQuery(
 			Expression<Func<TModel, object?>> property,
 			string parameterName) =>
-			this.SetValueQuery(SeltzrOptionsBuilder<TModel, TUser>.ExtractProperty(property), parameterName);
+			this.SetValueQuery(SeltzrOptionsBuilderBase.ExtractProperty(property), parameterName);
 
 		/// <summary>
 		///     Sets a value obtained from a route value on parsed models before the operation occurs.
@@ -390,7 +390,7 @@ namespace Seltzr.Options.Builder {
 		public SeltzrOptionsBuilder<TModel, TUser> SetValueRoute(
 			Expression<Func<TModel, object?>> property,
 			string parameterName) =>
-			this.SetValueRoute(SeltzrOptionsBuilder<TModel, TUser>.ExtractProperty(property), parameterName);
+			this.SetValueRoute(SeltzrOptionsBuilderBase.ExtractProperty(property), parameterName);
 
 		/// <summary>
 		///     Sets a value obtained from a route value on parsed models before the operation occurs. The name of the route value is inferred from the property name.
@@ -398,7 +398,7 @@ namespace Seltzr.Options.Builder {
 		/// <param name="property">The property to set the value on</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public SeltzrOptionsBuilder<TModel, TUser> SetValueRoute(PropertyInfo property) =>
-			this.SetValueRoute(property, property.Name);
+			this.SetValueRoute(property, SeltzrOptionsBuilderBase.CamelCase(property.Name));
 
 		/// <summary>
 		///     Sets a value obtained from a route value on parsed models before the operation occurs. The name of the route value is inferred from the property name.
@@ -407,7 +407,7 @@ namespace Seltzr.Options.Builder {
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public SeltzrOptionsBuilder<TModel, TUser> SetValueRoute(
 			Expression<Func<TModel, object?>> property) =>
-			this.SetValueRoute(SeltzrOptionsBuilder<TModel, TUser>.ExtractProperty(property));
+			this.SetValueRoute(SeltzrOptionsBuilderBase.ExtractProperty(property));
 
 		/// <summary>
 		///     Sets a value obtained from a query parameter on parsed models before the operation occurs. The name of the route value is inferred from camelCasing the property name.
@@ -415,7 +415,7 @@ namespace Seltzr.Options.Builder {
 		/// <param name="property">The property to set the value on</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public SeltzrOptionsBuilder<TModel, TUser> SetValueQuery(PropertyInfo property) =>
-			this.SetValueQuery(property, SeltzrOptionsBuilder<TModel, TUser>.CamelCase(property.Name));
+			this.SetValueQuery(property, SeltzrOptionsBuilderBase.CamelCase(property.Name));
 
 		/// <summary>
 		///     Sets a value obtained from a query parameter on parsed models before the operation occurs. The name of the route value is inferred from camelCasing the property name.
@@ -424,7 +424,7 @@ namespace Seltzr.Options.Builder {
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public SeltzrOptionsBuilder<TModel, TUser> SetValueQuery(
 			Expression<Func<TModel, object?>> property) =>
-			this.SetValueQuery(SeltzrOptionsBuilder<TModel, TUser>.ExtractProperty(property));
+			this.SetValueQuery(SeltzrOptionsBuilderBase.ExtractProperty(property));
 
 		/// <summary>
 		///		Runs a given action for each parsed request body before the operation is executed

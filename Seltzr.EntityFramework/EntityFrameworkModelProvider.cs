@@ -28,7 +28,7 @@ namespace Seltzr.EntityFramework {
 		/// <returns>An <see cref="IQueryable{T}" /> of all of the models available</returns>
 		public virtual async Task<IQueryable<TModel>> GetModelsAsync(IApiContext<TModel, object> context) {
 			TContext DatabaseContext = context.Services.GetRequiredService<TContext>();
-			return DatabaseContext.Set<TModel>();
+			return DatabaseContext.Set<TModel>().AsNoTracking();
 		}
 	}
 }

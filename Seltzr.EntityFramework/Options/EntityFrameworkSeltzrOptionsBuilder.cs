@@ -15,7 +15,6 @@ namespace Seltzr.EntityFramework.Options {
 	using System.Reflection;
 
 	using Microsoft.AspNetCore.Builder;
-	using Microsoft.AspNetCore.DataProtection.KeyManagement;
 	using Microsoft.Extensions.DependencyInjection;
 
 	using Seltzr.EntityFramework.Operations;
@@ -30,64 +29,104 @@ namespace Seltzr.EntityFramework.Options {
 	/// <summary>Options builder for an Entity Framework based API</summary>
 	/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
 	/// <typeparam name="TUser">The type of authenticated user context</typeparam>
-	public class
-		EntityFrameworkSeltzrOptionsBuilder<TModel, TUser> : SeltzrOptionsBuilder<TModel, TUser>, IOrmSeltzrOptionsBuilder<TModel, TUser>
+	public class EntityFrameworkSeltzrOptionsBuilder<TModel, TUser> : SeltzrOptionsBuilder<TModel, TUser>,
+	                                                                  IOrmSeltzrOptionsBuilder<TModel, TUser>
 		where TModel : class where TUser : class {
 		/// <summary>
-		///		Initializes a new instance of the <see cref="EntityFrameworkSeltzrOptionsBuilder{TModel,TUser}"/> class.
+		///     The primary key for <typeparamref name="TModel" />
+		/// </summary>
+		private List<KeyProperty>? PrimaryKey;
+
+		/// <summary>
+		///     Initializes a new instance of the <see cref="EntityFrameworkSeltzrOptionsBuilder{TModel,TUser}" /> class.
 		/// </summary>
 		/// <param name="app">The application builder for the app</param>
-		/// <param name="contextType">The type of the database context to get the set of <typeparamref name="TModel"/> objects from</param>
+		/// <param name="contextType">
+		///     The type of the database context to get the set of <typeparamref name="TModel" /> objects
+		///     from
+		/// </param>
+		/// <param name="primaryKey">
+		///     The primary key for <typeparamref name="TModel" />. If null, it will be determined
+		///     automatically
+		/// </param>
 		/// <param name="baseRoute">The base route for these options</param>
-		/// <param name="primaryKey">The primary key for <typeparamref name="TModel"/>. If null, it will be determined automatically</param>
 		/// <param name="routeOptionsHandler">ASP.NET core specific route options</param>
-		internal EntityFrameworkSeltzrOptionsBuilder(IApplicationBuilder app, Type contextType, List<PropertyInfo>? primaryKey, string baseRoute, Action<IEndpointConventionBuilder>? routeOptionsHandler) : base(baseRoute, routeOptionsHandler) {
+		internal EntityFrameworkSeltzrOptionsBuilder(
+			IApplicationBuilder app,
+			Type contextType,
+			List<PropertyInfo>? primaryKey,
+			string baseRoute,
+			Action<IEndpointConventionBuilder>? routeOptionsHandler)
+			: base(baseRoute, routeOptionsHandler) {
 			this.ContextType = contextType;
 			this.App = app;
 			this.PrimaryKey = primaryKey?.Select(p => new KeyProperty(p)).ToList();
 		}
 
 		/// <summary>
-		///		Initializes a new instance of the <see cref="EntityFrameworkSeltzrOptionsBuilder{TModel,TUser}"/> class.
+		///     Initializes a new instance of the <see cref="EntityFrameworkSeltzrOptionsBuilder{TModel,TUser}" /> class.
 		/// </summary>
 		/// <param name="app">The application builder for the app</param>
-		/// <param name="contextType">The type of the database context to get the set of <typeparamref name="TModel"/> objects from</param>
-		/// <param name="primaryKey">The primary key for <typeparamref name="TModel"/>. If null, it will be determined automatically</param>
+		/// <param name="contextType">
+		///     The type of the database context to get the set of <typeparamref name="TModel" /> objects
+		///     from
+		/// </param>
+		/// <param name="primaryKey">
+		///     The primary key for <typeparamref name="TModel" />. If null, it will be determined
+		///     automatically
+		/// </param>
 		/// <param name="options">The existing options</param>
-		internal EntityFrameworkSeltzrOptionsBuilder(IApplicationBuilder app, Type contextType, List<KeyProperty>? primaryKey, SeltzrOptions<TModel, TUser>? options) : base(options) {
+		internal EntityFrameworkSeltzrOptionsBuilder(
+			IApplicationBuilder app,
+			Type contextType,
+			List<KeyProperty>? primaryKey,
+			SeltzrOptions<TModel, TUser>? options)
+			: base(options) {
 			this.ContextType = contextType;
 			this.App = app;
 			this.PrimaryKey = primaryKey;
 		}
 
 		/// <summary>
-		///     Gets the type of the database context to get the set of <typeparamref name="TModel"/> objects from
-		/// </summary>
-		internal Type ContextType { get; }
-
-		/// <summary>
-		///		Gets the application builder for this application
+		///     Gets the application builder for this application
 		/// </summary>
 		internal IApplicationBuilder App { get; }
 
 		/// <summary>
-		///		Gets the primary key for <typeparamref name="TModel"/>
+		///     Gets the type of the database context to get the set of <typeparamref name="TModel" /> objects from
 		/// </summary>
-		private List<KeyProperty>? PrimaryKey { get; }
+		internal Type ContextType { get; }
 
 		/// <summary>
-		///		Creates a child instance of the <see cref="SeltzrOptionsBuilder{TModel, TUser}"/> type sharing the given base options. When overriden in a derived class, this method can be used to ensure that the entire tree of <see cref="SeltzrOptionsBuilder{TModel, TUser}"/> objects share the same derived type
+		///     Creates a child instance of the <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> type sharing the given base
+		///     options. When overriden in a derived class, this method can be used to ensure that the entire tree of
+		///     <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> objects share the same derived type
 		/// </summary>
 		/// <param name="baseOptions">The base options for the new instance</param>
-		/// <returns>The new <see cref="SeltzrOptionsBuilder{TModel, TUser}"/> instance</returns>
-		public override SeltzrOptionsBuilder<TModel, TUser> CreateChild(SeltzrOptions<TModel, TUser>? baseOptions) {
-			return new EntityFrameworkSeltzrOptionsBuilder<TModel, TUser>(this.App, this.ContextType, this.PrimaryKey, baseOptions);
-		}
+		/// <returns>The new <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> instance</returns>
+		public override SeltzrOptionsBuilder<TModel, TUser> CreateChild(SeltzrOptions<TModel, TUser>? baseOptions) =>
+			new EntityFrameworkSeltzrOptionsBuilder<TModel, TUser>(
+				this.App,
+				this.ContextType,
+				this.PrimaryKey,
+				baseOptions);
 
 		/// <summary>
-		///		Gets the properties that make up the primary key of <see cref="TModel"/>
+		///     Gets a create <see cref="IOperation{TModel, TUser}" /> for this model
 		/// </summary>
-		/// <returns>The properties that make up the primary key of <see cref="TModel"/></returns>
+		/// <returns>A new create operation for <typeparamref name="TModel" /></returns>
+		public virtual IOperation<TModel, TUser> GetCreateOperation() => this.NewOperation(typeof(CreateOperation<,>));
+
+		/// <summary>
+		///     Gets a delete <see cref="IOperation{TModel, TUser}" /> for this model
+		/// </summary>
+		/// <returns>A new delete operation for <typeparamref name="TModel" /></returns>
+		public virtual IOperation<TModel, TUser> GetDeleteOperation() => this.NewOperation(typeof(DeleteOperation<,>));
+
+		/// <summary>
+		///     Gets the properties that make up the primary key of <typeparamref name="TModel" />
+		/// </summary>
+		/// <returns>The properties that make up the primary key of <typeparamref name="TModel" /></returns>
 		public virtual List<KeyProperty> GetPrimaryKey() {
 			if (this.PrimaryKey != null) return this.PrimaryKey;
 
@@ -99,26 +138,28 @@ namespace Seltzr.EntityFramework.Options {
 			PropertyInfo[] ModelProperties = typeof(TModel).GetProperties();
 
 			try {
-				return Set.EntitySet.ElementType.KeyMembers
+				this.PrimaryKey = Set.EntitySet.ElementType.KeyMembers
 					.Select(k => new KeyProperty(ModelProperties.First(p => p.Name == k.Name))).ToList();
-			} catch (InvalidOperationException) {
-				throw new ApiException(
+				return this.PrimaryKey;
+			}
+			catch (InvalidOperationException) {
+				throw new OptionsException(
 					$"Unable to determine primary key for ${typeof(TModel).Name} automatically. Try specifying it explicitly");
 			}
 		}
 
 		/// <summary>
-		///		Gets a create <see cref="IOperation{TModel, TUser}"/> for this model
+		///     Gets an update <see cref="IOperation{TModel, TUser}" /> for this model
 		/// </summary>
-		/// <returns>A new create operation for <see cref="TModel"/></returns>
-		public virtual IOperation<TModel, TUser> GetCreateOperation() => this.NewOperation(typeof(CreateOperation<,>));
-
-		/// <summary>
-		///		Gets an update <see cref="IOperation{TModel, TUser}"/> for this model
-		/// </summary>
-		/// <param name="properties">The properties to use to compare existing models with parsed models to determine which models to update</param>
-		/// <param name="retrievers">A list of parameter retrievers to use to get values for the properties. If null, the parsed body will be used instead</param>
-		/// <returns>A new update operation for <see cref="TModel"/></returns>
+		/// <param name="properties">
+		///     The properties to use to compare existing models with parsed models to determine which models
+		///     to update
+		/// </param>
+		/// <param name="retrievers">
+		///     A list of parameter retrievers to use to get values for the properties. If null, the parsed
+		///     body will be used instead
+		/// </param>
+		/// <returns>A new update operation for <typeparamref name="TModel" /></returns>
 		public virtual IOperation<TModel, TUser> GetUpdateOperation(
 			PropertyInfo[] properties,
 			ParameterRetriever[]? retrievers) {
@@ -126,12 +167,6 @@ namespace Seltzr.EntityFramework.Options {
 				typeof(UpdateOperation<,>).MakeGenericType(typeof(TModel), this.ContextType),
 				new object?[] { properties, retrievers })!;
 		}
-
-		/// <summary>
-		///		Gets a delete <see cref="IOperation{TModel, TUser}"/> for this model
-		/// </summary>
-		/// <returns>A new delete operation for <see cref="TModel"/></returns>
-		public virtual IOperation<TModel, TUser> GetDeleteOperation() => this.NewOperation(typeof(DeleteOperation<,>));
 
 		/// <summary>
 		///     Creates a new operation

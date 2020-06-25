@@ -8,6 +8,8 @@ namespace Seltzr.Filters {
 	using System;
 	using System.Collections.Generic;
 
+	using Seltzr.Exceptions;
+
 	/// <summary>
 	///     Utility class that parses parameters
 	/// </summary>
@@ -43,7 +45,12 @@ namespace Seltzr.Filters {
 				throw new ArgumentException(
 					"Parameter type is not one of expected int, long, float, double, Guid, decimal, DateTime, bool, string");
 
-			return input == null ? null : (Output?.Invoke(input) ?? null);
+			try {
+				return input == null ? null : Output!.Invoke(input);
+			} catch (Exception e) when (e is FormatException || e is OverflowException) {
+				// todo: is it really "failed parsing"?
+				throw new ParsingFailedException($"Unable to parse parameter value \"{input}\"", e);
+			}
 		}
 	}
 }
