@@ -1,8 +1,0 @@
-- name: Overview
-  href: index.md
-- name: Routing
-  href: routing.md
-- name: Parsing
-  href: parsing.md
-- name: Authentication
-  href: authentication.md

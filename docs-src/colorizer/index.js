@@ -39,7 +39,9 @@ let names = {
     "cshtml": "Razor",
     "powershell": "Powershell",
     "bash":  "Bash",
-    "json": "JSON"
+    "json": "JSON",
+    "rest": "REST",
+    "xml": "XML"
 }
 
 async function main() {
@@ -51,7 +53,9 @@ async function main() {
         "cshtml": await registry.loadGrammar("text.html.cshtml"),
         "powershell": await registry.loadGrammar("source.powershell"),
         "bash":  await registry.loadGrammar("source.shell"),
-        "json":  await registry.loadGrammar("source.json")
+        "json":  await registry.loadGrammar("source.json"),
+        "rest": await registry.loadGrammar("source.rest"),
+        "xml": await registry.loadGrammar("text.xml")
     };
 
     let root = path.resolve(__dirname, "../../docs");
@@ -66,7 +70,7 @@ async function main() {
         resolve();
     });
 
-    await Promise.race([donePromise, delay(5000)]);
+    await Promise.race([donePromise, delay(30000)]);
     if (finishedFiles.length != files.length) {
         console.log("The following files timed out", files.filter(f => finishedFiles.indexOf(f) === -1));
     }
@@ -94,6 +98,9 @@ async function updateFile(path, grammars) {
                 node.parentNode.childNodes.splice(parentIndex, 0, colorized.header);
                 node.setAttribute("id", colorized.id);
             }
+
+            if (colorized.class) node.setAttribute("class", colorized.class);
+
             node.set_content(colorized.text);
             updated++;
         }
@@ -123,10 +130,15 @@ function colorizeNode(raw, grammars) {
     let headerMatch = text.length > 0 && text[0].match(/^(\/\/\s)?---\sHeader: (.*)\s(nocopy)?---$/i);
     let header = null;
     let id = null;
+    let preClass = "";
     if (true /*headerMatch*/) { // every block should have a header now that I think about it
         id = randomString(8);
         let headerText = headerMatch ? headerMatch[2] : names[lang];
-        header = new htmlParser.HTMLElement("div", { class: "code-header" });
+        if (headerText === "Request") preClass = "request-pre";
+
+        let headerClass = "code-header";
+        if (headerText === "Response") headerClass += " response-header";
+        header = new htmlParser.HTMLElement("div", { class: headerClass });
         let textContainer = new htmlParser.HTMLElement("span", {class: "language"});
         textContainer.appendChild(new htmlParser.TextNode(headerText));
         header.appendChild(textContainer)
@@ -171,7 +183,7 @@ function colorizeNode(raw, grammars) {
             let sub = line.substring(token.startIndex, token.endIndex);
             if (token.scopes.length == 0) output += sub;
             else {
-                let settingsList = token.scopes.map(s => matchScope(s)).filter(s => !!s);
+                let settingsList = token.scopes.reverse().map(s => matchScope(s)).filter(s => !!s);
                 let settings = settingsList.length > 0 ? settingsList[0] : { foreground: "black" };
                 if (!settings.foreground) settings.foreground = 'black';
 
@@ -192,7 +204,7 @@ function colorizeNode(raw, grammars) {
         ruleStack = lineTokens.ruleStack;
     }
 
-    return { text: new htmlParser.TextNode(`<code>${output}</code>`), header, id };
+    return { text: new htmlParser.TextNode(`<code>${output}</code>`), header, id, class: preClass };
 }
 
 function randomString(length) {

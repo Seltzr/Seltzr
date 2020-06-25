@@ -982,6 +982,7 @@ button.copy-btn {
   color: inherit;
   transition: background-color 100ms ease;
   width: 80px;
+  font-size: 12.8px;
 }
 
 button.copy-btn:hover {
@@ -1035,4 +1036,29 @@ body {
 .element-title > h4 {
   border-bottom: none;
   flex-grow: 1;
+}
+
+.alert-info a {
+  color: #000000;
+}
+
+.request-pre {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.response-header {
+  margin-top: 0 !important;
+}
+
+@media screen and (max-width:768px) {
+    .container {
+        margin: 0 10px;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .container {
+        margin: 0 30px;
+    }
 }

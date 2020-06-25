@@ -133,8 +133,8 @@ For more details on what these commands are doing, refer to EF Core's [getting s
 [!code-csharp[Startup.cs](../../code/getting_started/todo/Startup.cs?name=step2&highlight=2-5)]
 
 * The above code:
-	* Sets the API up to parse HTTP request bodies in the JSON format
-	* Sets the API up to return all responses in the JSON format
+	* Sets the API up to parse HTTP request bodies in the JSON format. **See Also:** <xref:parsing>
+	* Sets the API up to return all responses in the JSON format. **See Also:** <xref:result-writers>
 	* Adds an [**Exception Handler**](xref:exception-handlers) so that unhandled exceptions are caught and returned in the API response.
 
 #### Declaring routes
@@ -168,7 +168,7 @@ For more details on what these commands are doing, refer to EF Core's [getting s
 * Use the [OrderBy](xref:Seltzr.Options.Builder.SeltzrOptionsBuilder`2.OrderBy``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})) method to sort the todo items alphabetically by their `Text` property:
 [!code-csharp[Startup.cs](../../code/getting_started/todo/Startup.cs?name=step4&highlight=6)]
 
-* Under the hood, this method adds a [**Filter**](xref:filters) to the route. A filter is anything that modifies the dataset, even if it doesn't actually "filter" models out.
+* Under the hood, this method adds a [**Filter**](xref:filtering) to the route. A filter is anything that modifies the dataset, even if it doesn't actually "filter" models out.
 * Run the app and create a new todo item. It should be inserted alphabetically into the todo list.
 
 #### Requiring Non-Empty Input
@@ -184,7 +184,7 @@ For more details on what these commands are doing, refer to EF Core's [getting s
 > Try putting the call to `RequireAllInput` at the end of the chain, after `PostCreate`. You'll notice it's possible to create empty todo items again. **Why?** Calls to Seltzr's options builder only apply to all **future** routes (methods like `Get()` and `DeleteByPrimaryKey()` are what create routes), any previous routes don't have those options applied to them.
 
 > [!TIP]
-> Try adding [.ForEachInput(t => t.Text = t.Text.Trim())](xref:) to also trim any excess whitespace from the ends of the todo item.
+> Try adding [.ForEachInput(t => t.Text = t.Text.Trim())](xref:Seltzr.Options.Builder.SeltzrOptionsBuilder`2.ForEachInput(System.Action{`0})) to also trim any excess whitespace from the ends of the todo item.
 
 #### Setting a creation date
 * Every method that creates a route, like `Get()` and `PostCreate()` also accepts an options handler of its own which can be used to set up additional options that **only apply to that route**. Use it here to default the `Created` property on `Todo` to the current date and time.
