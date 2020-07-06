@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29827.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Seltzr", "Seltzr\Seltzr.csproj", "{5D8F4E5B-0670-43A0-A453-2B85300D3616}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject", "TestProject\TestProject.csproj", "{329D1E1A-0F94-4170-8971-7C9392089133}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject", "Tests\TestProject\TestProject.csproj", "{329D1E1A-0F94-4170-8971-7C9392089133}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Seltzr.OrmBase", "Seltzr.OrmBase\Seltzr.OrmBase.csproj", "{7BA6506B-7790-4AF0-8B44-D6FA6F5A8E29}"
 EndProject
@@ -18,13 +18,25 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Seltzr.EntityFrameworkCore"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Seltzr.EntityFramework", "Seltzr.EntityFramework\Seltzr.EntityFramework.csproj", "{F2FB2735-72E3-45B6-858D-7BF32C3B18B9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Seltzr.Tests", "Seltzr.Tests\Seltzr.Tests.csproj", "{542A208E-C6D7-4FBE-BD8F-0E236F89E51E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Seltzr.Tests", "Tests\Seltzr.Tests\Seltzr.Tests.csproj", "{542A208E-C6D7-4FBE-BD8F-0E236F89E51E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{758533A4-558C-42CB-B3E5-AD35BD8F20AF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Seltzr.TestGenerator", "Seltzr.TestGenerator\Seltzr.TestGenerator.csproj", "{DB0DE4DB-12EB-44FA-AF97-51C84256DEAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Seltzr.TestGenerator", "Tests\Seltzr.TestGenerator\Seltzr.TestGenerator.csproj", "{DB0DE4DB-12EB-44FA-AF97-51C84256DEAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seltzr.LinqToDB", "Seltzr.LinqToDB\Seltzr.LinqToDB.csproj", "{579F13B7-0E97-499C-8A8C-98B6CED22BD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Seltzr.LinqToDB", "Seltzr.LinqToDB\Seltzr.LinqToDB.csproj", "{579F13B7-0E97-499C-8A8C-98B6CED22BD5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Analyzers", "Analyzers", "{F99A5040-2FD8-4892-B845-601DC027D65F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seltzr.Analyzers", "Seltzr.Analyzers\Seltzr.Analyzers\Seltzr.Analyzers.csproj", "{D2AC19E7-44C7-4E30-A3CE-BC90C3842398}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seltzr.Analyzers.CodeFixes", "Seltzr.Analyzers\Seltzr.Analyzers.CodeFixes\Seltzr.Analyzers.CodeFixes.csproj", "{E2D655B0-51C4-436B-9F5D-E9AA81A41105}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seltzr.Analyzers.Package", "Seltzr.Analyzers\Seltzr.Analyzers.Package\Seltzr.Analyzers.Package.csproj", "{10F0DEA9-1CF7-4351-A102-57B4A992D85A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seltzr.Analyzers.Test", "Seltzr.Analyzers\Seltzr.Analyzers.Test\Seltzr.Analyzers.Test.csproj", "{479B8CB7-6847-4CF1-AD38-2EFFCAAE8AAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seltzr.Analyzers.Vsix", "Seltzr.Analyzers\Seltzr.Analyzers.Vsix\Seltzr.Analyzers.Vsix.csproj", "{E121282A-CA97-44B4-9014-AFC08709F51E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,13 +76,39 @@ Global
 		{579F13B7-0E97-499C-8A8C-98B6CED22BD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{579F13B7-0E97-499C-8A8C-98B6CED22BD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{579F13B7-0E97-499C-8A8C-98B6CED22BD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2AC19E7-44C7-4E30-A3CE-BC90C3842398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2AC19E7-44C7-4E30-A3CE-BC90C3842398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2AC19E7-44C7-4E30-A3CE-BC90C3842398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2AC19E7-44C7-4E30-A3CE-BC90C3842398}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2D655B0-51C4-436B-9F5D-E9AA81A41105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2D655B0-51C4-436B-9F5D-E9AA81A41105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2D655B0-51C4-436B-9F5D-E9AA81A41105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2D655B0-51C4-436B-9F5D-E9AA81A41105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10F0DEA9-1CF7-4351-A102-57B4A992D85A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10F0DEA9-1CF7-4351-A102-57B4A992D85A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10F0DEA9-1CF7-4351-A102-57B4A992D85A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10F0DEA9-1CF7-4351-A102-57B4A992D85A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{479B8CB7-6847-4CF1-AD38-2EFFCAAE8AAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{479B8CB7-6847-4CF1-AD38-2EFFCAAE8AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{479B8CB7-6847-4CF1-AD38-2EFFCAAE8AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{479B8CB7-6847-4CF1-AD38-2EFFCAAE8AAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E121282A-CA97-44B4-9014-AFC08709F51E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E121282A-CA97-44B4-9014-AFC08709F51E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E121282A-CA97-44B4-9014-AFC08709F51E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E121282A-CA97-44B4-9014-AFC08709F51E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{329D1E1A-0F94-4170-8971-7C9392089133} = {758533A4-558C-42CB-B3E5-AD35BD8F20AF}
 		{542A208E-C6D7-4FBE-BD8F-0E236F89E51E} = {758533A4-558C-42CB-B3E5-AD35BD8F20AF}
 		{DB0DE4DB-12EB-44FA-AF97-51C84256DEAD} = {758533A4-558C-42CB-B3E5-AD35BD8F20AF}
+		{D2AC19E7-44C7-4E30-A3CE-BC90C3842398} = {F99A5040-2FD8-4892-B845-601DC027D65F}
+		{E2D655B0-51C4-436B-9F5D-E9AA81A41105} = {F99A5040-2FD8-4892-B845-601DC027D65F}
+		{10F0DEA9-1CF7-4351-A102-57B4A992D85A} = {F99A5040-2FD8-4892-B845-601DC027D65F}
+		{479B8CB7-6847-4CF1-AD38-2EFFCAAE8AAB} = {F99A5040-2FD8-4892-B845-601DC027D65F}
+		{E121282A-CA97-44B4-9014-AFC08709F51E} = {F99A5040-2FD8-4892-B845-601DC027D65F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {90F84DE4-C419-4A27-AE34-B71ACF2E522B}
