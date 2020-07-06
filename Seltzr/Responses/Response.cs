@@ -18,7 +18,7 @@ namespace Seltzr.Responses {
 	///     An API response
 	/// </summary>
 	/// <typeparam name="TModel">The model that the response contains</typeparam>
-	public class Response<TModel>
+	public class Response<TModel> : IResponse<TModel>
 		where TModel : class {
 		/// <summary>
 		///     All of the properties on this <see cref="Response{TModel}" /> that have been set

@@ -23,12 +23,22 @@ namespace Seltzr.Options.Builder {
 		/// <typeparam name="TModel">The model to extract the property from</typeparam>
 		/// <returns>The extracted property</returns>
 		protected static PropertyInfo ExtractProperty<TProperty, TModel>(Expression<Func<TModel, TProperty>> propertyExpression) {
+			return (PropertyInfo)SeltzrOptionsBuilderBase.ExtractPropertyExpression(propertyExpression).Member;
+		}
+
+		/// <summary>
+		///     Extracts the member access expression from an expression
+		/// </summary>
+		/// <param name="propertyExpression">The lambda expression that refers to a member access</param>
+		/// <typeparam name="TProperty">The type of the property to extract</typeparam>
+		/// <typeparam name="TModel">The model to extract the property from</typeparam>
+		/// <returns>The extracted property access expression</returns>
+		protected static MemberExpression ExtractPropertyExpression<TProperty, TModel>(Expression<Func<TModel, TProperty>> propertyExpression) {
 			MemberExpression MemberExpression;
 			if (propertyExpression.Body is UnaryExpression Body)
 				MemberExpression = (MemberExpression)Body.Operand;
 			else MemberExpression = (MemberExpression)propertyExpression.Body;
-
-			return (PropertyInfo)MemberExpression.Member;
+			return MemberExpression;
 		}
 
 		/// <summary>

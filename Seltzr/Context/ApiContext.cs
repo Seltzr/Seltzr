@@ -52,7 +52,7 @@ namespace Seltzr.Context {
 		///     Gets the models that have been parsed by the body parser. This may be null if the body has not been parsed yet or
 		///     there are no body parsers registered for this route.
 		/// </summary>
-		public virtual ParseResult<TModel>[]? Parsed { get; internal set; }
+		public virtual IParseResult<TModel>[]? Parsed { get; internal set; }
 
 		/// <summary>
 		///     Gets the current request context. Shortcut to <see cref="HttpContext.Request" />
@@ -62,7 +62,7 @@ namespace Seltzr.Context {
 		/// <summary>
 		///     Gets the response for this API call. If this is null, the model itself will be serialized instead.
 		/// </summary>
-		public virtual Response<TModel>? Response { get; }
+		public virtual IResponse<TModel>? Response { get; }
 
 		/// <summary>
 		///     Gets a service provider for this API context

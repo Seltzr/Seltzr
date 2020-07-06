@@ -32,3 +32,6 @@ dotnet_diagnostic.SA1519.severity = none
 
 # SA1121: Use built-in type alias
 dotnet_diagnostic.SA1121.severity = none
+
+# SA1413: Use trailing comma in multi-line initializers
+dotnet_diagnostic.SA1413.severity = none

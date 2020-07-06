@@ -14,7 +14,7 @@ namespace Seltzr.Parsers {
 	///     The result of parsing a request body
 	/// </summary>
 	/// <typeparam name="TModel">The type of model being parsed</typeparam>
-	public class ParseResult<TModel> {
+	public class ParseResult<TModel> : IParseResult<TModel> {
 		/// <summary>Initializes a new instance of the <see cref="ParseResult{TModel}"/> class.</summary>
 		/// <param name="parsedModel">The model that was parsed</param>
 		/// <param name="presentProperties">The properties that were present on this model in the request body</param>

@@ -30,7 +30,7 @@ namespace Seltzr.ParameterRetrievers {
 		/// <summary>
 		///     Gets the name of the parameter to retrieve
 		/// </summary>
-		protected string ParameterName { get; }
+		public string ParameterName { get; }
 
 		/// <summary>
 		///     Gets the value of a parameter for the given request

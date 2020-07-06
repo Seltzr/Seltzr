@@ -6,7 +6,10 @@
 // -----------------------------------------------------------------------
 
 namespace Seltzr.Parsers {
+	using System.IO;
 	using System.Threading.Tasks;
+	using System.Xml;
+	using System.Xml.Serialization;
 
 	using Microsoft.AspNetCore.Http;
 
@@ -26,7 +29,7 @@ namespace Seltzr.Parsers {
 		/// <param name="context">The context for the HTTP request</param>
 		/// <returns>The parsed models</returns>
 		public virtual async Task<ParseResult<TModel>[]> Parse(byte[] body, ParserOptions options, HttpContext context) {
-		
+
 			/*
 			options.DefaultPropertyValues
 				options.IgnoredParseProperties
@@ -41,6 +44,10 @@ namespace Seltzr.Parsers {
 			using XmlReader Reader = XmlReader.Create(Stream);
 			Reader.MoveToContent();
 			*/
+			
+
+			//object Output = new XmlSerializer(typeof(TModel)).Deserialize(XmlReader.Create(new MemoryStream(body)), Events);
+			
 			// todo!
 			return null;
 		}

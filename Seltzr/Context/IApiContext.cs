@@ -16,7 +16,7 @@ namespace Seltzr.Context {
 	/// <summary>
 	///     Context for an API request.
 	/// </summary>
-	/// <typeparam name="TModel">The type of model being managed by the AP</typeparam>
+	/// <typeparam name="TModel">The type of model being managed by the API</typeparam>
 	/// <typeparam name="TUser">The type of authenticated user context</typeparam>
 	/// <remarks>
 	///		The API Context lives for the duration of a single route execution and contains a number of useful properties which are passed to many steps of the request flow. The API Context provides access to the parsed request body, the response wrapper, and a scoped service provider to Auth Providers, Conditions, Filters, Model Providers, Operations, Parsers, and Result Writers.
@@ -37,9 +37,7 @@ namespace Seltzr.Context {
 		///     Gets the models that have been parsed by the body parser. This may be null if the body has not been parsed yet or
 		///     there are no body parsers registered for this route.
 		/// </summary>
-		public ParseResult<TModel>[]? Parsed { get; }
-
-		// todo: make parseresult and response interfaces so TModel can be covariant and IResultWriter can be contravariant again for things like StringResultWriter
+		public IParseResult<TModel>[]? Parsed { get; }
 
 		/// <summary>
 		///     Gets the current request context. Shortcut to <see cref="HttpContext.Request" />
@@ -49,7 +47,7 @@ namespace Seltzr.Context {
 		/// <summary>
 		///     Gets the response for this API call. If this is null, the model itself will be serialized instead.
 		/// </summary>
-		public Response<TModel>? Response { get; }
+		public IResponse<TModel>? Response { get; }
 
 		/// <summary>
 		///     Gets a service provider for this API context

@@ -65,13 +65,13 @@ namespace Seltzr.Middleware {
 						- CALL exception handlers
 			**/
 			try {
-				Stopwatch Stopwatch = new Stopwatch();
-				Stopwatch.Start();
+				//Stopwatch Stopwatch = new Stopwatch();
+				//Stopwatch.Start();
 
 				await this.HandleRequest(context);
 
-				Stopwatch.Stop();
-				Debug.WriteLine($"elapsed: {Stopwatch.ElapsedMilliseconds}");
+				//Stopwatch.Stop();
+				//Debug.WriteLine($"elapsed: {Stopwatch.ElapsedMilliseconds}");
 				return false;
 			}
 			catch (Exception e) {
@@ -151,46 +151,46 @@ namespace Seltzr.Middleware {
 			ApiContext<TModel, TUser> ApiContext = new ApiContext<TModel, TUser>(context, ResponseWrapper);
 
 			ApiContext.Parsed = await this.ParseBody(ApiContext);
-			//////////////////////
-			Stopwatch.Stop();
-			Debug.WriteLine($"Parse\t{Stopwatch.ElapsedMilliseconds}");
-			Stopwatch.Restart();
-			/////////////////////
+			////////////////////////
+			//Stopwatch.Stop();
+			//Debug.WriteLine($"Parse\t{Stopwatch.ElapsedMilliseconds}");
+			//Stopwatch.Restart();
+			///////////////////////
 			// then authenticate the request. may return null
 			ApiContext.User = await this.Authenticate(ApiContext);
-			//////////////////////
-			Stopwatch.Stop();
-			Debug.WriteLine($"Auth\t{Stopwatch.ElapsedMilliseconds}");
-			Stopwatch.Restart();
-			/////////////////////
+			////////////////////////
+			//Stopwatch.Stop();
+			//Debug.WriteLine($"Auth\t{Stopwatch.ElapsedMilliseconds}");
+			//Stopwatch.Restart();
+			///////////////////////
 			if (this.Options.ModelProvider == null)
 				throw new ApiException("No model provider was given. Request failed.");
 
 			// query the dataset for models
 			IQueryable<TModel> Dataset = await this.Options.ModelProvider.GetModelsAsync(ApiContext);
-			//////////////////////
-			Stopwatch.Stop();
-			Debug.WriteLine($"Query\t{Stopwatch.ElapsedMilliseconds}");
-			Stopwatch.Restart();
-			/////////////////////
+			////////////////////////
+			//Stopwatch.Stop();
+			//Debug.WriteLine($"Query\t{Stopwatch.ElapsedMilliseconds}");
+			//Stopwatch.Restart();
+			///////////////////////
 			// filter our dataset
 			foreach (IFilter<TModel, TUser> Filter in this.Options.Filters)
 				Dataset = await Filter.FilterDataAsync(ApiContext, Dataset);
 
 			// ensure it passes all conditions
 			await this.VerifyConditions(ApiContext, Dataset);
-			//////////////////////
-			Stopwatch.Stop();
-			Debug.WriteLine($"Filter\t{Stopwatch.ElapsedMilliseconds}");
-			Stopwatch.Restart();
-			/////////////////////
+			////////////////////////
+			//Stopwatch.Stop();
+			//Debug.WriteLine($"Filter\t{Stopwatch.ElapsedMilliseconds}");
+			//Stopwatch.Restart();
+			///////////////////////
 			foreach (IPreOpAction<TModel, TUser> Action in this.Options.PreOpActions)
 				await Action.RunAsync(ApiContext, Dataset);
-			//////////////////////
-			Stopwatch.Stop();
-			Debug.WriteLine($"PreOp\t{Stopwatch.ElapsedMilliseconds}");
-			Stopwatch.Restart();
-			/////////////////////
+			////////////////////////
+			//Stopwatch.Stop();
+			//Debug.WriteLine($"PreOp\t{Stopwatch.ElapsedMilliseconds}");
+			//Stopwatch.Restart();
+			///////////////////////
 			// then do our operation
 			IEnumerable<TModel> Result = this.Options.Operation != null
 				                             ? await this.Options.Operation.OperateAsync(ApiContext, Dataset)
@@ -199,27 +199,27 @@ namespace Seltzr.Middleware {
 			// if we don't make result an array, multiple queries to the database could occur when doing post operation actions
 			if (this.Options.PostOpActions.Any())
 				Result = Result.ToArray();
-			//////////////////////
-			Stopwatch.Stop();
-			Debug.WriteLine($"Op\t{Stopwatch.ElapsedMilliseconds}");
-			Stopwatch.Restart();
-			/////////////////////
+			////////////////////////
+			//Stopwatch.Stop();
+			//Debug.WriteLine($"Op\t{Stopwatch.ElapsedMilliseconds}");
+			//Stopwatch.Restart();
+			///////////////////////
 			foreach (IPostOpAction<TModel, TUser> Action in this.Options.PostOpActions)
 				await Action.RunAsync(ApiContext, Result);
-			//////////////////////
-			Stopwatch.Stop();
-			Debug.WriteLine($"PostOp\t{Stopwatch.ElapsedMilliseconds}");
-			Stopwatch.Restart();
-			/////////////////////
+			////////////////////////
+			//Stopwatch.Stop();
+			//Debug.WriteLine($"PostOp\t{Stopwatch.ElapsedMilliseconds}");
+			//Stopwatch.Restart();
+			///////////////////////
 			// and write the result
 			await this.Options.ResultWriter!.WriteResultAsync(
 				ApiContext,
 				Result,
 				this.Options.FormattingOptions);
-			//////////////////////
-			Stopwatch.Stop();
-			Debug.WriteLine($"Write\t{Stopwatch.ElapsedMilliseconds}");
-			/////////////////////
+			////////////////////////
+			//Stopwatch.Stop();
+			//Debug.WriteLine($"Write\t{Stopwatch.ElapsedMilliseconds}");
+			///////////////////////
 			ApiContext.Dispose();
 		}
 

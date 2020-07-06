@@ -8,7 +8,6 @@
 namespace Seltzr.Filters {
 	using System;
 	using System.Linq.Expressions;
-	using System.Reflection;
 
 	/// <summary>
 	///     Expression modifier for the FilterBy methods that strips away the parsed parameter and replaces it with a constant
@@ -18,6 +17,11 @@ namespace Seltzr.Filters {
 	/// <typeparam name="TModel">The type of model to replace the parameter with</typeparam>
 	/// <typeparam name="TParam">The type of the parameter to strip away</typeparam>
 	internal class FilterByExpressionModifier<TModel, TParam> : ExpressionVisitor {
+		/// <summary>
+		///     An expression to be used as the parameter for the transformed lambda
+		/// </summary>
+		private readonly ParameterExpression ModelParameter;
+
 		/// <summary>
 		///     The type of the parameter to strip away
 		/// </summary>
@@ -29,9 +33,9 @@ namespace Seltzr.Filters {
 		private readonly ConstantExpression ParameterConstant;
 
 		/// <summary>
-		///     The property that models are being filtered by
+		///     An expression to access the property that uses the new model parameter
 		/// </summary>
-		private readonly PropertyInfo PropertyInfo;
+		private readonly MemberExpression PropertyAccessExpression;
 
 		/// <summary>
 		///     The name of the parameter that refers to the parsed request parameter
@@ -39,21 +43,21 @@ namespace Seltzr.Filters {
 		private string? ParsedParamName;
 
 		/// <summary>
-		///     An expression to access the property that uses the new model parameter
-		/// </summary>
-		private MemberExpression? PropertyAccessExpression;
-
-		/// <summary>
 		///     The name of the parameter that refers to the model's property
 		/// </summary>
 		private string? PropertyParamName;
 
 		/// <summary>Initializes a new instance of the <see cref="FilterByExpressionModifier{TModel,TParam}" /> class.</summary>
-		/// <param name="property">The property being filtered by</param>
+		/// <param name="accessExpression">An expression accessing the property being filtered by</param>
+		/// <param name="modelParameter">An expression to be used as the parameter for the transformed lambda</param>
 		/// <param name="param">The value of the parameter to use as a constant</param>
-		public FilterByExpressionModifier(PropertyInfo property, TParam param) {
+		public FilterByExpressionModifier(
+			MemberExpression accessExpression,
+			ParameterExpression modelParameter,
+			TParam param) {
 			this.ParameterConstant = Expression.Constant(param);
-			this.PropertyInfo = property;
+			this.PropertyAccessExpression = accessExpression;
+			this.ModelParameter = modelParameter;
 		}
 
 		/// <summary>
@@ -64,10 +68,8 @@ namespace Seltzr.Filters {
 		public Expression<Func<TModel, bool>> Modify(Expression<Func<TParam, TParam, bool>> expression) {
 			this.PropertyParamName = expression.Parameters[0].Name;
 			this.ParsedParamName = expression.Parameters[1].Name;
-			ParameterExpression ModelParameter = Expression.Parameter(typeof(TModel));
-			this.PropertyAccessExpression = Expression.Property(ModelParameter, this.PropertyInfo);
 
-			return Expression.Lambda<Func<TModel, bool>>(this.Visit(expression.Body), ModelParameter);
+			return Expression.Lambda<Func<TModel, bool>>(this.Visit(expression.Body), this.ModelParameter);
 		}
 
 		/// <summary>
@@ -77,7 +79,7 @@ namespace Seltzr.Filters {
 		/// <returns>An expression to be used in the place of the given <see cref="ParameterExpression" /></returns>
 		protected override Expression VisitParameter(ParameterExpression node) {
 			if (node.Name == this.ParsedParamName) return this.ParameterConstant;
-			if (node.Name == this.PropertyParamName) return this.PropertyAccessExpression!;
+			if (node.Name == this.PropertyParamName) return this.PropertyAccessExpression;
 			return base.VisitParameter(node); // likely impossible but just in case
 		}
 	}

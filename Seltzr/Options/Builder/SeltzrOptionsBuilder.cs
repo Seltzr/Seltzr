@@ -471,7 +471,7 @@ namespace Seltzr.Options.Builder {
 		/// </summary>
 		/// <param name="propertyExpression">An expression that returns the property to be ignored</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public SeltzrOptionsBuilder<TModel, TUser> Ignore(Expression<Func<TModel, object>> propertyExpression) {
+		public SeltzrOptionsBuilder<TModel, TUser> Ignore(Expression<Func<TModel, object?>> propertyExpression) {
 			return this.Ignore(SeltzrOptionsBuilderBase.ExtractProperty(propertyExpression));
 		}
 
@@ -506,7 +506,7 @@ namespace Seltzr.Options.Builder {
 		/// </summary>
 		/// <param name="propertyExpression">An expression that returns the property to be included</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public SeltzrOptionsBuilder<TModel, TUser> Include(Expression<Func<TModel, object>> propertyExpression) =>
+		public SeltzrOptionsBuilder<TModel, TUser> Include(Expression<Func<TModel, object?>> propertyExpression) =>
 			this.Include(SeltzrOptionsBuilderBase.ExtractProperty(propertyExpression));
 
 		/// <summary>
@@ -607,7 +607,7 @@ namespace Seltzr.Options.Builder {
 		/// </summary>
 		/// <param name="propertyExpression">An expression that returns the property to be omitted</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public SeltzrOptionsBuilder<TModel, TUser> Omit(Expression<Func<TModel, object>> propertyExpression) =>
+		public SeltzrOptionsBuilder<TModel, TUser> Omit(Expression<Func<TModel, object?>> propertyExpression) =>
 			this.Omit(SeltzrOptionsBuilderBase.ExtractProperty(propertyExpression));
 
 		/// <summary>
@@ -664,7 +664,7 @@ namespace Seltzr.Options.Builder {
 		/// <param name="propertyExpression">An expression that returns the property to require</param>
 		/// <returns>This <see cref="SeltzrOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public SeltzrOptionsBuilder<TModel, TUser> RequireProperty(
-			Expression<Func<TModel, object>> propertyExpression) =>
+			Expression<Func<TModel, object?>> propertyExpression) =>
 			this.RequireProperty(SeltzrOptionsBuilderBase.ExtractProperty(propertyExpression));
 
 		/// <summary>

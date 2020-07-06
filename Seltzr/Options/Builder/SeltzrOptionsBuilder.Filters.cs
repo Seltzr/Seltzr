@@ -623,18 +623,20 @@ namespace Seltzr.Options.Builder {
 			ParameterRetriever retriever,
 			Expression<Func<T, T, bool>> comparer,
 			bool optional) {
-			PropertyInfo Info = SeltzrOptionsBuilderBase.ExtractProperty(property);
+			MemberExpression AccessExpression = SeltzrOptionsBuilderBase.ExtractPropertyExpression(property);
+			ParameterExpression ModelParameter = property.Parameters.First();
+
 			Type PropertyType = typeof(T);
 
 			this.Filter(
 				(c, d) => {
 					string? ParamValue = retriever.GetValue(c.Request);
-					if (ParamValue == null) 
-						return optional ? d : throw new ConditionFailedException("Failed to parse request parameter");
+					if (ParamValue == null)
+						return optional ? d : throw new ConditionFailedException($"Failed to parse required request parameter '{retriever.ParameterName}'");
 
 					T Parsed = (T)ParameterResolver.ParseParameter(ParamValue, PropertyType);
 
-					return d.Where(new FilterByExpressionModifier<TModel, T>(Info, Parsed).Modify(comparer));
+					return d.Where(new FilterByExpressionModifier<TModel, T>(AccessExpression, ModelParameter, Parsed).Modify(comparer));
 				});
 			return this;
 		}

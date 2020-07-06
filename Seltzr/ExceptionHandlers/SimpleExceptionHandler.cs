@@ -58,8 +58,7 @@ namespace Seltzr.ExceptionHandlers {
 					await context.Response.WriteAsync("An unexpected error occurred");
 					return false;
 			}
-
-
+			
 			string Message = exception.Message;
 			if (exception.InnerException != null)
 				Message += $"\r\nReason: {exception.InnerException.Message}";

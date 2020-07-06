@@ -19,7 +19,7 @@ namespace Seltzr.Responses {
 		/// </summary>
 		[ApiVersion]
 		public string? ApiVersion { get; set; }
-
+		
 		/// <summary>
 		///     Gets or sets an integer which, when present, indicates the number of elements included in the response
 		/// </summary>
